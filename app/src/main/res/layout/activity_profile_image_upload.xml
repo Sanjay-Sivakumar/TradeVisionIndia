@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileImageUpload"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/profileimageupdate"
+        android:layout_width="305dp"
+        android:layout_height="306dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="50dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="115dp"
+            android:src="@drawable/ic_backup"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Click The Photo"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textSize="20dp"
+            android:textColor="#000"/>
+    </LinearLayout>
+</LinearLayout>

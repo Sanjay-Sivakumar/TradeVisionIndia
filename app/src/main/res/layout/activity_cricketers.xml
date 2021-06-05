@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActivityCricketers"
+    android:layout_margin="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="TPH"
+        android:id="@+id/ettph"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:textAlignment="center"
+        android:background="@drawable/bg_round"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/brandspinner"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="80dp"
+        android:textAlignment="center"
+        android:entries="@array/brand"
+        android:background="@drawable/bg_round"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/etstage"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="135dp"
+        android:hint="STAGE"
+        android:textColorHint="#000"
+        android:textColor="#000"
+        android:textAlignment="center"
+        android:background="@drawable/bg_round"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="185dp">
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_bg"
+            android:orientation="horizontal"
+            android:clickable="true"
+            android:id="@+id/addequipment"
+            android:focusable="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_list" />
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="EQUIPMENT"
+                android:textColor="#000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_cricketers"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"/>
+
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="690dp"
+        android:hint="Year Of Supply"
+        android:id="@+id/etyearofsupply"
+        android:textAlignment="center"
+        android:textColorHint="#000"
+        android:background="@drawable/edittext_bg"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Submit"
+        android:id="@+id/submitlist"
+        android:textAlignment="center"
+        android:layout_marginTop="760dp"/>
+    </RelativeLayout>
+
+</ScrollView>

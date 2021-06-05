@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">SARA</string>
+    <string name="search">Search</string>
+
+    <array name="brand">
+        <item>PUZZOLANA</item>
+        <item>OTHERS</item>
+    </array>
+
+    <array name="quarry">
+        <item>Own</item>
+        <item>Lease</item>
+    </array>
+
+    <array name="yesorno">
+        <item>YES</item>
+        <item>NO</item>
+    </array>
+
+    <array name="SearchEngine">
+        <item>Company_Name</item>
+        <item>OEN_NUMBER</item>
+    </array>
+
+
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserSearch"
+    android:layout_margin="10dp">
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:id="@+id/usersearch"
+        android:background="#f5f5f5"
+        android:drawableLeft="@drawable/ic_search"
+        android:padding="15dp"/>
+
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/usersearchlist"
+        android:layout_marginTop="90dp"
+        />
+
+</RelativeLayout>

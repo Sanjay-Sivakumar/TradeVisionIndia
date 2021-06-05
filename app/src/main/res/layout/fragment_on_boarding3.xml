@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/pink">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/imageview1"
+        android:src="@drawable/img3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias=".3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview1"
+        android:text="sizzling sites"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageview1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageview1"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:background="#ffffff"
+        android:text="SkIP"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textview1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@+id/textview1"
+        app:layout_constraintTop_toTopOf="@id/textview1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview2"
+        android:text="Easy"
+        android:textColor="@color/white"
+        android:textSize="42sp"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/imageview1"
+        app:layout_constraintTop_toBottomOf="@id/imageview1"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview3"
+        android:text="Payment"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="42sp"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textview2"
+        app:layout_constraintTop_toBottomOf="@id/textview2"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/textview4"
+        android:text="Everything you will Experience will be absolutely safe and Easy"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".1"
+        app:layout_constraintStart_toStartOf="@+id/textview3"
+        app:layout_constraintTop_toBottomOf="@+id/textview3"
+        app:layout_constraintWidth_percent=".5"
+        />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="10dp"
+        android:src="@drawable/tab3"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias=".6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/textview4"
+        app:layout_constraintTop_toBottomOf="@id/textview4"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btntologinonboard3"
+        android:backgroundTint="@color/white"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintVertical_bias="1"
+        android:src="@drawable/ic_next"
+        android:layout_margin="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.notificationappmsg">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Notificationappmsg">
+        <activity android:name=".SearchEngine">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OrderDetailsViewing" />
+        <activity android:name=".CompanyDetailsViewing" />
+        <activity android:name=".OrderPhotoUpload" />
+        <activity android:name=".PaymentReceipt" />
+        <activity android:name=".TakingOrder" />
+        <activity android:name=".CompanySearch" />
+        <activity android:name=".ServiceEntry" />
+        <activity android:name=".ProfileImageUpload" />
+        <activity android:name=".CompanyDetailsEntering" />
+        <activity android:name=".ActivityCricketers" />
+        <activity android:name=".PlacingOrderPlace" />
+        <activity android:name=".ServiceDashboardPage" />
+        <activity android:name=".UserLeveloneDashboard">
+
+        </activity>
+        <activity android:name=".UserSearch" />
+        <activity android:name=".ProfileEditingAdminPage" />
+        <activity android:name=".ProfileViewingPage" />
+        <activity android:name=".UserprofilePage" />
+        <activity android:name=".LoginPage" />
+        <activity android:name=".AdminDashborad" />
+        <activity android:name=".RegistrationPage" />
+        <activity android:name=".LoginAuth" />
+        <activity android:name=".IntroActivity" />
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

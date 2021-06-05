@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TakingOrder">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_calender"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="8dp"
+                    android:inputType="date"
+                    android:id="@+id/orderdate"
+                    android:textColor="#000"
+                    android:text="12/07/2002"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_order"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="8dp"
+                    android:id="@+id/orderNumber"
+                    android:textColor="#000"
+                    android:text="12/07/2002"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:hint="TPH"
+                android:id="@+id/ettphorder"
+                android:textColor="#000"
+                android:textColorHint="#000"
+                android:textAlignment="center"
+                android:background="@drawable/bg_round"
+                android:importantForAutofill="no"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"/>
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/brandspinnerorder"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="80dp"
+                android:textAlignment="center"
+                android:entries="@array/brand"
+                android:background="@drawable/bg_round"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/etstageorder"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="135dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:hint="STAGE"
+                android:inputType="text"
+                android:textColorHint="#000"
+                android:textColor="#000"
+                android:textAlignment="center"
+                android:background="@drawable/bg_round"
+                android:importantForAutofill="no" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/etwashingorder"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:hint="Washing"
+                android:textColorHint="#000"
+                android:textColor="#000"
+                android:textAlignment="center"
+                android:background="@drawable/bg_round"
+                android:importantForAutofill="no"
+                tools:ignore="TextFields" />
+
+
+
+
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="#f5f5f5"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#0D1EE9C0">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Transport Price"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:id="@+id/transportprice"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Basic Price"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:id="@+id/basicprice"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Advance"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:id="@+id/etadvanceorder"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:text="Calculate!"
+                    android:id="@+id/calculatenetamount"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFFFFF"
+                    android:textColor="#000"
+                    android:drawableLeft="@drawable/ic_circle_down"
+                    android:layout_marginBottom="25dp"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="#f1f1f1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FIELDS"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FILLED"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GST 18%"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="GST Amount"
+                    android:id="@+id/textViewgst"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1% TCS ON TOTAL"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TCS AMOUNT"
+                    android:id="@+id/textViewtcsamount"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NET PRICE"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/textViewnetprice"
+                    android:text="NET PRICE"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+
+
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="#f1f1f1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="TPC"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+            </TableRow>
+
+            <TableRow>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:hint="Name"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:id="@+id/ettpcname"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"
+                    android:importantForAutofill="no" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:hint="Amount"
+                    android:id="@+id/ettpcamount"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:importantForAutofill="no" />
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/chequertgsdetails"
+            android:hint="Cheque/RTGS:"
+            android:padding="12dp"
+            android:gravity="top"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_round"
+            android:importantForAutofill="no"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/et_remarksorder"
+            android:hint="Remarks"
+            android:padding="12dp"
+            android:gravity="top"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_round"
+            android:importantForAutofill="no"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"/>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="15dp">
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_bg"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/addequipment1"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:text="ADD EQUIPMENT"
+                    android:textColor="#000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_cricketersorder"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="SUBMIT"
+            android:id="@+id/submitorder"
+            android:layout_marginTop="20dp"
+            android:textColor="#000"
+            android:layout_marginStart="170dp"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

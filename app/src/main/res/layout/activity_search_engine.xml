@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchEngine">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Search By :"
+            android:textColor="#000"
+            android:textSize="24sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="25dp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="14dp"
+            android:src="@drawable/ic_filter"
+            android:layout_marginStart="15dp"/>
+
+            <ToggleButton
+                android:id="@+id/toggleButtonsearch"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ToggleButton"
+                android:textOn="OEN NUMBER"
+                android:textOff="Company Name"
+                android:textColor="#000"
+                android:background="#00BCD4"/>
+
+
+
+
+        </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/searchenginetext"
+            android:background="#f5f5f5"
+            android:drawableStart="@drawable/ic_search"
+            android:padding="15dp"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listofsearchresults"
+            android:layout_marginTop="90dp"/>
+    </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

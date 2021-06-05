@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#f1f1f1">
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FIELDS"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FILLED"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"/>
+
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Company Name"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="companyname"
+                android:id="@+id/textViewcompanyname"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Company Phone Number"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="companyphonenumber"
+                android:id="@+id/textViewcompanyphonenumber"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Company Email"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/textViewcompanyemail"
+                android:text="companyemail"
+                android:background="#ffffff"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Company Address"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="address"
+                android:id="@+id/textViewcompanyaddresss"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Company Site Address"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="site address"
+                android:id="@+id/textViewsiteaddress"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Name of Head"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/textViewnameofthehead"
+                android:text="Name of the head"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Person Name"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="Person Name"
+                android:id="@+id/textViewpersonname"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Person Phone Number"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="personphonenumber"
+                android:id="@+id/textViewpersonphonenumber"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Person Designation"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/textViewpersondesignation"
+                android:text="persondesignation"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Applied date"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/textViewapplieddate"
+                android:text="appointmentdate"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Next Visit"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/textViewnextvisit"
+                android:text="nextvisit"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

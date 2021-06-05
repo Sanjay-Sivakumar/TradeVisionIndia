@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginAuth"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+
+    <EditText
+        android:id="@+id/etloginemail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="Email"
+        android:textColorHint="#000"
+        android:textColor="#000"
+        android:textAlignment="center"
+        android:ems="10"/>
+
+    <EditText
+        android:id="@+id/usernamelogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:background="@drawable/edittext_bg"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#020000"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/userphonenumber"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Phone Number"
+        android:background="@drawable/edittext_bg"
+        android:textAlignment="center"
+        android:textColorHint="#000"
+        android:textColor="#000"/>
+
+
+    <EditText
+        android:id="@+id/userlevelnumber"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="userlevel"
+        android:background="@drawable/edittext_bg"
+        android:inputType="number"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textColorHint="#000"/>
+
+    <EditText
+        android:id="@+id/etloginpassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/edittext_bg"
+        android:layout_marginTop="20dp"
+        android:hint="Password"
+        android:textColorHint="#000"
+        android:textColor="#000"
+        android:textAlignment="center"
+        android:ems="10"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="130dp"
+        android:id="@+id/btnlogin"
+        android:background="#FFFFFF"
+        android:text="Submit!"/>
+
+
+</LinearLayout>
