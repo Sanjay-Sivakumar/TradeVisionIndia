@@ -93,7 +93,7 @@ public class SearchEngine extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 PopulateSearchByName(snapshot);
-                Toast.makeText(SearchEngine.this,"Search Now",Toast.LENGTH_LONG).show();
+                Toast.makeText(SearchEngine.this,"Search Now!",Toast.LENGTH_LONG).show();
 
             }
             @Override
