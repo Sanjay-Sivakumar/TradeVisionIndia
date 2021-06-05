@@ -50,7 +50,7 @@ public class SearchEngine extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    CallValueEventListenerForOEn();
+                    CallValueEventListenerForOen();
                 }
                 else{
 
@@ -62,7 +62,7 @@ public class SearchEngine extends AppCompatActivity {
 
     }
 
-    private void CallValueEventListenerForOEn() {
+    private void CallValueEventListenerForOen() {
 
         ValueEventListener event=new ValueEventListener() {
             @Override
