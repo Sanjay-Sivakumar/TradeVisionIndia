@@ -235,7 +235,7 @@ public class SearchEngine extends AppCompatActivity {
 
 
                 }else{
-                    Toast.makeText(SearchEngine.this,"No Company Found !!!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(SearchEngine.this,"No Company Found ",Toast.LENGTH_LONG).show();
                 }
             }
 
