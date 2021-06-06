@@ -40,7 +40,6 @@ public class OrderDetailsViewing extends AppCompatActivity {
         cricketers=new ArrayList<String>();
 
 
-
     }
 
     @Override
