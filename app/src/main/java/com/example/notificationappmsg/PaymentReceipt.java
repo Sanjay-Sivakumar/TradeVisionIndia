@@ -45,8 +45,6 @@ public class PaymentReceipt extends AppCompatActivity {
 
     Button btn1,btn2;
 
-
-
     public String Company_Name,Order_Net_Price,oen_number_id,cOMPany_Id,AmountPaid,Lastnetamount;
 
     public DatabaseReference dforderpayment,dfcompanypayment,dtorderdates,dttesting,dtpayment1,dtorderdates1;

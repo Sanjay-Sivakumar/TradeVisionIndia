@@ -23,7 +23,7 @@ public class ServiceEngineerDashboard extends AppCompatActivity implements Navig
     DrawerLayout drawerLayout1;
     NavigationView navigationView1;
     Toolbar toolbar1;
-    ImageView image1,image2,image3,image4;
+    ImageView image1,image2,image3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +35,6 @@ public class ServiceEngineerDashboard extends AppCompatActivity implements Navig
         image1 = findViewById(R.id.imageView1);
         image2 = findViewById(R.id.imageView2);
         image3 = findViewById(R.id.imageView3);
-        image4 = findViewById(R.id.imageView4);
 
 
         image1.setOnClickListener(new View.OnClickListener() {
@@ -53,13 +52,6 @@ public class ServiceEngineerDashboard extends AppCompatActivity implements Navig
             }
         });
         image3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(ServiceEngineerDashboard.this, SecondActivity.class);
-                ServiceEngineerDashboard.this.startActivity(myIntent);
-            }
-        });
-        image4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(ServiceEngineerDashboard.this, SecondActivity.class);

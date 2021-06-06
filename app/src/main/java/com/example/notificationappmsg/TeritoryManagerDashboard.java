@@ -23,7 +23,7 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
      DrawerLayout drawerLayout3;
      NavigationView navigationView3;
      Toolbar toolbar3;
-     ImageView image10,image11,image12,image13,image14,image15,image16,image17,image18;
+     ImageView image10,image11,image12,image14,image15,image16,image17,image18,image19;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +40,8 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
         image10 = findViewById(R.id.imageView10);
         image11= findViewById(R.id.imageView11);
         image12 = findViewById(R.id.imageView12);
-        image13 = findViewById(R.id.imageView13);
+        image19 = findViewById(R.id.imageView19);
+
 
 
         image14.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +100,8 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
-        image13.setOnClickListener(new View.OnClickListener() {
+
+        image19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);

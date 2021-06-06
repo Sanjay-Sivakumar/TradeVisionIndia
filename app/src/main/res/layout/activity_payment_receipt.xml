@@ -1,79 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PaymentReceipt"
-    android:orientation="vertical">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <TextView
-        android:id="@+id/tv1"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="match_parent"
+        tools:context=".PaymentReceipt">
 
-    <TextView
-        android:id="@+id/tv2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:layout_marginTop="10dp"/>
+        <ImageView
+            android:id="@+id/payment_logo"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            app:srcCompat="@drawable/payment_details" />
 
-    <TextView
-        android:id="@+id/tv3"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="304dp"
+            android:background="@drawable/bg_round"
+            android:drawableLeft="@drawable/ic_baseline_date_range_24"
+            android:padding="7dp"
+            android:text="Date"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.297" />
 
-    <TextView
-        android:id="@+id/tv4"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="365dp"
+            android:background="@drawable/bg_round"
+            android:drawableLeft="@drawable/ic_baseline_format_list_numbered_24"
+            android:padding="7dp"
+            android:text="OEN"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.297" />
 
-    <EditText
-        android:id="@+id/et1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_marginTop="10dp"
-        android:text="Name" />
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="426dp"
+            android:background="@drawable/bg_round"
+            android:drawableLeft="@drawable/ic_baseline_account_box_24"
+            android:padding="7dp"
+            android:text="Customer Name"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.297" />
 
-    <EditText
-        android:id="@+id/et2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:layout_marginTop="10dp"/>
-
-    <Button
-        android:id="@+id/buttonpr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Calculate" />
-
-    <TextView
-        android:id="@+id/tv5"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:layout_marginTop="10dp"/>
-
-    <Button
-        android:id="@+id/buttonpr1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Submit" />
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="487dp"
+            android:background="@drawable/bg_round"
+            android:drawableLeft="@drawable/ic_baseline_format_list_numbered_24"
+            android:padding="7dp"
+            android:text="Order Value(NET)"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.297" />
 
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="548dp"
+            android:background="@drawable/bg_round"
+            android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="7dp"
+            android:text="Amount Paid Today"
+            android:textAlignment="center"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.096" />
+
+        <EditText
+            android:id="@+id/et2"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="609dp"
+            android:background="@drawable/bg_round"
+            android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:padding="7dp"
+            android:text="Cheque/RTGS/Bank DO"
+            android:textAlignment="center"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.096" />
+
+        <Button
+            android:id="@+id/buttonpr"
+            android:layout_width="92dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="671dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_round1"
+            android:text="Calculate"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.456" />
+
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="332dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="731dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/bg_round"
+            android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+            android:padding="7dp"
+            android:text="Balance Amount"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.297" />
+
+        <Button
+            android:id="@+id/buttonpr1"
+            android:layout_width="128dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="790dp"
+            android:layout_marginEnd="144dp"
+            android:background="@drawable/bg_round1"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+</ScrollView>
