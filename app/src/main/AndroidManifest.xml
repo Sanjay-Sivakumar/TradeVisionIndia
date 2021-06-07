@@ -39,6 +39,7 @@
         <activity android:name=".UserLeveloneDashboard">
 
         </activity>
+        <activity android:name=".BusinessExecutiveDashboard"/>
 
         <activity android:name=".OrderLossEntry" />
         <activity android:name=".ServiceEntryDetails"/>
