@@ -12,12 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notificationappmsg">
         <activity android:name=".SearchEngine">
+
+        </activity>
+        <activity android:name=".BusinessExecutiveDashboard"/>
+        <activity android:name=".TeritoryManagerDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ServiceSearchEngine"/>
+        <activity android:name=".SecondActivity"/>
         <activity android:name=".OrderDetailsViewing" />
         <activity android:name=".CompanyDetailsViewing" />
         <activity android:name=".OrderPhotoUpload" />
@@ -33,6 +39,11 @@
         <activity android:name=".UserLeveloneDashboard">
 
         </activity>
+
+        <activity android:name=".OrderLossEntry" />
+        <activity android:name=".ServiceEntryDetails"/>
+        <activity android:name=".OrderLossViewing" />
+
         <activity android:name=".UserSearch" />
         <activity android:name=".ProfileEditingAdminPage" />
         <activity android:name=".ProfileViewingPage" />

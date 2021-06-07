@@ -32,6 +32,8 @@ public class SearchEngine extends AppCompatActivity {
     DatabaseReference searchEngineRef;
     ToggleButton toggleButtonSearch;
 
+    public String RequestCodeSearch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,8 @@ public class SearchEngine extends AppCompatActivity {
         toggleButtonSearch=findViewById(R.id.toggleButtonsearch);
         searchResults=findViewById(R.id.listofsearchresults);
 
+
+        RequestCodeSearch= getIntent().getStringExtra("RequestCode");
 
         searchEngineRef= FirebaseDatabase.getInstance().getReference("Search_Engine_Details");
 
@@ -161,9 +165,7 @@ public class SearchEngine extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             //Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(SearchEngine.this,PaymentReceipt.class);
-                            intent.putExtra("RequestCode", "1");
-                            startActivity(intent);
+                           GotoIntentation();
                         }
                     });
 
@@ -179,6 +181,8 @@ public class SearchEngine extends AppCompatActivity {
             }
         });
     }
+
+
 
     private void PopulateSearchByName(DataSnapshot snapshot) {
         ArrayList<String> names=new ArrayList<>();
@@ -236,9 +240,7 @@ public class SearchEngine extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             //Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(SearchEngine.this,OrderLossEntry.class);
-                            intent.putExtra("RequestCode", "1");
-                            startActivity(intent);
+                            GotoIntentation();
                         }
                     });
 
@@ -253,5 +255,27 @@ public class SearchEngine extends AppCompatActivity {
 
             }
         });
+    }
+    private void GotoIntentation() {
+
+        if(RequestCodeSearch.equals("1"))
+        {
+            Intent intent =new Intent(SearchEngine.this,OrderDetailsViewing.class);
+            startActivity(intent);
+        }else if(RequestCodeSearch.equals("2"))
+        {
+            Intent intent =new Intent(SearchEngine.this,OrderLossEntry.class);
+            startActivity(intent);
+        }
+        else if(RequestCodeSearch.equals("3"))
+        {
+            Intent intent = new Intent(SearchEngine.this,OrderLossDetails.class);
+            startActivity(intent);
+        }else if(RequestCodeSearch.equals("4"))
+        {
+            Intent intent = new Intent(SearchEngine.this,PaymentReceipt.class);
+            startActivity(intent);
+        }
+
     }
 }

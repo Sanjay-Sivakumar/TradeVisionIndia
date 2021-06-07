@@ -29,6 +29,7 @@ public class CompanySearch extends AppCompatActivity {
     private AutoCompleteTextView txtsearch;
     String COMPANYID;
 
+    public String RequestCodeCompany;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,10 @@ public class CompanySearch extends AppCompatActivity {
         companyRef= FirebaseDatabase.getInstance().getReference("CompanyDetails");
         listViewcom=(ListView)findViewById(R.id.companysearchlist);
         txtsearch=(AutoCompleteTextView)findViewById(R.id.companysearch);
+
+
+
+        RequestCodeCompany= getIntent().getStringExtra("RequestCode");
 
 
         ValueEventListener event=new ValueEventListener() {
@@ -99,9 +104,9 @@ public class CompanySearch extends AppCompatActivity {
                         Toast.makeText(CompanySearch.this,COMPANYID,Toast.LENGTH_LONG).show();
                         CompanyID company_ID=new CompanyID();
                         company_ID.setCOMPanyID(models.getCompanyId());
-                        company_ID.setComPany_Email_id(models.getCompanyEmail());
-                        company_ID.setComPany_Address(models.getCompanyAddress());
-                        company_ID.setComPany_Name(models.getCompanyName());
+                        CompanyID.setComPany_Email_id(models.getCompanyEmail());
+                        CompanyID.setComPany_Address(models.getCompanyAddress());
+                        CompanyID.setComPany_Name(models.getCompanyName());
 
                     }
 
@@ -111,9 +116,10 @@ public class CompanySearch extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             //Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(CompanySearch.this,PlacingOrderPlace.class);
-                            intent.putExtra("RequestCode", "1");
-                            startActivity(intent);
+                           // Intent intent = new Intent(CompanySearch.this,PlacingOrderPlace.class);
+                           // intent.putExtra("RequestCode", "1");
+                            //startActivity(intent);
+                            GotoIntent();
                         }
                     });
 
@@ -128,6 +134,27 @@ public class CompanySearch extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void GotoIntent() {
+
+        if(RequestCodeCompany.equals("3"))
+        {
+            Intent intent=new Intent(CompanySearch.this,PlacingOrderPlace.class);
+            intent.putExtra("RequestCode","2");
+            startActivity(intent);
+
+        }else if(RequestCodeCompany.equals("2"))
+        {
+            Intent intent=new Intent(CompanySearch.this,PlacingOrderPlace.class);
+            intent.putExtra("RequestCode","1");
+            startActivity(intent);
+        }else{
+            Intent intent=new Intent(CompanySearch.this,CompanyDetailsViewing.class);
+            startActivity(intent);
+        }
+
+
     }
 
 }

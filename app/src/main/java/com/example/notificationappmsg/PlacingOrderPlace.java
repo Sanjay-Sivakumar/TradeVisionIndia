@@ -25,7 +25,7 @@ public class PlacingOrderPlace extends AppCompatActivity {
     int count=0;
     EditText spinnerElement;
 
-    public String RequestCode;
+    public String RequestCodeEquip;
 
     List<String> teamList = new ArrayList<>();
     ArrayList<Cricketer> cricketersList = new ArrayList<>();
@@ -42,7 +42,7 @@ public class PlacingOrderPlace extends AppCompatActivity {
         spinnerElement=findViewById(R.id.addspinnerelements);
 
 
-        RequestCode= getIntent().getStringExtra("RequestCode");
+        RequestCodeEquip= getIntent().getStringExtra("RequestCode");
 
         teamList.add("Model");
         teamList.add("Jaw");
@@ -90,14 +90,21 @@ public class PlacingOrderPlace extends AppCompatActivity {
             case R.id.button_submit_list:
 
                 if(checkIfValidAndRead()){
-                    //if(RequestCode.equals("1"))
-                    //{
+                    if(RequestCodeEquip.equals("1"))
+                    {
                         Intent intent = new Intent(PlacingOrderPlace.this, TakingOrder.class);
                         Bundle bundle = new Bundle();
                         bundle.putSerializable("list", cricketersList);
                         intent.putExtras(bundle);
                         startActivity(intent);
-                    //}
+                    }
+                    else{
+                        Intent intent = new Intent(PlacingOrderPlace.this, ServiceEntryDetails.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("list", cricketersList);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
                 }
 
                 break;

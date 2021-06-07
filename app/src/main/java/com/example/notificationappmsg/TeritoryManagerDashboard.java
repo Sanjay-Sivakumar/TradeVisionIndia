@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class TeritoryManagerDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -48,63 +49,71 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
         image13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, CompanyDetailsEntering.class);
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
         image14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, CompanySearch.class);
+                myIntent.putExtra("RequestCode", "2");
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
         image15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "1");
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
         image16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "2");
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
         image17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "3");
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
         image18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "4");
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
         image10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, CompanySearch.class);
+                myIntent.putExtra("RequestCode", "3");
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
         image11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, ServiceSearchEngine.class);
+                myIntent.putExtra("RequestCode", "1");
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
         image12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, CompanySearch.class);
+                myIntent.putExtra("RequestCode", "1");
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
@@ -112,7 +121,7 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
         image19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(TeritoryManagerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, LoginAuth.class);
                 TeritoryManagerDashboard.this.startActivity(myIntent);
             }
         });
@@ -152,15 +161,16 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
             case R.id.nav_home:
                 break;
             case R.id.nav_search:
-                Intent intent6 = new Intent(TeritoryManagerDashboard.this,SecondActivity.class);
+                Intent intent6 = new Intent(TeritoryManagerDashboard.this,UserSearch.class);
                 startActivity(intent6);
                 break;
             case R.id.nav_profile:
-                Intent intent7 = new Intent(TeritoryManagerDashboard.this,SecondActivity.class);
+                Intent intent7 = new Intent(TeritoryManagerDashboard.this,UserprofilePage.class);
                 startActivity(intent7);
                 break;
             case R.id.nav_logout:
-                Intent intent8 = new Intent(TeritoryManagerDashboard.this,SecondActivity.class);
+                FirebaseAuth.getInstance().signOut();
+                Intent intent8 = new Intent(TeritoryManagerDashboard.this,LoginPage.class);
                 startActivity(intent8);
                 break;
         }

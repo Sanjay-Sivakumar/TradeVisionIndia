@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class BusinessExecutiveDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -45,49 +46,55 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
         image0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, CompanyDetailsEntering.class);
                 BusinessExecutiveDashboard.this.startActivity(myIntent);
             }
         });
         image4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, CompanySearch.class);
+                myIntent.putExtra("RequestCode", "1");
                 BusinessExecutiveDashboard.this.startActivity(myIntent);
             }
         });
         image5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, CompanySearch.class);
+                myIntent.putExtra("RequestCode", "2");
                 BusinessExecutiveDashboard.this.startActivity(myIntent);
             }
         });
         image6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "1");
                 BusinessExecutiveDashboard.this.startActivity(myIntent);
             }
         });
         image7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "2");
                 BusinessExecutiveDashboard.this.startActivity(myIntent);
             }
         });
         image8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "3");
                 BusinessExecutiveDashboard.this.startActivity(myIntent);
             }
         });
         image9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "4");
                 BusinessExecutiveDashboard.this.startActivity(myIntent);
             }
         });
@@ -127,15 +134,16 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
             case R.id.nav_home:
                 break;
             case R.id.nav_search:
-                Intent intent3 = new Intent(BusinessExecutiveDashboard.this,SecondActivity.class);
+                Intent intent3 = new Intent(BusinessExecutiveDashboard.this,UserSearch.class);
                 startActivity(intent3);
                 break;
             case R.id.nav_profile:
-                Intent intent4 = new Intent(BusinessExecutiveDashboard.this,SecondActivity.class);
+                Intent intent4 = new Intent(BusinessExecutiveDashboard.this,UserprofilePage.class);
                 startActivity(intent4);
                 break;
             case R.id.nav_logout:
-                Intent intent5 = new Intent(BusinessExecutiveDashboard.this,SecondActivity.class);
+                FirebaseAuth.getInstance().signOut();
+                Intent intent5 = new Intent(BusinessExecutiveDashboard.this,LoginPage.class);
                 startActivity(intent5);
                 break;
         }

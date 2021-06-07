@@ -154,7 +154,7 @@ public class ServiceSearchEngine extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             //Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(ServiceSearchEngine.this,PaymentReceipt.class);
+                            Intent intent = new Intent(ServiceSearchEngine.this,ServiceEntry.class);
                             intent.putExtra("RequestCode", "1");
                             startActivity(intent);
                         }
@@ -215,6 +215,10 @@ public class ServiceSearchEngine extends AppCompatActivity {
 
                         CompanyID company_ID=new CompanyID();
                         company_ID.setCOMPanyID(models.getService_company_id());
+                        CompanyID.setComPany_Email_id(models.getService_company_email());
+                        CompanyID.setComPany_Name(models.getService_company_name());
+                        CompanyID.setComPany_phone_number(models.getService_company_phone());
+                        CompanyID.setComPany_Address(models.getService_company_address());
                     }
 
                     ArrayAdapter AAdapter=new ArrayAdapter(ServiceSearchEngine.this, android.R.layout.simple_list_item_1,listtuser);
@@ -222,8 +226,8 @@ public class ServiceSearchEngine extends AppCompatActivity {
                     serviceSearchResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            //Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(ServiceSearchEngine.this,PaymentReceipt.class);
+
+                            Intent intent = new Intent(ServiceSearchEngine.this,ServiceEntry.class);
                             intent.putExtra("RequestCode", "1");
                             startActivity(intent);
                         }

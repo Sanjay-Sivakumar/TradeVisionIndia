@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ServiceEngineerDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -40,21 +41,21 @@ public class ServiceEngineerDashboard extends AppCompatActivity implements Navig
         image1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(ServiceEngineerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(ServiceEngineerDashboard.this, CompanySearch.class);
                 ServiceEngineerDashboard.this.startActivity(myIntent);
             }
         });
         image2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(ServiceEngineerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(ServiceEngineerDashboard.this, ServiceSearchEngine.class);
                 ServiceEngineerDashboard.this.startActivity(myIntent);
             }
         });
         image3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(ServiceEngineerDashboard.this, SecondActivity.class);
+                Intent myIntent = new Intent(ServiceEngineerDashboard.this, CompanySearch.class);
                 ServiceEngineerDashboard.this.startActivity(myIntent);
             }
         });
@@ -94,15 +95,16 @@ public class ServiceEngineerDashboard extends AppCompatActivity implements Navig
             case R.id.nav_home:
                 break;
             case R.id.nav_search:
-                Intent intent = new Intent(ServiceEngineerDashboard.this,SecondActivity.class);
+                Intent intent = new Intent(ServiceEngineerDashboard.this,UserSearch.class);
                 startActivity(intent);
                 break;
             case R.id.nav_profile:
-                Intent intent1 = new Intent(ServiceEngineerDashboard.this,SecondActivity.class);
+                Intent intent1 = new Intent(ServiceEngineerDashboard.this,UserprofilePage.class);
                 startActivity(intent1);
                 break;
             case R.id.nav_logout:
-                Intent intent2 = new Intent(ServiceEngineerDashboard.this,SecondActivity.class);
+                FirebaseAuth.getInstance().signOut();
+                Intent intent2 = new Intent(ServiceEngineerDashboard.this,LoginPage.class);
                 startActivity(intent2);
                 break;
         }
