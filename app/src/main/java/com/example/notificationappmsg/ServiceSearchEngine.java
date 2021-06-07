@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.CompoundButton;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -24,37 +23,35 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class SearchEngine extends AppCompatActivity {
+public class ServiceSearchEngine extends AppCompatActivity {
 
 
-    AutoCompleteTextView searchtext;
-    ListView searchResults;
-    DatabaseReference searchEngineRef;
-    ToggleButton toggleButtonSearch;
+    AutoCompleteTextView servicesearchtext;
+    ListView serviceSearchResults;
+    DatabaseReference ServicesearchEngineRef;
+    ToggleButton toggleButtonServiceSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_engine);
+        setContentView(R.layout.activity_service_search_engine);
 
-        searchtext=findViewById(R.id.searchenginetext);
-        toggleButtonSearch=findViewById(R.id.toggleButtonsearch);
-        searchResults=findViewById(R.id.listofsearchresults);
+        servicesearchtext=findViewById(R.id.servicesearchenginetext);
+        toggleButtonServiceSearch=findViewById(R.id.toggleButtonsearchservice);
+        serviceSearchResults=findViewById(R.id.listofservicesearchresults);
 
 
-        searchEngineRef= FirebaseDatabase.getInstance().getReference("Search_Engine_Details");
+        ServicesearchEngineRef= FirebaseDatabase.getInstance().getReference("Search_Engine_Details_service");
 
         CallValueEventListenerForName();
 
-        toggleButtonSearch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        toggleButtonServiceSearch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    CallValueEventListenerForOen();
+                    CallValueEventListenerForIns();
                 }
                 else{
-
-
                     CallValueEventListenerForName();
                 }
             }
@@ -62,15 +59,15 @@ public class SearchEngine extends AppCompatActivity {
 
     }
 
-    private void CallValueEventListenerForOen() {
+    private void CallValueEventListenerForIns() {
 
         ValueEventListener event=new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
 
-                Toast.makeText(SearchEngine.this,"Search now by OEN",Toast.LENGTH_LONG).show();
-                PopulateSearchByOen(snapshot);
+                Toast.makeText(ServiceSearchEngine.this,"Search now by Inspection Number",Toast.LENGTH_LONG).show();
+                PopulateSearchByIns(snapshot);
 
             }
 
@@ -80,7 +77,7 @@ public class SearchEngine extends AppCompatActivity {
 
             }
         };
-        searchEngineRef.addListenerForSingleValueEvent(event);
+        ServicesearchEngineRef.addListenerForSingleValueEvent(event);
 
     }
 
@@ -93,7 +90,7 @@ public class SearchEngine extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 PopulateSearchByName(snapshot);
-                Toast.makeText(SearchEngine.this,"Search Now!",Toast.LENGTH_LONG).show();
+                Toast.makeText(ServiceSearchEngine.this,"Search Now!",Toast.LENGTH_LONG).show();
 
             }
             @Override
@@ -101,39 +98,39 @@ public class SearchEngine extends AppCompatActivity {
 
             }
         };
-        searchEngineRef.addListenerForSingleValueEvent(event);
+        ServicesearchEngineRef.addListenerForSingleValueEvent(event);
 
-        }
+    }
 
 
-    private void PopulateSearchByOen(DataSnapshot snapshot) {
+    private void PopulateSearchByIns(DataSnapshot snapshot) {
         ArrayList<String> names=new ArrayList<>();
         if(snapshot.exists())
         {
             for(DataSnapshot ds:snapshot.getChildren())
             {
-                String Fname=ds.child("oenId").getValue(String.class);
+                String Fname=ds.child("service_id_Ins").getValue(String.class);
                 names.add(Fname);
             }
             ArrayAdapter Aadapter=new ArrayAdapter(this, android.R.layout.simple_list_item_1,names);
-            searchtext.setAdapter(Aadapter);
-            searchtext.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            servicesearchtext.setAdapter(Aadapter);
+            servicesearchtext.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    String fname=searchtext.getText().toString();
-                    SearchCompanyByOen(fname);
+                    String fname=servicesearchtext.getText().toString();
+                   SearchCompanyByIns(fname);
                 }
             });
 
         }else
         {
-            Toast.makeText(SearchEngine.this,"Company is not found",Toast.LENGTH_LONG).show();
+            Toast.makeText(ServiceSearchEngine.this,"Company is not found",Toast.LENGTH_LONG).show();
         }
     }
 
-    private void SearchCompanyByOen(String fname) {
+    private void SearchCompanyByIns(String fname) {
 
-        Query query=searchEngineRef.orderByChild("oenId").equalTo(fname);
+        Query query=ServicesearchEngineRef.orderByChild("service_id_Ins").equalTo(fname);
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -143,25 +140,21 @@ public class SearchEngine extends AppCompatActivity {
                     ArrayList<String> listtuser=new ArrayList<>();
                     for(DataSnapshot ds:snapshot.getChildren())
                     {
-                        SearchResultDetails models= new SearchResultDetails(ds.child("companyId").getValue(String.class),ds.child("oenId").getValue(String.class),ds.child("companyName").getValue(String.class),ds.child("companyPhone").getValue(String.class),ds.child("companyEmail").getValue(String.class),ds.child("compayAddress").getValue(String.class));
-                        listtuser.add(models.getOenId()+"\n"+models.getCompanyName()+"\n"+models.getCompanyPhone()+"\n"+models.getCompayAddress()+"\n"+models.getCompanyEmail());
+                        SearchServiceDetails models= new SearchServiceDetails(ds.child("service_company_id").getValue(String.class),ds.child("service_id_Ins").getValue(String.class),ds.child("service_company_name").getValue(String.class),ds.child("service_company_phone").getValue(String.class),ds.child("service_company_email").getValue(String.class),ds.child("service_company_address").getValue(String.class));
+                        listtuser.add(models.getService_id_Ins()+"\n"+models.getService_company_name()+"\n"+models.getService_company_phone()+"\n"+models.getService_company_address()+"\n"+models.getService_company_email());
 
                         CompanyID company_ID=new CompanyID();
-                        company_ID.setCOMPanyID(models.getCompanyId());
-                        CompanyID.setCOMPany_OEN(models.getOenId());
-                        CompanyID.setComPany_Email_id(models.getCompanyEmail());
-                        CompanyID.setComPany_phone_number(models.getCompanyPhone());
-                        CompanyID.setComPany_Address(models.getCompayAddress());
+                        company_ID.setCOMPanyID(models.getService_company_id());
 
                     }
 
-                    ArrayAdapter AAdapter=new ArrayAdapter(SearchEngine.this, android.R.layout.simple_list_item_1,listtuser);
-                    searchResults.setAdapter(AAdapter);
-                    searchResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    ArrayAdapter AAdapter=new ArrayAdapter(ServiceSearchEngine.this, android.R.layout.simple_list_item_1,listtuser);
+                    serviceSearchResults.setAdapter(AAdapter);
+                    serviceSearchResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             //Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(SearchEngine.this,PaymentReceipt.class);
+                            Intent intent = new Intent(ServiceSearchEngine.this,PaymentReceipt.class);
                             intent.putExtra("RequestCode", "1");
                             startActivity(intent);
                         }
@@ -169,7 +162,7 @@ public class SearchEngine extends AppCompatActivity {
 
 
                 }else{
-                    Toast.makeText(SearchEngine.this,"No Company Found",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ServiceSearchEngine.this,"No Company Found",Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -186,28 +179,28 @@ public class SearchEngine extends AppCompatActivity {
         {
             for(DataSnapshot ds:snapshot.getChildren())
             {
-                String Fname=ds.child("companyName").getValue(String.class);
+                String Fname=ds.child("service_company_name").getValue(String.class);
                 names.add(Fname);
             }
             ArrayAdapter Aadapter=new ArrayAdapter(this, android.R.layout.simple_list_item_1,names);
-            searchtext.setAdapter(Aadapter);
-            searchtext.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            servicesearchtext.setAdapter(Aadapter);
+            servicesearchtext.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    String fname=searchtext.getText().toString();
+                    String fname=servicesearchtext.getText().toString();
                     SearchCompanyByName(fname);
                 }
             });
 
         }else
         {
-            Toast.makeText(SearchEngine.this,"Company is not found",Toast.LENGTH_LONG).show();
+            Toast.makeText(ServiceSearchEngine.this,"Company is not found ",Toast.LENGTH_LONG).show();
         }
     }
 
     private void SearchCompanyByName(String fname) {
 
-        Query query=searchEngineRef.orderByChild("companyName").equalTo(fname);
+        Query query=ServicesearchEngineRef.orderByChild("service_company_name").equalTo(fname);
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -217,26 +210,20 @@ public class SearchEngine extends AppCompatActivity {
                     ArrayList<String> listtuser=new ArrayList<>();
                     for(DataSnapshot ds:snapshot.getChildren())
                     {
-                        SearchResultDetails models= new SearchResultDetails(ds.child("companyId").getValue(String.class),ds.child("oenId").getValue(String.class),ds.child("companyName").getValue(String.class),ds.child("companyPhone").getValue(String.class),ds.child("companyEmail").getValue(String.class),ds.child("compayAddress").getValue(String.class));
-                        listtuser.add(models.getOenId()+"\n"+models.getCompanyName()+"\n"+models.getCompanyPhone()+"\n"+models.getCompayAddress()+"\n"+models.getCompanyEmail());
+                        SearchServiceDetails models= new SearchServiceDetails(ds.child("service_company_id").getValue(String.class),ds.child("service_id_Ins").getValue(String.class),ds.child("service_company_name").getValue(String.class),ds.child("service_company_phone").getValue(String.class),ds.child("service_company_email").getValue(String.class),ds.child("service_company_address").getValue(String.class));
+                        listtuser.add(models.getService_id_Ins()+"\n"+models.getService_company_name()+"\n"+models.getService_company_phone()+"\n"+models.getService_company_address()+"\n"+models.getService_company_email());
 
                         CompanyID company_ID=new CompanyID();
-                        company_ID.setCOMPanyID(models.getCompanyId());
-                        CompanyID.setCOMPany_OEN(models.getOenId());
-                        CompanyID.setComPany_Email_id(models.getCompanyEmail());
-                        CompanyID.setComPany_phone_number(models.getCompanyPhone());
-                        CompanyID.setComPany_Address(models.getCompayAddress());
-
-
+                        company_ID.setCOMPanyID(models.getService_company_id());
                     }
 
-                    ArrayAdapter AAdapter=new ArrayAdapter(SearchEngine.this, android.R.layout.simple_list_item_1,listtuser);
-                    searchResults.setAdapter(AAdapter);
-                    searchResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    ArrayAdapter AAdapter=new ArrayAdapter(ServiceSearchEngine.this, android.R.layout.simple_list_item_1,listtuser);
+                    serviceSearchResults.setAdapter(AAdapter);
+                    serviceSearchResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             //Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(SearchEngine.this,OrderLossEntry.class);
+                            Intent intent = new Intent(ServiceSearchEngine.this,PaymentReceipt.class);
                             intent.putExtra("RequestCode", "1");
                             startActivity(intent);
                         }
@@ -244,7 +231,7 @@ public class SearchEngine extends AppCompatActivity {
 
 
                 }else{
-                    Toast.makeText(SearchEngine.this,"No Company Found ",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ServiceSearchEngine.this,"No Company Found ",Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -254,4 +241,5 @@ public class SearchEngine extends AppCompatActivity {
             }
         });
     }
+
 }

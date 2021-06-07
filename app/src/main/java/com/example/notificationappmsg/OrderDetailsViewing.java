@@ -37,7 +37,7 @@ public class OrderDetailsViewing extends AppCompatActivity {
         listViewOrdermodel=findViewById(R.id.listVieworderlistview);
 
         orderEntryDetailList = new ArrayList<>();
-        cricketers=new ArrayList<String>();
+        cricketers=new ArrayList<>();
 
 
     }
@@ -53,7 +53,8 @@ public class OrderDetailsViewing extends AppCompatActivity {
                 //clearing the previous artist list
                 orderEntryDetailList.clear();
                 cricketers.clear();
-                ArrayAdapter adapter=new ArrayAdapter<String>(OrderDetailsViewing.this,R.layout.row_cricketer,cricketers);
+
+                ArrayAdapter<String> adapter=new ArrayAdapter<String>(OrderDetailsViewing.this,android.R.layout.simple_list_item_1,cricketers);
                 listViewOrdermodel.setAdapter(adapter);
 
 
@@ -84,6 +85,8 @@ public class OrderDetailsViewing extends AppCompatActivity {
                        }
 
                    }
+
+
                    adapter.notifyDataSetChanged();
                }
 

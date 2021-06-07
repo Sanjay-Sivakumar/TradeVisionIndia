@@ -99,6 +99,9 @@ public class CompanySearch extends AppCompatActivity {
                         Toast.makeText(CompanySearch.this,COMPANYID,Toast.LENGTH_LONG).show();
                         CompanyID company_ID=new CompanyID();
                         company_ID.setCOMPanyID(models.getCompanyId());
+                        company_ID.setComPany_Email_id(models.getCompanyEmail());
+                        company_ID.setComPany_Address(models.getCompanyAddress());
+                        company_ID.setComPany_Name(models.getCompanyName());
 
                     }
 

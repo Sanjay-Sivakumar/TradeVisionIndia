@@ -261,9 +261,6 @@ public class TakingOrder extends AppCompatActivity {
 
     }
 
-    private void GetEnoughDetailsOfCompany(String comPanyID) {
-
-    }
 
     private void getEnoughDetails() {
 

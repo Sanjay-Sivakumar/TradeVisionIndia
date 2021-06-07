@@ -1,8 +1,15 @@
 package com.example.notificationappmsg;
+import com.google.firebase.database.IgnoreExtraProperties;
+
+@IgnoreExtraProperties
 
 public class paymentmodel1 {
 
     private String company_ID,OEN_ID,NETPRICE,ORderDate,ORderTime,AmountPaid,ChequeDetails;
+
+    public paymentmodel1(){
+
+    }
 
     public paymentmodel1(String company_ID, String OEN_ID, String NETPRICE) {
         this.company_ID = company_ID;

@@ -45,9 +45,12 @@ public class PaymentReceipt extends AppCompatActivity {
 
     Button btn1,btn2;
 
-    public String Company_Name,Order_Net_Price,oen_number_id,cOMPany_Id,AmountPaid,Lastnetamount;
+    public String Company_Name_payment,Order_Net_Price,oen_number_id,cOMPany_Id,AmountPaid,Lastnetamount,Company_Email_Payment;
+    public String Oen_Payment;
 
     public DatabaseReference dforderpayment,dfcompanypayment,dtorderdates,dttesting,dtpayment1,dtorderdates1;
+
+    public int flagPayment=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +58,10 @@ public class PaymentReceipt extends AppCompatActivity {
         setContentView(R.layout.activity_payment_receipt);
 
         CompanyID companyID=new CompanyID();
-        String companyid=companyID.getCOMPanyID();
+        cOMPany_Id=companyID.getCOMPanyID();
+        Company_Name_payment=CompanyID.getComPany_Name();
+        Company_Email_Payment=CompanyID.getComPany_Email_id();
+        Oen_Payment=CompanyID.getCOMPany_OEN();
 
 
         prdate=findViewById(R.id.tv1);
@@ -69,20 +75,16 @@ public class PaymentReceipt extends AppCompatActivity {
         btn2=findViewById(R.id.buttonpr1);
 
         prdate.setText(getTodaysDate());
-
-
-
-     //   GetCompanyDetails();
+        cnmaepr.setText(Company_Name_payment);
 
 
         dforderpayment=FirebaseDatabase.getInstance().getReference("Payment_Details");
-        dfcompanypayment=FirebaseDatabase.getInstance().getReference("CompanyDetails").child(companyid);
         dtorderdates=FirebaseDatabase.getInstance().getReference("Order_Dates");
         dtpayment1=FirebaseDatabase.getInstance().getReference("Payment_Details");
         dtorderdates1=FirebaseDatabase.getInstance().getReference("Order_Dates");
 
 
-        Query query=dtorderdates.orderByChild("companyId").equalTo(companyid);
+        Query query=dtorderdates.orderByChild("oen_NUMBER_ID").equalTo(Oen_Payment);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -92,7 +94,7 @@ public class PaymentReceipt extends AppCompatActivity {
                         String oenNumbers = models.getOEN_NUMBER_ID();
                         String dates = models.getOrderDate();
                         String times = models.getOrderTime();
-                        setDetails(oenNumbers,dates,times,companyid);
+                        setDetails(oenNumbers,dates,times);
                     }
                 }
             }
@@ -114,11 +116,30 @@ public class PaymentReceipt extends AppCompatActivity {
                         int amtPay= Integer.parseInt(amtpay);
                         Lastnetamount=Lastnetamount.replaceAll(",","");
                         double neTPrice=Double.parseDouble(Lastnetamount);
-                        Double Remaining=neTPrice-amtPay;
-                        DecimalFormat df=new DecimalFormat();
-                        df.setMaximumFractionDigits(2);
-                        Order_Net_Price=df.format(Remaining);
-                       remainingpr.setText(Order_Net_Price);
+                        if(neTPrice==-1)
+                        {
+                            Toast.makeText(PaymentReceipt.this,"The Order has been closed",Toast.LENGTH_LONG).show();
+                        }
+                        else if(neTPrice==0)
+                        {
+
+                            Toast.makeText(PaymentReceipt.this,"The Payment had completed for this order",Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            if(neTPrice>=amtPay)
+                            {
+                                Double Remaining = neTPrice - amtPay;
+                                DecimalFormat df = new DecimalFormat();
+                                df.setMaximumFractionDigits(2);
+                                Order_Net_Price = df.format(Remaining);
+                                remainingpr.setText(Order_Net_Price);
+                            }
+                            else{
+                                Toast.makeText(PaymentReceipt.this,"Please enter the correct Amount",Toast.LENGTH_LONG).show();
+                            }
+
+
+                        }
 
                     }catch (Exception e) {
                         Toast.makeText(PaymentReceipt.this, e.getMessage(), Toast.LENGTH_LONG).show();
@@ -133,9 +154,9 @@ public class PaymentReceipt extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(amountbytoday.getText().toString())&&!TextUtils.isEmpty(chequedetails.getText().toString()))
                 {
-                    paymentmodel1 paymentmodel1=new paymentmodel1(companyid,oen_number_id,Order_Net_Price,amountbytoday.getText().toString(),chequedetails.getText().toString(),getTodaysDate(),getTimewitham());
+                    paymentmodel1 paymentmodel1=new paymentmodel1(cOMPany_Id,oen_number_id,Order_Net_Price,amountbytoday.getText().toString(),chequedetails.getText().toString(),getTodaysDate(),getTimewitham());
 
-                    paymentmodel1.setCompany_ID(companyid);
+                    paymentmodel1.setCompany_ID(cOMPany_Id);
 
                     paymentmodel1.setOEN_ID(oen_number_id);
                     paymentmodel1.setNETPRICE(Order_Net_Price);
@@ -146,13 +167,13 @@ public class PaymentReceipt extends AppCompatActivity {
                     paymentmodel1.setORderDate(getTodaysDate());
                     paymentmodel1.setORderTime(getTimewitham());
 
-                    dforderpayment.child(getTodaysDate()+""+getTimewitham()).setValue(paymentmodel1);
+                    dforderpayment.child(getTodaysDate()+""+getTimewitham()+""+oen_number_id).setValue(paymentmodel1);
 
-                    OrderDatesAndTime orderDatesAndTime=new OrderDatesAndTime(getTodaysDate(),getTimewitham(),oen_number_id,companyid);
+                    OrderDatesAndTime orderDatesAndTime=new OrderDatesAndTime(getTodaysDate(),getTimewitham(),oen_number_id,cOMPany_Id);
                     orderDatesAndTime.setOrderDate(getTodaysDate());
                     orderDatesAndTime.setOrderTime(getTimewitham());
                     orderDatesAndTime.setOEN_NUMBER_ID(oen_number_id);
-                    orderDatesAndTime.setCompanyId(companyid);
+                    orderDatesAndTime.setCompanyId(cOMPany_Id);
                     dtorderdates1.child(oen_number_id).setValue(orderDatesAndTime);
 
                     Toast.makeText(PaymentReceipt.this,"All details are updated",Toast.LENGTH_LONG).show();
@@ -171,7 +192,7 @@ public class PaymentReceipt extends AppCompatActivity {
         sEmail = "ssannthoshkumar@gmail.com";
         sPassword = "Santhosh*2";
 
-        rEmail = "sanj18ec114@rmkcet.ac.in";
+        rEmail =Company_Email_Payment.trim();
 
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
@@ -195,7 +216,7 @@ public class PaymentReceipt extends AppCompatActivity {
 
             message.setSubject("Payment Details");
 
-            message.setText("Payment Done for sss company \nThe Order Entry number is " + oen_number_id + "\nThe amount you paid is " + amountbytoday.getText().toString() + "\nThe Remaining amount is " + Order_Net_Price+"\n");
+            message.setText("Payment Done for "+Company_Name_payment+"company \nThe Order Entry number is " + oen_number_id + "\nThe amount you paid is " + amountbytoday.getText().toString() + "\nThe Remaining amount is " + Order_Net_Price+"\n");
 
             new SendMail().execute(message);
 
@@ -203,6 +224,7 @@ public class PaymentReceipt extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 
         private class SendMail extends AsyncTask<Message, String, String> {
 
@@ -252,12 +274,12 @@ public class PaymentReceipt extends AppCompatActivity {
             }
         }
 
-    private void setDetails(String oenNumber,String dates,String times,String cOMPany_Id) {
+    private void setDetails(String oenNumber,String dates,String times) {
 
 
         dtpayment1=FirebaseDatabase.getInstance().getReference("Payment_Details").child(dates+""+times);
 
-        Toast.makeText(PaymentReceipt.this,dates+""+times,Toast.LENGTH_LONG).show();
+
 
         dtpayment1.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -284,30 +306,6 @@ public class PaymentReceipt extends AppCompatActivity {
             }
         });
 
-
-    }
-
-    private void GetCompanyDetails() {
-
-
-        dfcompanypayment.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot ds) {
-
-                if(ds.exists())
-                {
-                    CompanyDetails models= new CompanyDetails(ds.child("companyId").getValue(String.class),ds.child("companyName").getValue(String.class),ds.child("companyPhoneNumber").getValue(String.class),ds.child("companyAddress").getValue(String.class),ds.child("companyEmail").getValue(String.class));
-                    Company_Name=models.getCompanyName();
-                    cnmaepr.setText(Company_Name);
-
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
     }
 
