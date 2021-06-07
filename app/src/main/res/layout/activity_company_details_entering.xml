@@ -15,28 +15,59 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="20dp">
-            <TextView
-                android:layout_height="50dp"
-                android:layout_width="wrap_content"
-                android:layout_weight="0.5"
-                android:layout_marginStart="25dp"
-                android:text="Date"
-                android:textSize="25sp"
-                android:textColor="#000"
-                android:id="@+id/visitinputdate"
-                app:drawableLeftCompat="@drawable/ic_calender"
-                android:drawablePadding="12dp"/>
+            android:layout_marginTop="25dp"
+            android:baselineAligned="false">
 
-            <TextView
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_width="wrap_content"
                 android:layout_weight="0.5"
-                android:text="Time"
-                android:textSize="25sp"
-                android:id="@+id/visitinputtime"
-                android:textColor="#000"
-                app:drawableLeftCompat="@drawable/ic_time" />
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="18dp"
+                    android:src="@drawable/ic_calender"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="18dp"
+                    android:inputType="date"
+                    android:id="@+id/visitinputdate"
+                    android:textColor="#000"
+                    android:text="12/07/2002"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_time"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="8dp"
+                    android:inputType="date"
+                    android:id="@+id/visitinputtime"
+                    android:textColor="#000"
+                    android:text="12/07/2002"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -46,19 +77,16 @@
             android:orientation="horizontal"
             android:layout_marginTop="30dp">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_company"/>
+
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:hint="Enter Company Name"
+                android:hint=" Enter Company Name"
                 android:id="@+id/visitinputcompanyname"
                 android:textColor="#000"
-                android:textColorHint="#000" />
+                android:textColorHint="#000"
+                android:drawableLeft="@drawable/ic_company"/>
         </LinearLayout>
 
         <LinearLayout
@@ -67,17 +95,13 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_head"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:hint="Enter Name Of The Head"
                 android:id="@+id/visitinputnameofthehead"
+                android:drawableLeft="@drawable/ic_head"
                 android:textColor="#000"
                 android:textColorHint="#000" />
         </LinearLayout>
@@ -88,16 +112,12 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_locationicon"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:hint="Enter Company Address"
+                android:hint=" Enter Company Address"
+                android:drawableLeft="@drawable/ic_locationicon"
                 android:id="@+id/visitinputcompanyaddress"
                 android:textColor="#000"
                 android:textColorHint="#000" />
@@ -109,17 +129,13 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_phoneicon"
-                tools:ignore="ContentDescription" />
+
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:hint="Enter Phone Number"
+                android:hint=" Enter Phone Number"
+                android:drawableLeft="@drawable/ic_phoneicon"
                 android:id="@+id/visitinputcompanyphonenumber"
                 android:textColor="#000"
                 android:textColorHint="#000"
@@ -132,20 +148,16 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_web"
-                tools:ignore="ContentDescription" />
+
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:hint="Enter Site Address"
+                android:hint=" Enter Site Address"
                 android:id="@+id/visitinputcompanysiteaddress"
                 android:textColor="#000"
                 android:textColorHint="#000"
+                android:drawableLeft="@drawable/ic_web"
                 android:importantForAutofill="no" />
         </LinearLayout>
 
@@ -155,19 +167,14 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_contactmail"
-                tools:ignore="ContentDescription" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:hint="Enter Email"
+                android:hint=" Enter Email"
                 android:id="@+id/visitinputcompanyemail"
                 android:textColor="#000"
+                android:drawableLeft="@drawable/ic_contactmail"
                 android:textColorHint="#000"
                 android:importantForAutofill="no" />
         </LinearLayout>
@@ -248,12 +255,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_profileicon"
-                tools:ignore="ContentDescription" />
+
 
             <EditText
                 android:layout_width="match_parent"
@@ -261,6 +263,7 @@
                 android:hint="Enter Name"
                 android:id="@+id/visitinputpersonname"
                 android:textColor="#000"
+                android:drawableLeft="@drawable/profile_icon"
                 android:textColorHint="#000"
                 android:importantForAutofill="no" />
         </LinearLayout>
@@ -271,17 +274,13 @@
             android:orientation="horizontal"
             android:layout_marginTop="10dp">
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="23dp"
-                android:src="@drawable/ic_workpositionicon"
-                tools:ignore="ContentDescription" />
+
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:hint="Enter Designation"
+                android:drawableLeft="@drawable/ic_workpositionicon"
                 android:id="@+id/visitinputpersondesignation"
                 android:textColor="#000"
                 android:textColorHint="#000"
