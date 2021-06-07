@@ -113,19 +113,15 @@ public class LoginTabFragment extends Fragment {
 
                 if(Objects.equals(levelCHecker, santab))
                 {
-                   Intent intent = new Intent(getActivity(), ServiceDashboardPage.class);
+                   Intent intent = new Intent(getActivity(),ServiceEngineerDashboard.class);
                     startActivity(intent);
                 }
-            /*    else if(Objects.equals(levelCHecker, santab1)){
-                    Intent intent = new Intent(getActivity(), UserLeveloneDashboard.class);
+               else if(Objects.equals(levelCHecker, santab1)){
+                    Intent intent = new Intent(getActivity(), BusinessExecutiveDashboard.class);
                     startActivity(intent);
-                }else if(Objects.equals(levelCHecker, santab2))
+                }else
                 {
-                    Intent intent = new Intent(getActivity(), UserSearch.class);
-                    startActivity(intent);
-                }*/else
-                {
-                    Intent intent = new Intent(getActivity(), UserLeveloneDashboard.class);
+                    Intent intent = new Intent(getActivity(), TeritoryManagerDashboard.class);
                     startActivity(intent);
                 }
 

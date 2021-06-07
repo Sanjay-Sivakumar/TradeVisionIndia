@@ -40,7 +40,7 @@ public class UserprofilePage extends AppCompatActivity {
     private LinearLayout editprofilechecker;
 
 
-    String sanedit =new String("1");
+    String sanedit =new String("3");
     String USER_ID;
 
     @Override
@@ -153,11 +153,11 @@ public class UserprofilePage extends AppCompatActivity {
 
                 if(Objects.equals(levelCHecker, sanedit))
                 {
-                    Intent intent = new Intent(UserprofilePage.this, ProfileViewingPage.class);
+                    Intent intent = new Intent(UserprofilePage.this, ProfileEditingAdminPage.class);
                     startActivity(intent);
                 }else
                 {
-                    Intent intent = new Intent(UserprofilePage.this, ProfileEditingAdminPage.class);
+                    Intent intent = new Intent(UserprofilePage.this, ProfileViewingPage.class);
                     startActivity(intent);
                 }
 
