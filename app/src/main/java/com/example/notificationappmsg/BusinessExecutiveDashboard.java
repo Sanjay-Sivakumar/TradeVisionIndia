@@ -23,7 +23,7 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
     DrawerLayout drawerLayout2;
     NavigationView navigationView2;
     Toolbar toolbar2;
-    ImageView image5,image6,image7,image8,image9;
+    ImageView image0,image4,image5,image6,image7,image8,image9;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +37,25 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
         image7 = findViewById(R.id.imageView7);
         image8 = findViewById(R.id.imageView8);
         image9 = findViewById(R.id.imageView9);
+        image0 = findViewById(R.id.imageView0);
+        image4 = findViewById(R.id.imageView4);
 
 
+
+        image0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SecondActivity.class);
+                BusinessExecutiveDashboard.this.startActivity(myIntent);
+            }
+        });
+        image4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SecondActivity.class);
+                BusinessExecutiveDashboard.this.startActivity(myIntent);
+            }
+        });
         image5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
