@@ -14,23 +14,168 @@
         android:orientation="vertical">
 
 
-    <ListView
-        android:id="@+id/listViewservieequipments"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="1dp">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="#f1f1f1"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
 
-    </ListView>
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company Details"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company Name"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:text="name"
+                    android:id="@+id/textViewcompanynameprint1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company phone"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:text="phone"
+                    android:id="@+id/textViewcompanyphoneprint1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company Email"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/textViewCompanyemailprint1"
+                    android:text="email"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company Address"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/textViewCompanyaddressprint1"
+                    android:text="address"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Service Details"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000"
+            android:layout_marginStart="140dp"/>
+
+
 
         <ListView
             android:id="@+id/listViewservicelist"
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="1dp">
+            android:layout_marginEnd="1dp"/>
 
-        </ListView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Equipment Details"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000"
+
+            android:layout_marginStart="120dp"/>
+
+        <ListView
+        android:id="@+id/listViewservieequipments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="1dp"/>
+
+
 
     </LinearLayout>
 

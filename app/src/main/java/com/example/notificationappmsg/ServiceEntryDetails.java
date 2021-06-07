@@ -57,7 +57,7 @@ public class ServiceEntryDetails extends AppCompatActivity {
 
     Spinner underwarranty,instock;
 
-    ToggleButton servicecall;
+    Spinner servicecall;
 
     RecyclerView recyclerCricketers2;
     ArrayList<Cricketer> cricketersList2 = new ArrayList<>();
@@ -110,26 +110,9 @@ public class ServiceEntryDetails extends AppCompatActivity {
         dtservicecompdetails=FirebaseDatabase.getInstance().getReference("CompanyDetails");
         dtsearchservice=FirebaseDatabase.getInstance().getReference("Search_Engine_Details_service");
 
-        servicecall.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(!isChecked){
-                    Service_OnCall="General";
-                }
-                else{
-
-
-                    Service_OnCall="On Call";
-                }
-            }
-        });
-
         getEnoughDetails();
         getLastServiceValues();
         serviceDate.setText(getTodaysDate());
-        UserDetails userDetails=new UserDetails();
-        String inspection1= UserDetails.getInsid();
-        Toast.makeText(ServiceEntryDetails.this,inspection1,Toast.LENGTH_LONG).show();
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
         recyclerCricketers2.setLayoutManager(layoutManager);
@@ -174,6 +157,7 @@ public class ServiceEntryDetails extends AppCompatActivity {
                                 String serviceAmountCollected=serviceamountcollected.getText().toString();
                                 String AccopaniedBy=accompainedby.getText().toString();
                                 String customerFeedback=customerfeedback.getText().toString();
+                                Service_OnCall=servicecall.getSelectedItem().toString();
 
                                 CompanyID company_ID=new CompanyID();
                                 Service_company_Id=company_ID.getCOMPanyID();

@@ -11,6 +11,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
@@ -24,6 +25,8 @@ public class PaymentDetailsViewing extends AppCompatActivity {
     DatabaseReference databasePaymentList;
 
 
+    public String oenPayment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,29 +38,30 @@ public class PaymentDetailsViewing extends AppCompatActivity {
 
         paymentmodel1s = new ArrayList<>();
 
+        oenPayment=getIntent().getStringExtra("RequestOen");
 
+        Toast.makeText(PaymentDetailsViewing.this,oenPayment,Toast.LENGTH_LONG).show();
     }
     @Override
     protected void onStart() {
         super.onStart();
         //attaching value event listener
-        databasePaymentList.addValueEventListener(new ValueEventListener() {
+        Query query=databasePaymentList.orderByChild("oen_ID").equalTo(oenPayment);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
 
-                //clearing the previous artist list
                 paymentmodel1s.clear();
-                //iterating through all the nodes
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    //getting artist
+
                     paymentmodel1 busno = postSnapshot.getValue(paymentmodel1.class);
-                    //adding artist to the list
+
                     paymentmodel1s.add(busno);
                 }
 
                 //creating adapter
                 PaymentDetailsList BustimeAdapter = new PaymentDetailsList(PaymentDetailsViewing.this, paymentmodel1s);
-                //attaching adapter to the listview
+
                 listViewPaymentList.setAdapter(BustimeAdapter);
 
 

@@ -2,15 +2,20 @@ package com.example.notificationappmsg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
@@ -27,17 +32,55 @@ public class OrderDetailsViewing extends AppCompatActivity {
     DatabaseReference databaseOrderList;
     ArrayList<String> cricketers;
 
+    public String viewOen,viewCname,viewCphone,viewCemail,viewCaddress;
+
+    TextView cnamepr1,cphonepr1,cemailpr1,caddresspr1;
+
+    LinearLayout linearLayoutpayment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_details_viewing);
 
+        CompanyID companyID=new CompanyID();
+        viewOen=CompanyID.getCOMPany_OEN();
+        viewCname=CompanyID.getComPany_Name();
+        viewCemail=CompanyID.getComPany_Email_id();
+        viewCaddress=CompanyID.getComPany_Address();
+        viewCphone=CompanyID.getComPany_phone_number();
+
+
+
+
+
+
         databaseOrderList = FirebaseDatabase.getInstance().getReference("Order_Details");
         listViewOrderList = (ListView) findViewById(R.id.listViewordersview);
         listViewOrdermodel=findViewById(R.id.listVieworderlistview);
+        cnamepr1=findViewById(R.id.textViewcompanynameprint);
+        cphonepr1=findViewById(R.id.textViewcompanyphoneprint);
+        cemailpr1=findViewById(R.id.textViewCompanyemailprint);
+        caddresspr1=findViewById(R.id.textViewCompanyaddressprint);
+        linearLayoutpayment=findViewById(R.id.gotopayment);
+
+        cnamepr1.setText(viewCname);
+        cphonepr1.setText(viewCphone);
+        cemailpr1.setText(viewCemail);
+        caddresspr1.setText(viewCaddress);
+
 
         orderEntryDetailList = new ArrayList<>();
         cricketers=new ArrayList<>();
+
+        linearLayoutpayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(OrderDetailsViewing.this,PaymentDetailsViewing.class);
+                intent.putExtra("RequestOen",viewOen);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -46,7 +89,8 @@ public class OrderDetailsViewing extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         //attaching value event listener
-        databaseOrderList.addValueEventListener(new ValueEventListener() {
+        Query query=databaseOrderList.orderByChild("oen_ID").equalTo(viewOen);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
 
@@ -58,8 +102,6 @@ public class OrderDetailsViewing extends AppCompatActivity {
                 listViewOrdermodel.setAdapter(adapter);
 
 
-                Toast.makeText(OrderDetailsViewing.this,"111",Toast.LENGTH_LONG).show();
-                //iterating through all the nodes
                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                    //getting artist
                    OrderEntryDetails busno = postSnapshot.getValue(OrderEntryDetails.class);
@@ -67,7 +109,6 @@ public class OrderDetailsViewing extends AppCompatActivity {
                    orderEntryDetailList.add(busno);
                    String oen=busno.getOEN_ID();
 
-                   Toast.makeText(OrderDetailsViewing.this,String.valueOf(dataSnapshot.child(oen).child("listEqiupments").getChildrenCount()),Toast.LENGTH_LONG).show();
 
 
                    for (DataSnapshot ds : dataSnapshot.child(oen).child("listEqiupments").getChildren()) {
@@ -81,7 +122,7 @@ public class OrderDetailsViewing extends AppCompatActivity {
                            cricketers.add(modelnumber);
 
                        } else {
-                           Toast.makeText(OrderDetailsViewing.this, "Snapshot not found 2", Toast.LENGTH_LONG).show();
+                           Toast.makeText(OrderDetailsViewing.this, "Snapshot not found ", Toast.LENGTH_LONG).show();
                        }
 
                    }

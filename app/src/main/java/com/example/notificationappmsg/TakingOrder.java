@@ -166,7 +166,7 @@ public class TakingOrder extends AppCompatActivity {
                                 comPanyID=company_ID.getCOMPanyID();
 
                                 OrderEntryDetails modellist=new OrderEntryDetails(orderTPH,OrderBrand,orderStage,orderWashing,TCPName,TCPAmount,Cheque_RTGS_deatis,Order_Remarks,getTodaysDate(),getTimewitham(),BasicPrice,GSTAmount,TransportationPrice,AdvancePAY,TOTAL_PRICE,NET_PRICE,TCSAmount,comPanyID,Oen_Numbers,cricketersList1);
-                                dtbaseorder.child(Oen_Numbers).setValue(modellist);
+                                dtbaseorder.child(Oen_Numbers+""+comPanyID).setValue(modellist);
 
                                 paymentmodel1 paymentmodel1=new paymentmodel1(comPanyID,Oen_Numbers,NET_PRICE,AdvancePAY,Cheque_RTGS_deatis,getTodaysDate(),getTimewitham());
 
@@ -181,7 +181,7 @@ public class TakingOrder extends AppCompatActivity {
                                 paymentmodel1.setORderDate(getTodaysDate());
                                 paymentmodel1.setORderTime(getTimewitham());
 
-                                dtpayment.child(getTodaysDate()+""+getTimewitham()).setValue(paymentmodel1);
+                                dtpayment.child(getTodaysDate()+""+getTimewitham()+""+Oen_Numbers).setValue(paymentmodel1);
 
                                 OrderDatesAndTime orderDatesAndTime=new OrderDatesAndTime(getTodaysDate(),getTimewitham(),Oen_Numbers,comPanyID);
                                 orderDatesAndTime.setOrderDate(getTodaysDate());
@@ -189,8 +189,6 @@ public class TakingOrder extends AppCompatActivity {
                                 orderDatesAndTime.setOEN_NUMBER_ID(Oen_Numbers);
                                 orderDatesAndTime.setCompanyId(comPanyID);
                                 dtbasedates.child(Oen_Numbers).setValue(orderDatesAndTime);
-
-                              //  GetEnoughDetailsOfCompany(comPanyID);
 
                                 String Order_id_oen=Oen_Numbers;
 
@@ -211,7 +209,7 @@ public class TakingOrder extends AppCompatActivity {
 
 
                                                     SearchResultDetails searchResultDetails = new SearchResultDetails(models.getCompanyId(), Order_id_oen, models.getCompanyName(), models.getCompanyPhoneNumber(), models.getCompanyEmail(), models.getCompanyAddress());
-                                                    Toast.makeText(TakingOrder.this,comPanyID,Toast.LENGTH_LONG).show();
+
                                                     searchResultDetails.setCompanyId(comPanyID);
                                                     searchResultDetails.setCompanyName(order_company_name);
                                                     searchResultDetails.setOenId(Order_id_oen);
@@ -219,7 +217,7 @@ public class TakingOrder extends AppCompatActivity {
                                                     searchResultDetails.setCompanyEmail(order_company_email);
                                                     searchResultDetails.setCompayAddress(order_company_address);
 
-                                                    dtsearch.child(Order_id_oen).setValue(searchResultDetails);
+                                                    dtsearch.child(Order_id_oen+""+comPanyID).setValue(searchResultDetails);
                                                 }
 
                                             } else {

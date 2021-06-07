@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +28,10 @@ public class ServiceEntry extends AppCompatActivity {
     ArrayList<String> equipmentListService;
 
 
+    public String viewOen1,viewCname1,viewCphone1,viewCemail1,viewCaddress1;
+
+    TextView cnamepr2,cphonepr2,cemailpr2,caddresspr2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,24 @@ public class ServiceEntry extends AppCompatActivity {
 
         serviceEntryDetailList = new ArrayList<>();
         equipmentListService= new ArrayList<>();
+
+        CompanyID companyID=new CompanyID();
+        viewOen1=CompanyID.getCOMPany_OEN();
+        viewCname1=CompanyID.getComPany_Name();
+        viewCemail1=CompanyID.getComPany_Email_id();
+        viewCaddress1=CompanyID.getComPany_Address();
+        viewCphone1=CompanyID.getComPany_phone_number();
+
+        cnamepr2=findViewById(R.id.textViewcompanynameprint1);
+        cphonepr2=findViewById(R.id.textViewcompanyphoneprint1);
+        cemailpr2=findViewById(R.id.textViewCompanyemailprint1);
+        caddresspr2=findViewById(R.id.textViewCompanyaddressprint1);
+
+        cnamepr2.setText(viewCname1);
+        cphonepr2.setText(viewCphone1);
+        cemailpr2.setText(viewCemail1);
+        caddresspr2.setText(viewCaddress1);
+
 
     }
 

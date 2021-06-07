@@ -41,6 +41,9 @@
         </activity>
         <activity android:name=".BusinessExecutiveDashboard"/>
 
+        <activity android:name=".PaymentDetailsViewing"/>
+
+
         <activity android:name=".OrderLossEntry" />
         <activity android:name=".ServiceEntryDetails"/>
         <activity android:name=".OrderLossViewing" />

@@ -10,6 +10,12 @@
         <item>OTHERS</item>
     </array>
 
+    <array name="servicecall">
+        <item>General</item>
+        <item>ON Call</item>
+    </array>
+
+
     <array name="quarry">
         <item>Own</item>
         <item>Lease</item>

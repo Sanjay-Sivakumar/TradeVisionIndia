@@ -45,6 +45,7 @@ public class OrderEntryDetailsList extends ArrayAdapter<OrderEntryDetails> {
         TextView textViewOrdereddate =  listViewItem.findViewById(R.id.textViewordereddate);
         TextView textViewOrderedtime =  listViewItem.findViewById(R.id.textViewordertime);
         TextView textViewOrderednumber =  listViewItem.findViewById(R.id.textViewoenid);
+        TextView textViewOrderAdvancePay=listViewItem.findViewById(R.id.textViewadvancepay);
 
 
 
@@ -65,6 +66,7 @@ public class OrderEntryDetailsList extends ArrayAdapter<OrderEntryDetails> {
         textViewOrdereddate.setText(appointmentpatient.getOrdered_Date());
         textViewOrderedtime.setText(appointmentpatient.getOrdered_Time());
         textViewOrderednumber.setText(appointmentpatient.getOEN_ID());
+        textViewOrderAdvancePay.setText(appointmentpatient.getAdvance_Pay());
 
 
         return listViewItem;
