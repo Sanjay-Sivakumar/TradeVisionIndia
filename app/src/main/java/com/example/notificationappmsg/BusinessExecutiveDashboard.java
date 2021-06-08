@@ -155,7 +155,7 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
     }
     private void askToClose (){
         AlertDialog.Builder builder = new AlertDialog.Builder(BusinessExecutiveDashboard.this);
-        builder.setMessage("Are you sure you want to quit?");
+        builder.setMessage("Are you sure you want to quit");
         builder.setCancelable(true);
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
