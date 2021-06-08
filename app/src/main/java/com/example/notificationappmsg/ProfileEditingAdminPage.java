@@ -14,12 +14,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ProfileEditingAdminPage extends AppCompatActivity {
 
@@ -30,6 +34,11 @@ public class ProfileEditingAdminPage extends AppCompatActivity {
 
     Button btntoadminupdate;
     EditText adminstarrating,admincompanyvisit,adminusernamefb,adminuserphonenumberfb,adminuserworkpositionfb,adminuseraddressfb,adminuserworkzonefb,adminuseremailfb;
+
+    String santab =new String("1");
+    String santab1 =new String("2");
+    String santab2 =new String("3");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +74,9 @@ public class ProfileEditingAdminPage extends AppCompatActivity {
 
     public void UpdateUserProfile(String userName,String userPhoneNumber,String userEmailId,String userAddress,String userCurrentPostion,String userWorkingZone,String StarRating,String NoOfComapanyVisited)
     {
-        noteRef = db.collection("UsersProfile").document(adminuserphonenumberfb.getText().toString());
+
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        noteRef = db.collection("UsersProfile").document(user.getUid());
         Map<String, Object> note = new HashMap<>();
         note.put("UserName", userName);
         note.put("UserPhoneNumber", userPhoneNumber);
@@ -108,8 +119,9 @@ public class ProfileEditingAdminPage extends AppCompatActivity {
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                Intent intent=new Intent(ProfileEditingAdminPage.this,UserLeveloneDashboard.class);
-                startActivity(intent);
+                FirebaseAuth authUser=FirebaseAuth.getInstance();
+                FirebaseUser UserAuth=authUser.getCurrentUser();
+                CheckUserAccessLevel1(UserAuth.getUid());
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -121,5 +133,31 @@ public class ProfileEditingAdminPage extends AppCompatActivity {
         });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    private void CheckUserAccessLevel1(String uid) {
+        DocumentReference df=FirebaseFirestore.getInstance().collection("UsersProfile").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String levelCHecker=documentSnapshot.getString("UserLevel");
+
+                if(Objects.equals(levelCHecker, santab))
+                {
+                    Intent intent = new Intent(ProfileEditingAdminPage.this,ServiceEngineerDashboard.class);
+                    startActivity(intent);
+                }
+                else if(Objects.equals(levelCHecker, santab1)){
+                    Intent intent = new Intent(ProfileEditingAdminPage.this, BusinessExecutiveDashboard.class);
+                    startActivity(intent);
+                }else
+                {
+                    Intent intent = new Intent(ProfileEditingAdminPage.this, TeritoryManagerDashboard.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 }

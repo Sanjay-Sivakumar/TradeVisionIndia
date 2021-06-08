@@ -41,7 +41,7 @@ public class UserprofilePage extends AppCompatActivity {
 
 
     String sanedit =new String("3");
-    String USER_ID;
+    public String USER_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class UserprofilePage extends AppCompatActivity {
         setContentView(R.layout.activity_userprofile_page);
 
 
-         USER_ID= getIntent().getStringExtra("USERID");
+         USER_ID= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         fullName=findViewById(R.id.fullnameview);
         phoneNumber=findViewById(R.id.phonenumberview);
@@ -94,7 +94,7 @@ public class UserprofilePage extends AppCompatActivity {
                     starRate.setText(StarRating);
                     CompanyVisit.setText(CompanyVisited);
 
-                    downloadingimage(documentSnapshot.getString("UserPhoneNumber"));
+                    downloadingimage(USER_ID);
 
 
                 }
@@ -143,7 +143,7 @@ public class UserprofilePage extends AppCompatActivity {
     }
 
     private void CheckUserAccessLevelEditing(String uid) {
-        DocumentReference df=fstoredit.collection("users").document(uid);
+        DocumentReference df=fstoredit.collection("UsersProfile").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {

@@ -2,7 +2,7 @@ package com.example.notificationappmsg;
 
 public class CompanyID {
 
-    public static String COMPanyID,COMPany_OEN,ComPany_Name,ComPany_phone_number,ComPany_Email_id,ComPany_Address;
+    public static String COMPanyID,COMPany_OEN,ComPany_Name,ComPany_phone_number,ComPany_Email_id,ComPany_Address,COMPany_INS;
 
 
     public  CompanyID(){
@@ -49,6 +49,14 @@ public class CompanyID {
         ComPany_Address = comPany_Address;
     }
 
+    public static String getCOMPany_INS() {
+        return COMPany_INS;
+    }
+
+    public static void setCOMPany_INS(String COMPany_INS) {
+        CompanyID.COMPany_INS = COMPany_INS;
+    }
+
     public static String getCOMPany_OEN() {
         return COMPany_OEN;
     }
@@ -56,4 +64,6 @@ public class CompanyID {
     public static void setCOMPany_OEN(String COMPany_OEN) {
         CompanyID.COMPany_OEN = COMPany_OEN;
     }
+
+
 }

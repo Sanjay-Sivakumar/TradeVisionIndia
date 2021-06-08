@@ -2,11 +2,13 @@ package com.example.notificationappmsg;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -150,7 +152,7 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
             drawerLayout3.closeDrawer(GravityCompat.START);
         }
         else {
-            super.onBackPressed();
+           askToClose();
         }
 
     }
@@ -177,4 +179,30 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
         drawerLayout3.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
+    private void askToClose (){
+        AlertDialog.Builder builder = new AlertDialog.Builder(TeritoryManagerDashboard.this);
+        builder.setMessage("Are you sure you want to quit?");
+        builder.setCancelable(true);
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                finishAffinity();
+                System.exit(0);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
+
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+
 }

@@ -145,6 +145,10 @@ public class ServiceSearchEngine extends AppCompatActivity {
 
                         CompanyID company_ID=new CompanyID();
                         company_ID.setCOMPanyID(models.getService_company_id());
+                        CompanyID.setCOMPany_INS(models.getService_id_Ins());
+                        CompanyID.setComPany_Name(models.getService_company_name());
+                        CompanyID.setComPany_Address(models.getService_company_address());
+                        CompanyID.setComPany_phone_number(models.getService_company_phone());
 
                     }
 
@@ -215,6 +219,7 @@ public class ServiceSearchEngine extends AppCompatActivity {
 
                         CompanyID company_ID=new CompanyID();
                         company_ID.setCOMPanyID(models.getService_company_id());
+                        CompanyID.setCOMPany_INS(models.getService_id_Ins());
                         CompanyID.setComPany_Email_id(models.getService_company_email());
                         CompanyID.setComPany_Name(models.getService_company_name());
                         CompanyID.setComPany_phone_number(models.getService_company_phone());

@@ -47,7 +47,7 @@ public class OrderLossViewing extends AppCompatActivity {
                 //clearing the previous artist list
                 orderLossDetails.clear();
 
-                Toast.makeText(OrderLossViewing.this,"111",Toast.LENGTH_LONG).show();
+
                 //iterating through all the nodes
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     //getting artist

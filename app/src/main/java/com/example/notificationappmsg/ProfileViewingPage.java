@@ -32,6 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 import com.google.firebase.storage.FirebaseStorage;
@@ -44,6 +45,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class ProfileViewingPage extends AppCompatActivity {
 
@@ -53,6 +55,10 @@ public class ProfileViewingPage extends AppCompatActivity {
 
     Button btntouserupdate;
     EditText usernamefb,userphonenumberfb,useraddressfb,useremailfb;
+
+    String santab =new String("1");
+    String santab1 =new String("2");
+    String santab2 =new String("3");
 
 
     @Override
@@ -81,7 +87,8 @@ public class ProfileViewingPage extends AppCompatActivity {
     private void UserUpadateProfile(String userName, String userPhoneNumber, String userAddress, String userEmailId)
     {
 
-        noteRef1 = db1.collection("UsersProfile").document(userphonenumberfb.getText().toString());
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        noteRef1 = db1.collection("UsersProfile").document(user.getUid());
 
         Map<String, Object> note = new HashMap<>();
         note.put("UserName", userName);
@@ -120,8 +127,9 @@ public class ProfileViewingPage extends AppCompatActivity {
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                Intent intent=new Intent(ProfileViewingPage.this,UserLeveloneDashboard.class);
-                startActivity(intent);
+                FirebaseAuth authUser=FirebaseAuth.getInstance();
+                FirebaseUser UserAuth=authUser.getCurrentUser();
+                CheckUserAccessLevel2(UserAuth.getUid());
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -133,6 +141,32 @@ public class ProfileViewingPage extends AppCompatActivity {
         });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    private void CheckUserAccessLevel2(String uid) {
+        DocumentReference df=FirebaseFirestore.getInstance().collection("UsersProfile").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String levelCHecker=documentSnapshot.getString("UserLevel");
+
+                if(Objects.equals(levelCHecker, santab))
+                {
+                    Intent intent = new Intent(ProfileViewingPage.this,ServiceEngineerDashboard.class);
+                    startActivity(intent);
+                }
+                else if(Objects.equals(levelCHecker, santab1)){
+                    Intent intent = new Intent(ProfileViewingPage.this, BusinessExecutiveDashboard.class);
+                    startActivity(intent);
+                }else
+                {
+                    Intent intent = new Intent(ProfileViewingPage.this, TeritoryManagerDashboard.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 
 }

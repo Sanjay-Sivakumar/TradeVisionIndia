@@ -33,12 +33,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="18dp"
+                    android:layout_marginStart="12dp"
                     android:inputType="date"
                     android:id="@+id/orderdate"
                     android:textColor="#000"
                     android:text="12/07/2002"
-                    android:textSize="20sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -47,7 +47,8 @@
                 android:layout_height="50dp"
                 android:layout_weight="0.5"
                 android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
+                tools:ignore="UseCompoundDrawables"
+                android:layout_marginStart="12dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -63,7 +64,7 @@
                     android:id="@+id/orderNumber"
                     android:textColor="#000"
                     android:text="12/07/2002"
-                    android:textSize="20sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
         </LinearLayout>

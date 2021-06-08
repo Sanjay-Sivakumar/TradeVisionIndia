@@ -64,7 +64,7 @@ public class CompanySearch extends AppCompatActivity {
         ArrayList<String> names=new ArrayList<>();
         if(snapshot.exists())
         {
-            Toast.makeText(CompanySearch.this,"Some Issues are found Try Again Later!",Toast.LENGTH_LONG).show();
+
             for(DataSnapshot ds:snapshot.getChildren())
             {
                 String Fname=ds.child("companyName").getValue(String.class);
@@ -101,7 +101,6 @@ public class CompanySearch extends AppCompatActivity {
                         CompanyDetails models= new CompanyDetails(ds.child("companyId").getValue(String.class),ds.child("companyName").getValue(String.class),ds.child("companyPhoneNumber").getValue(String.class),ds.child("companyAddress").getValue(String.class),ds.child("companyEmail").getValue(String.class));
                         listtuser.add(models.getCompanyName()+"\n"+models.getCompanyPhoneNumber()+"\n"+models.getCompanyAddress()+"\n"+models.getCompanyEmail());
                         COMPANYID=models.getCompanyId();
-                        Toast.makeText(CompanySearch.this,COMPANYID,Toast.LENGTH_LONG).show();
                         CompanyID company_ID=new CompanyID();
                         company_ID.setCOMPanyID(models.getCompanyId());
                         CompanyID.setComPany_Email_id(models.getCompanyEmail());
@@ -115,10 +114,6 @@ public class CompanySearch extends AppCompatActivity {
                     listViewcom.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            //Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
-                           // Intent intent = new Intent(CompanySearch.this,PlacingOrderPlace.class);
-                           // intent.putExtra("RequestCode", "1");
-                            //startActivity(intent);
                             GotoIntent();
                         }
                     });

@@ -79,7 +79,7 @@ public class LoginTabFragment extends Fragment {
 
                         FirebaseAuth authUser=FirebaseAuth.getInstance();
                         FirebaseUser UserAuth=authUser.getCurrentUser();
-                        Toast.makeText(getActivity(),"Login Successfull",Toast.LENGTH_LONG).show();
+
                         CheckUserAccessLevel(UserAuth.getUid());
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -104,7 +104,7 @@ public class LoginTabFragment extends Fragment {
         return root;
     }
     private void CheckUserAccessLevel(String uid) {
-        DocumentReference df=fstoretab.collection("users").document(uid);
+        DocumentReference df=fstoretab.collection("UsersProfile").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {

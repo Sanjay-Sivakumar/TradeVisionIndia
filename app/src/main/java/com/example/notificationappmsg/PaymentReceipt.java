@@ -76,6 +76,7 @@ public class PaymentReceipt extends AppCompatActivity {
 
         prdate.setText(getTodaysDate());
         cnmaepr.setText(Company_Name_payment);
+        proen.setText(Oen_Payment);
 
 
         dforderpayment=FirebaseDatabase.getInstance().getReference("Payment_Details");
@@ -109,6 +110,7 @@ public class PaymentReceipt extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                flagPayment=1;
                 if(!TextUtils.isEmpty(amountbytoday.getText().toString()))
                 {
                     String amtpay=amountbytoday.getText().toString();
@@ -144,6 +146,8 @@ public class PaymentReceipt extends AppCompatActivity {
                     }catch (Exception e) {
                         Toast.makeText(PaymentReceipt.this, e.getMessage(), Toast.LENGTH_LONG).show();
                     }
+                }else{
+                    Toast.makeText(PaymentReceipt.this,"Please fill Enough details",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -152,7 +156,7 @@ public class PaymentReceipt extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(!TextUtils.isEmpty(amountbytoday.getText().toString())&&!TextUtils.isEmpty(chequedetails.getText().toString()))
+                if(!TextUtils.isEmpty(amountbytoday.getText().toString())&&!TextUtils.isEmpty(chequedetails.getText().toString())&& flagPayment==1)
                 {
                     paymentmodel1 paymentmodel1=new paymentmodel1(cOMPany_Id,oen_number_id,Order_Net_Price,amountbytoday.getText().toString(),chequedetails.getText().toString(),getTodaysDate(),getTimewitham());
 
@@ -179,6 +183,8 @@ public class PaymentReceipt extends AppCompatActivity {
                     Toast.makeText(PaymentReceipt.this,"All details are updated",Toast.LENGTH_LONG).show();
                     SendingMail();
 
+                }else{
+                    Toast.makeText(PaymentReceipt.this,"Please Do Enough task to complete this action",Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -291,7 +297,6 @@ public class PaymentReceipt extends AppCompatActivity {
                     oen_number_id = models.getOEN_ID();
                     Lastnetamount = models.getNETPRICE();
                     String nETPrice=models.getNETPRICE();
-                    proen.setText(oen_number_id);
                     netpricepr.setText(nETPrice);
 
                 }

@@ -22,9 +22,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -34,6 +38,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class ProfileImageUpload extends AppCompatActivity {
 
@@ -44,6 +49,11 @@ public class ProfileImageUpload extends AppCompatActivity {
     DatabaseReference databaseUserdata;
     Uri imageUri;
     ImageView profilechange;
+    public String userId1;
+
+    String santab =new String("1");
+    String santab1 =new String("2");
+    String santab2 =new String("3");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +69,7 @@ public class ProfileImageUpload extends AppCompatActivity {
         objectStorageReference= FirebaseStorage.getInstance().getReference("profilePic");
         objectFirebaseFirestore=FirebaseFirestore.getInstance();
         databaseUserdata = FirebaseDatabase.getInstance().getReference("UserData");
+        userId1= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         profilechange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +116,7 @@ public class ProfileImageUpload extends AppCompatActivity {
 
         try {
             if (imageUri != null) {
-                String nameoftheimage = id+getExtension(imageUri);
+                String nameoftheimage = userId1+getExtension(imageUri);
                 StorageReference imgRef = objectStorageReference.child(nameoftheimage);
 
                 UploadTask objectUploadTask = imgRef.putFile(imageUri);
@@ -123,7 +134,7 @@ public class ProfileImageUpload extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Map<String, String> objectmap = new HashMap<>();
                             objectmap.put("url", task.getResult().toString());
-                            objectFirebaseFirestore.collection("profileLinks").document(id)
+                            objectFirebaseFirestore.collection("profileLinks").document(userId1)
                                     .set(objectmap)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
@@ -172,8 +183,9 @@ public class ProfileImageUpload extends AppCompatActivity {
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                Intent intent=new Intent(ProfileImageUpload.this,UserLeveloneDashboard.class);
-                startActivity(intent);
+                FirebaseAuth authUser=FirebaseAuth.getInstance();
+                FirebaseUser UserAuth=authUser.getCurrentUser();
+                CheckUserAccessLevel3(UserAuth.getUid());
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -185,6 +197,32 @@ public class ProfileImageUpload extends AppCompatActivity {
         });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    private void CheckUserAccessLevel3(String uid) {
+        DocumentReference df=FirebaseFirestore.getInstance().collection("UsersProfile").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String levelCHecker=documentSnapshot.getString("UserLevel");
+
+                if(Objects.equals(levelCHecker, santab))
+                {
+                    Intent intent = new Intent(ProfileImageUpload.this,ServiceEngineerDashboard.class);
+                    startActivity(intent);
+                }
+                else if(Objects.equals(levelCHecker, santab1)){
+                    Intent intent = new Intent(ProfileImageUpload.this, BusinessExecutiveDashboard.class);
+                    startActivity(intent);
+                }else
+                {
+                    Intent intent = new Intent(ProfileImageUpload.this, TeritoryManagerDashboard.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 
 }

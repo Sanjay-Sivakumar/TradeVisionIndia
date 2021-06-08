@@ -270,7 +270,7 @@ public class SearchEngine extends AppCompatActivity {
         }
         else if(RequestCodeSearch.equals("3"))
         {
-            Intent intent = new Intent(SearchEngine.this,OrderLossDetails.class);
+            Intent intent = new Intent(SearchEngine.this,OrderLossViewing.class);
             startActivity(intent);
         }else if(RequestCodeSearch.equals("4"))
         {

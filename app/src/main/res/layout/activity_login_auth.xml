@@ -1,84 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginAuth"
     android:orientation="vertical"
-    android:layout_margin="20dp">
+    android:layout_margin="2dp">
 
-    <EditText
-        android:id="@+id/etloginemail"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/edittext_bg"
-        android:hint="Email"
-        android:textColorHint="#000"
-        android:textColor="#000"
-        android:textAlignment="center"
-        android:ems="10"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/usernamelogin"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:background="@drawable/edittext_bg"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="#020000"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:padding="20dp"
+            android:background="@drawable/applogolight">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:id="@+id/userphonenumber"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="Phone Number"
-        android:background="@drawable/edittext_bg"
-        android:textAlignment="center"
-        android:textColorHint="#000"
-        android:textColor="#000"/>
+        </RelativeLayout>
 
 
-    <EditText
-        android:id="@+id/userlevelnumber"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:hint="userlevel"
-        android:background="@drawable/edittext_bg"
-        android:inputType="number"
-        android:layout_marginTop="20dp"
-        android:textAlignment="center"
-        android:textColorHint="#000"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etloginpassword"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/edittext_bg"
-        android:layout_marginTop="20dp"
-        android:hint="Password"
-        android:textColorHint="#000"
-        android:textColor="#000"
-        android:textAlignment="center"
-        android:ems="10"
-        android:inputType="textPassword"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="USER ID"
+                android:layout_marginBottom="10dp">
 
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="130dp"
-        android:id="@+id/btnlogin"
-        android:background="#FFFFFF"
-        android:text="Submit!"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_profileicon"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/createuserid"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:layout_marginBottom="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_profileicon"
+                        android:drawablePadding="10dp"
+                        android:id="@+id/createuserpassword"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-</LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_profileicon"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/createusername"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_phoneicon"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/createuserphonenumber"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Work Position"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_workpositionicon"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/createuserworkposition"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User Level"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_workpositionicon"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/createuserlevel"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Working Zone"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_locationicon"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/createuserworkzone"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact Email"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_contactmail"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/createuseremail"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Permanent Address"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_locationicon"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/createuseraddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create"
+                android:id="@+id/btncreateuser"
+                android:fontFamily="@font/bungee"
+                android:background="#fff"/>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

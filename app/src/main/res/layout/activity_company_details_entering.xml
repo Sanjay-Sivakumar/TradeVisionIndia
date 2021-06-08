@@ -28,7 +28,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="50dp"
-                    android:layout_marginStart="18dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/ic_calender"/>
 
                 <TextView
@@ -40,7 +40,7 @@
                     android:id="@+id/visitinputdate"
                     android:textColor="#000"
                     android:text="12/07/2002"
-                    android:textSize="20sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
             <LinearLayout
@@ -48,7 +48,8 @@
                 android:layout_height="50dp"
                 android:layout_weight="0.5"
                 android:orientation="horizontal"
-                tools:ignore="UseCompoundDrawables">
+                tools:ignore="UseCompoundDrawables"
+                android:layout_marginStart="18dp">
 
                 <ImageView
                     android:layout_width="40dp"
@@ -64,7 +65,7 @@
                     android:id="@+id/visitinputtime"
                     android:textColor="#000"
                     android:text="12/07/2002"
-                    android:textSize="20sp"/>
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
@@ -86,7 +87,7 @@
                 android:id="@+id/visitinputcompanyname"
                 android:textColor="#000"
                 android:textColorHint="#000"
-                android:drawableLeft="@drawable/ic_company"/>
+                android:drawableLeft="@drawable/ic_company" />
         </LinearLayout>
 
         <LinearLayout
@@ -264,6 +265,7 @@
                 android:id="@+id/visitinputpersonname"
                 android:textColor="#000"
                 android:drawableLeft="@drawable/profile_icon"
+                android:padding="12dp"
                 android:textColorHint="#000"
                 android:importantForAutofill="no" />
         </LinearLayout>
@@ -281,6 +283,7 @@
                 android:layout_height="60dp"
                 android:hint="Enter Designation"
                 android:drawableLeft="@drawable/ic_workpositionicon"
+                android:padding="12dp"
                 android:id="@+id/visitinputpersondesignation"
                 android:textColor="#000"
                 android:textColorHint="#000"
@@ -298,7 +301,8 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="23dp"
-                android:src="@drawable/ic_phoneicon"/>
+                android:src="@drawable/ic_phoneicon"
+                android:padding="12dp"/>
 
             <EditText
                 android:layout_width="match_parent"

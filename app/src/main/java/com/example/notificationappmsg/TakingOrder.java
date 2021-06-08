@@ -50,6 +50,8 @@ public class TakingOrder extends AppCompatActivity {
     Spinner brandOrder;
     public String comPanyID;
 
+    public int flagorder=0;
+
     DatabaseReference dtbaseorder,dtgetorder,dtpayment,dtbasedates,dtbasecompdetails,dtsearch;
 
     public String order_company_name,order_company_phone,order_company_email,order_company_address;
@@ -118,6 +120,7 @@ public class TakingOrder extends AppCompatActivity {
             public void onClick(View v) {
                 if(!TextUtils.isEmpty(transportationPrice.getText().toString())&&!TextUtils.isEmpty(basicPrice.getText().toString())&&!TextUtils.isEmpty(advancePay.getText().toString()))
                 {
+                    flagorder=1;
                     CalculateNetAmount(transportationPrice.getText().toString(),basicPrice.getText().toString(),advancePay.getText().toString());
 
                 }else{
@@ -136,7 +139,7 @@ public class TakingOrder extends AppCompatActivity {
                 if (!TextUtils.isEmpty(ordertph.getText().toString()) && !TextUtils.isEmpty(orderstage.getText().toString())
                 &&!TextUtils.isEmpty(orderwashing.getText().toString())&&!TextUtils.isEmpty(basicPrice.getText().toString())&&!TextUtils.isEmpty(transportationPrice.getText().toString())
                 &&!TextUtils.isEmpty(tpcName.getText().toString())&&!TextUtils.isEmpty(tpcAmount.getText().toString())&&!TextUtils.isEmpty(advancePay.getText().toString())
-                &&!TextUtils.isEmpty(chequeRTGSdetails.getText().toString())&&!TextUtils.isEmpty(orderRemarks.getText().toString()))
+                &&!TextUtils.isEmpty(chequeRTGSdetails.getText().toString())&&!TextUtils.isEmpty(orderRemarks.getText().toString())&&flagorder==1)
                 {
                     dtbaseorder.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -250,7 +253,7 @@ public class TakingOrder extends AppCompatActivity {
                     });
 
                 }else{
-                    Toast.makeText(TakingOrder.this,"Fill All Details!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(TakingOrder.this,"Fill All Details! and Do Enough Task To Complete this Action",Toast.LENGTH_LONG).show();
                 }
             }
         });

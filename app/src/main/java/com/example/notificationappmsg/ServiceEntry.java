@@ -12,6 +12,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
@@ -46,7 +47,7 @@ public class ServiceEntry extends AppCompatActivity {
         equipmentListService= new ArrayList<>();
 
         CompanyID companyID=new CompanyID();
-        viewOen1=CompanyID.getCOMPany_OEN();
+        viewOen1=CompanyID.getCOMPany_INS();
         viewCname1=CompanyID.getComPany_Name();
         viewCemail1=CompanyID.getComPany_Email_id();
         viewCaddress1=CompanyID.getComPany_Address();
@@ -69,7 +70,8 @@ public class ServiceEntry extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         //attaching value event listener
-        databaseServiceList.addValueEventListener(new ValueEventListener() {
+        Query query=databaseServiceList.orderByChild("inspection_NO").equalTo(viewOen1);
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
 
@@ -87,10 +89,8 @@ public class ServiceEntry extends AppCompatActivity {
                     serviceEntryDetailList.add(busno);
                     String oen=busno.getInspection_NO();
 
-                    Toast.makeText(ServiceEntry.this,String.valueOf(dataSnapshot.child(oen).child("serviceList").getChildrenCount()),Toast.LENGTH_LONG).show();
 
-
-                    for (DataSnapshot ds : dataSnapshot.child(oen).child("serviceList").getChildren()) {
+                    for (DataSnapshot ds : dataSnapshot.child(viewOen1).child("serviceList").getChildren()) {
 
                         if (ds.exists()) {
                            Cricketer crket = ds.getValue(Cricketer.class);
@@ -100,10 +100,9 @@ public class ServiceEntry extends AppCompatActivity {
                             equipmentListService.add(modelname);
                             equipmentListService.add(modelnumber);
 
-                            Toast.makeText(ServiceEntry.this,modelname,Toast.LENGTH_LONG).show();
 
                         } else {
-                            Toast.makeText(ServiceEntry.this, "Snapshot not found 2", Toast.LENGTH_LONG).show();
+                            Toast.makeText(ServiceEntry.this, "Snapshot not found ", Toast.LENGTH_LONG).show();
                         }
 
                     }

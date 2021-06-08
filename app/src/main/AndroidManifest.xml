@@ -15,10 +15,17 @@
 
         </activity>
         <activity android:name=".BusinessExecutiveDashboard"/>
+
         <activity android:name=".TeritoryManagerDashboard">
 
         </activity>
+
+        <activity android:name=".ServiceEngineerDashboard" >
+
+        </activity>
+
         <activity android:name=".ServiceSearchEngine"/>
+
         <activity android:name=".SecondActivity"/>
         <activity android:name=".OrderDetailsViewing" />
         <activity android:name=".CompanyDetailsViewing" />
@@ -42,7 +49,9 @@
 
         <activity android:name=".OrderLossEntry" />
         <activity android:name=".ServiceEntryDetails"/>
-        <activity android:name=".OrderLossViewing" />
+        <activity android:name=".OrderLossViewing">
+
+        </activity>
 
         <activity android:name=".UserSearch" />
         <activity android:name=".ProfileEditingAdminPage" />
@@ -51,7 +60,9 @@
         <activity android:name=".LoginPage" />
         <activity android:name=".AdminDashborad" />
         <activity android:name=".RegistrationPage" />
-        <activity android:name=".LoginAuth" />
+        <activity android:name=".LoginAuth">
+
+        </activity>
         <activity android:name=".IntroActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
