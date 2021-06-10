@@ -3,14 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:orientation="vertical"
-    android:background="@drawable/background_purple"
+    android:background="@drawable/loginbg"
     android:gravity="bottom"
     android:padding="20dp">
 
     <ImageView
-        android:layout_width="145dp"
-        android:layout_height="95dp"
-        android:src="@drawable/payment_details"
+        android:layout_width="146dp"
+        android:layout_height="100dp"
+        android:src="@drawable/round_logo"
         android:layout_marginLeft="20dp"/>
 
     <TextView
