@@ -206,7 +206,7 @@
                     android:id="@+id/calculatenetamount"
                     android:layout_marginStart="120dp"
                     android:layout_marginTop="10dp"
-                    android:background="#FFFFFF"
+                    android:background="@drawable/ripple_effect"
                     android:textColor="#000"
                     android:drawableLeft="@drawable/ic_circle_down"
                     android:layout_marginBottom="25dp"/>
@@ -456,6 +456,7 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:text="SUBMIT"
+            android:background="@drawable/ripple_effect"
             android:id="@+id/submitorder"
             android:layout_marginTop="20dp"
             android:textColor="#000"

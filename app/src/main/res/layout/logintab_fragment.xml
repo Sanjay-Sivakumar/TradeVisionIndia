@@ -45,18 +45,18 @@
         android:id="@+id/btntabuserlogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/ripple_effect"
         android:text="Login"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:background="@drawable/bg_round"
-        android:textColor="@color/black"
-        app:layout_constraintVertical_bias=".7"
-        app:layout_constraintWidth_percent=".8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintVertical_bias="0.779"
+        app:layout_constraintWidth_percent=".8" />
 
     <TextView
         android:id="@+id/tvtabforgotpass"
@@ -66,12 +66,11 @@
         android:layout_marginRight="5dp"
         android:text="Forgot Password?"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/ettabuserpassword"
-        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ettabuserpassword"
-        app:layout_constraintVertical_bias="0" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.573" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

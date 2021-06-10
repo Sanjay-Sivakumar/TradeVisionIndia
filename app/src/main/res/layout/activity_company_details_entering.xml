@@ -329,8 +329,9 @@
             android:layout_height="50dp"
             android:layout_marginTop="20dp"
             android:text="SUBMIT"
+            android:background="@drawable/ripple_effect"
             android:id="@+id/visitinputbutton"
-            android:textColor="@color/purple"
+            android:textColor="@color/black"
             android:layout_marginStart="160dp"/>
 
 
