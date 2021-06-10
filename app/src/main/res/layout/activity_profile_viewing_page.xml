@@ -92,7 +92,7 @@
                 android:text="UPDATE"
                 android:id="@+id/btntoupdateuser"
                 android:fontFamily="@font/bungee"
-                android:background="@drawable/edittext_bg"/>
+                android:background="@drawable/ripple_effect"/>
 
         </LinearLayout>
     </LinearLayout>

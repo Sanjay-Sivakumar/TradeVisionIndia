@@ -34,7 +34,6 @@
                 android:id="@+id/toolbar2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-
                 android:background="@color/white"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
@@ -97,6 +96,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
+
                     app:cardElevation="5dp">
 
                     <RelativeLayout
@@ -118,6 +118,7 @@
                             android:id="@+id/imageView5"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/data_uploading" />
@@ -149,6 +150,7 @@
                         <ImageView
                             android:id="@+id/imageView6"
                             android:layout_width="149dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_height="65dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
@@ -194,6 +196,7 @@
                         <ImageView
                             android:id="@+id/imageView7"
                             android:layout_width="140dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_height="65dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
@@ -227,6 +230,7 @@
                             android:id="@+id/imageView8"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/data_retriving" />
@@ -272,6 +276,7 @@
                             android:id="@+id/imageView0"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/company_details" />
@@ -304,6 +309,7 @@
                             android:id="@+id/imageView4"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/user_profile" />
@@ -351,6 +357,7 @@
                             android:id="@+id/imageView9"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/payment_details" />

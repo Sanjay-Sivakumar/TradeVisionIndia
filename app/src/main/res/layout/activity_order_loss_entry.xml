@@ -215,6 +215,7 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:text="SUBMIT"
+            android:background="@drawable/ripple_effect"
             android:id="@+id/submitorderloss"
             android:layout_marginTop="20dp"
             android:textColor="#000"

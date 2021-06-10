@@ -115,6 +115,7 @@
                         <ImageView
                             android:id="@+id/imageView10"
                             android:layout_width="140dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_height="65dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
@@ -147,6 +148,7 @@
                         <ImageView
                             android:id="@+id/imageView11"
                             android:layout_width="149dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_height="65dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
@@ -192,6 +194,7 @@
                             android:id="@+id/imageView12"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/company_details" />
@@ -225,6 +228,7 @@
                             android:id="@+id/imageView13"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/user_profile" />
@@ -271,6 +275,7 @@
                             android:id="@+id/imageView14"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/data_uploading" />
@@ -303,6 +308,7 @@
                             android:id="@+id/imageView15"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/data_retriving" />
@@ -347,6 +353,7 @@
                             android:id="@+id/imageView16"
                             android:layout_width="140dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/data_uploading" />
@@ -379,6 +386,7 @@
                             android:id="@+id/imageView17"
                             android:layout_width="149dp"
                             android:layout_height="65dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
                             app:srcCompat="@drawable/data_retriving" />
@@ -423,6 +431,7 @@
                         <ImageView
                             android:id="@+id/imageView18"
                             android:layout_width="140dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_height="65dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"
@@ -456,6 +465,7 @@
                         <ImageView
                             android:id="@+id/imageView19"
                             android:layout_width="140dp"
+                            android:background="@drawable/ripple_dashboard"
                             android:layout_height="65dp"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="15dp"

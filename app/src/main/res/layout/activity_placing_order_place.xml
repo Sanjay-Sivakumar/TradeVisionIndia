@@ -30,7 +30,7 @@
 
     <Button
         android:id="@+id/button_add"
-        android:background="@drawable/round_primary"
+        android:background="@drawable/bg_round1"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:text="Add"
@@ -46,7 +46,7 @@
 
     <Button
         android:id="@+id/button_submit_list"
-        android:background="@drawable/round_primary"
+        android:background="@drawable/ripple_effect"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="Submit List"
@@ -54,7 +54,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textAllCaps="false"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -67,8 +67,8 @@
         android:hint="Enter Model Name"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:background="@drawable/bg_round"
-        android:textColorHint="#000"
+        android:background="@drawable/bg_round1"
+        android:textColorHint="#FFF"
         android:textAlignment="center"
         android:id="@+id/addspinnerelements"
         android:layout_marginTop="430dp"/>
@@ -84,20 +84,20 @@
             android:layout_weight="0.5"
             android:text="ADD"
             android:textColorHint="#FFF"
-            android:background="@drawable/round_primary"
+            android:background="@drawable/ripple_effect"
             android:id="@+id/addspinelement"
             android:layout_marginEnd="5dp"
-            android:textColor="#FFF"/>
+            android:textColor="#000"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="0.5"
-            android:background="@drawable/round_primary"
+            android:background="@drawable/ripple_effect"
             android:layout_marginStart="5dp"
             android:text="Remove"
             android:id="@+id/removespinelement"
-            android:textColor="#FFF"/>
+            android:textColor="#000"/>
 
 
     </LinearLayout>
