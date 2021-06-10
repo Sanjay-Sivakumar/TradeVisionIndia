@@ -22,12 +22,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.auth.User;
 
 import java.text.DateFormat;
@@ -36,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -68,6 +75,9 @@ public class ServiceEntryDetails extends AppCompatActivity {
 
     public int flagservice=0;
     public String InspectionNO,Service_company_Id,Service_OnCall,inspection;
+
+    String santab =new String("1");
+    String santab1 =new String("2");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,9 +214,9 @@ public class ServiceEntryDetails extends AppCompatActivity {
                                 Toast.makeText(ServiceEntryDetails.this,"All details are Stored",Toast.LENGTH_LONG).show();
 
                                 SendingMail();
-
-
-                                Intent intent=new Intent(ServiceEntryDetails.this,UserLeveloneDashboard.class);
+                                FirebaseAuth authUser=FirebaseAuth.getInstance();
+                                FirebaseUser UserAuth=authUser.getCurrentUser();
+                                CheckUserAccessLevel4(UserAuth.getUid());
 
                             }
                         }
@@ -225,6 +235,32 @@ public class ServiceEntryDetails extends AppCompatActivity {
 
 
 
+    }
+
+    private void CheckUserAccessLevel4(String uid) {
+        DocumentReference df= FirebaseFirestore.getInstance().collection("UsersProfile").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String levelCHecker=documentSnapshot.getString("UserLevel");
+
+                if(Objects.equals(levelCHecker, santab))
+                {
+                    Intent intent = new Intent(ServiceEntryDetails.this,ServiceEngineerDashboard.class);
+                    startActivity(intent);
+                }
+                else if(Objects.equals(levelCHecker, santab1)){
+                    Intent intent = new Intent(ServiceEntryDetails.this, BusinessExecutiveDashboard.class);
+                    startActivity(intent);
+                }else
+                {
+                    Intent intent = new Intent(ServiceEntryDetails.this, TeritoryManagerDashboard.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 
     private void getLastServiceValues() {

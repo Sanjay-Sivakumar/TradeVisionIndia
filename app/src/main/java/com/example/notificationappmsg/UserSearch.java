@@ -106,9 +106,9 @@ public class UserSearch extends AppCompatActivity {
                     ArrayList<String> listtuser=new ArrayList<>();
                     for(DataSnapshot ds:snapshot.getChildren())
                     {
-                        model models= new model(ds.child("namedb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("purldb").getValue(String.class));
+                        model models= new model(ds.child("namedb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("purldb").getValue(String.class));
                         listtuser.add(models.getNamedb()+"\n"+models.getPhnodb()+"\n"+models.getEmaildb());
-                        USERID=models.getEmaildb();
+                        USERID=models.getPhnodb();
                     }
 
                     ArrayAdapter AAdapter=new ArrayAdapter(UserSearch.this, android.R.layout.simple_list_item_1,listtuser);
@@ -116,7 +116,7 @@ public class UserSearch extends AppCompatActivity {
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                           // Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
+
                             Intent intent = new Intent(UserSearch.this,UserprofilePage.class);
                             intent.putExtra("USERID", USERID);
                             startActivity(intent);

@@ -49,7 +49,7 @@ public class ProfileImageUpload extends AppCompatActivity {
     DatabaseReference databaseUserdata;
     Uri imageUri;
     ImageView profilechange;
-    public String userId1;
+  //  public String userId1;
 
     String santab =new String("1");
     String santab1 =new String("2");
@@ -69,7 +69,7 @@ public class ProfileImageUpload extends AppCompatActivity {
         objectStorageReference= FirebaseStorage.getInstance().getReference("profilePic");
         objectFirebaseFirestore=FirebaseFirestore.getInstance();
         databaseUserdata = FirebaseDatabase.getInstance().getReference("UserData");
-        userId1= FirebaseAuth.getInstance().getCurrentUser().getUid();
+      //  userId1= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         profilechange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +116,7 @@ public class ProfileImageUpload extends AppCompatActivity {
 
         try {
             if (imageUri != null) {
-                String nameoftheimage = userId1+getExtension(imageUri);
+                String nameoftheimage = id+getExtension(imageUri);
                 StorageReference imgRef = objectStorageReference.child(nameoftheimage);
 
                 UploadTask objectUploadTask = imgRef.putFile(imageUri);
@@ -134,14 +134,16 @@ public class ProfileImageUpload extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Map<String, String> objectmap = new HashMap<>();
                             objectmap.put("url", task.getResult().toString());
-                            objectFirebaseFirestore.collection("profileLinks").document(userId1)
+                            objectFirebaseFirestore.collection("profileLinks").document(id)
                                     .set(objectmap)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
                                             pd.dismiss();
                                             Toast.makeText(ProfileImageUpload.this, "Image is uploaded", Toast.LENGTH_LONG).show();
-                                            startActivity(new Intent(ProfileImageUpload.this,UserLeveloneDashboard.class));
+                                            FirebaseAuth authUser=FirebaseAuth.getInstance();
+                                            FirebaseUser UserAuth=authUser.getCurrentUser();
+                                            CheckUserAccessLevel3(UserAuth.getUid());
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -200,7 +202,7 @@ public class ProfileImageUpload extends AppCompatActivity {
     }
 
     private void CheckUserAccessLevel3(String uid) {
-        DocumentReference df=FirebaseFirestore.getInstance().collection("UsersProfile").document(uid);
+        DocumentReference df=FirebaseFirestore.getInstance().collection("Users").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {

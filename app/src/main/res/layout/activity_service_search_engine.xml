@@ -68,7 +68,7 @@
 
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="850dp"
                 android:id="@+id/listofservicesearchresults"
                 android:layout_marginTop="90dp"/>
         </RelativeLayout>

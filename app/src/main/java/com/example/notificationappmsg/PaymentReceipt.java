@@ -283,7 +283,7 @@ public class PaymentReceipt extends AppCompatActivity {
     private void setDetails(String oenNumber,String dates,String times) {
 
 
-        dtpayment1=FirebaseDatabase.getInstance().getReference("Payment_Details").child(dates+""+times);
+        dtpayment1=FirebaseDatabase.getInstance().getReference("Payment_Details").child(dates+""+times+""+oenNumber);
 
 
 

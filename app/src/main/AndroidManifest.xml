@@ -16,7 +16,6 @@
         </activity>
         <activity android:name=".BusinessExecutiveDashboard"/>
 
-
         <activity android:name=".TeritoryManagerDashboard">
 
         </activity>
@@ -58,7 +57,7 @@
         <activity android:name=".ProfileEditingAdminPage" />
         <activity android:name=".ProfileViewingPage" />
         <activity android:name=".UserprofilePage" />
-        <activity android:name=".LoginPage">
+        <activity android:name=".LoginPage" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -67,9 +66,12 @@
         </activity>
         <activity android:name=".AdminDashborad" />
         <activity android:name=".RegistrationPage" />
-        <activity android:name=".LoginAuth"/>
+        <activity android:name=".LoginAuth">
 
-        <activity android:name=".IntroActivity"/>
+        </activity>
+        <activity android:name=".IntroActivity" >
+
+        </activity>
         <activity android:name=".MainActivity" />
 
         <meta-data

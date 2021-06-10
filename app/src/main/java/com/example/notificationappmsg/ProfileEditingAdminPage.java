@@ -76,7 +76,7 @@ public class ProfileEditingAdminPage extends AppCompatActivity {
     {
 
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-        noteRef = db.collection("UsersProfile").document(user.getUid());
+        noteRef = db.collection("UsersProfile").document(userPhoneNumber);
         Map<String, Object> note = new HashMap<>();
         note.put("UserName", userName);
         note.put("UserPhoneNumber", userPhoneNumber);
@@ -136,7 +136,7 @@ public class ProfileEditingAdminPage extends AppCompatActivity {
     }
 
     private void CheckUserAccessLevel1(String uid) {
-        DocumentReference df=FirebaseFirestore.getInstance().collection("UsersProfile").document(uid);
+        DocumentReference df=FirebaseFirestore.getInstance().collection("Users").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {

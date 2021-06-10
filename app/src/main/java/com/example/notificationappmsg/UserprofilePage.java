@@ -49,7 +49,9 @@ public class UserprofilePage extends AppCompatActivity {
         setContentView(R.layout.activity_userprofile_page);
 
 
-         USER_ID= FirebaseAuth.getInstance().getCurrentUser().getUid();
+         USER_ID=getIntent().getStringExtra("USERID");
+
+         Toast.makeText(UserprofilePage.this,USER_ID,Toast.LENGTH_LONG).show();
 
         fullName=findViewById(R.id.fullnameview);
         phoneNumber=findViewById(R.id.phonenumberview);
@@ -143,7 +145,7 @@ public class UserprofilePage extends AppCompatActivity {
     }
 
     private void CheckUserAccessLevelEditing(String uid) {
-        DocumentReference df=fstoredit.collection("UsersProfile").document(uid);
+        DocumentReference df=fstoredit.collection("Users").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {

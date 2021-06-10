@@ -19,8 +19,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ServiceEngineerDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -105,8 +110,9 @@ public class ServiceEngineerDashboard extends AppCompatActivity implements Navig
                 startActivity(intent);
                 break;
             case R.id.nav_profile:
-                Intent intent1 = new Intent(ServiceEngineerDashboard.this,UserprofilePage.class);
-                startActivity(intent1);
+                FirebaseAuth authUser=FirebaseAuth.getInstance();
+                FirebaseUser UserAuth=authUser.getCurrentUser();
+                Getphnumber(UserAuth.getUid());
                 break;
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();
@@ -137,6 +143,22 @@ public class ServiceEngineerDashboard extends AppCompatActivity implements Navig
         });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    private void Getphnumber(String uid) {
+        DocumentReference df= FirebaseFirestore.getInstance().collection("Users").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String levelCHecker=documentSnapshot.getString("UserPhoneNumber");
+
+                Intent intent = new Intent(ServiceEngineerDashboard.this, UserprofilePage.class);
+                intent.putExtra("USERID",levelCHecker);
+                startActivity(intent);
+
+            }
+        });
     }
 
 

@@ -88,7 +88,7 @@ public class ProfileViewingPage extends AppCompatActivity {
     {
 
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-        noteRef1 = db1.collection("UsersProfile").document(user.getUid());
+        noteRef1 = db1.collection("UsersProfile").document(userPhoneNumber);
 
         Map<String, Object> note = new HashMap<>();
         note.put("UserName", userName);

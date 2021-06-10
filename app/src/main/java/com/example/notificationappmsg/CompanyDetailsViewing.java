@@ -56,8 +56,6 @@ public class CompanyDetailsViewing extends AppCompatActivity {
 
                 if(dataSnapshot.exists()) {
 
-                    Toast.makeText(CompanyDetailsViewing.this,"Snapshot found",Toast.LENGTH_LONG).show();
-
 
                     for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                         //getting artist

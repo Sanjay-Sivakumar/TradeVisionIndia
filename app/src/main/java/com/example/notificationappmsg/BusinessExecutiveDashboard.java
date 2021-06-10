@@ -18,8 +18,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class BusinessExecutiveDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -141,8 +146,9 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
                 startActivity(intent3);
                 break;
             case R.id.nav_profile:
-                Intent intent4 = new Intent(BusinessExecutiveDashboard.this,UserprofilePage.class);
-                startActivity(intent4);
+                FirebaseAuth authUser=FirebaseAuth.getInstance();
+                FirebaseUser UserAuth=authUser.getCurrentUser();
+                Getphnumber(UserAuth.getUid());
                 break;
             case R.id.nav_logout:
                 FirebaseAuth.getInstance().signOut();
@@ -173,6 +179,22 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
         });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    private void Getphnumber(String uid) {
+        DocumentReference df= FirebaseFirestore.getInstance().collection("Users").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String levelCHecker=documentSnapshot.getString("UserPhoneNumber");
+
+                Intent intent = new Intent(BusinessExecutiveDashboard.this, UserprofilePage.class);
+                intent.putExtra("USERID",levelCHecker);
+                startActivity(intent);
+
+            }
+        });
     }
 
 }

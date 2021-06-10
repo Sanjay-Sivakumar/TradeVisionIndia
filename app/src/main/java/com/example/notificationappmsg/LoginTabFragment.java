@@ -104,7 +104,7 @@ public class LoginTabFragment extends Fragment {
         return root;
     }
     private void CheckUserAccessLevel(String uid) {
-        DocumentReference df=fstoretab.collection("UsersProfile").document(uid);
+        DocumentReference df=fstoretab.collection("Users").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {

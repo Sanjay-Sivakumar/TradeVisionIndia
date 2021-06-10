@@ -17,16 +17,23 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -49,6 +56,11 @@ public class OrderLossEntry extends AppCompatActivity {
     DatabaseReference dtbaseorderLoss,dtlossdatesandtimes,dtpaymentloss;
 
     Button btnsubmitLoss;
+
+    String santab =new String("1");
+    String santab1 =new String("2");
+    String santab2 =new String("3");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,13 +130,15 @@ public class OrderLossEntry extends AppCompatActivity {
                     OrderLossDetails orderLossDetails=new OrderLossDetails(Order_Loss_Comp_ID,Order_Loss_oen,Order_Loss_CompanyName,Order_Loss_CompanyPhone,Order_Loss_CompanyEmail,Order_Loss_Address,CompetitorsBrand,CompetitiorsPrice,LossPrice,LossScope,Exisiting_Brand,OtherReason,getTodaysDate(),getTimewitham());
                     dtbaseorderLoss.child(Order_Loss_oen).setValue(orderLossDetails);
 
+                    Toast.makeText(OrderLossEntry.this,"Your Order Has Been Closed",Toast.LENGTH_LONG);
+
                     SendingMail();
 
-                    Toast.makeText(OrderLossEntry.this,"Your Order Has Been Closed",Toast.LENGTH_LONG);
-                    Intent intent=new Intent(OrderLossEntry.this,UserLeveloneDashboard.class);
-                    startActivity(intent);
 
 
+                    FirebaseAuth authUser=FirebaseAuth.getInstance();
+                    FirebaseUser UserAuth=authUser.getCurrentUser();
+                    CheckUserAccessLevel5(UserAuth.getUid());
                 }
             }
         });
@@ -135,9 +149,7 @@ public class OrderLossEntry extends AppCompatActivity {
 
     private void SetTheDetails(String oenNumbers, String dates, String times) {
 
-        dtpaymentloss=FirebaseDatabase.getInstance().getReference("Payment_Details").child(dates+""+times);
-
-        Toast.makeText(OrderLossEntry.this,dates+""+times,Toast.LENGTH_LONG).show();
+        dtpaymentloss=FirebaseDatabase.getInstance().getReference("Payment_Details").child(dates+""+times+""+oenNumbers);
 
         dtpaymentloss.child("netprice").setValue("-1");
 
@@ -239,5 +251,31 @@ public class OrderLossEntry extends AppCompatActivity {
     }
     private String getTimewitham(){
         return new SimpleDateFormat("hh:mm a", Locale.getDefault()).format(new Date());
+    }
+
+    private void CheckUserAccessLevel5(String uid) {
+        DocumentReference df= FirebaseFirestore.getInstance().collection("Users").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String levelCHecker=documentSnapshot.getString("UserLevel");
+
+                if(Objects.equals(levelCHecker, santab))
+                {
+                    Intent intent = new Intent(OrderLossEntry.this,ServiceEngineerDashboard.class);
+                    startActivity(intent);
+                }
+                else if(Objects.equals(levelCHecker, santab1)){
+                    Intent intent = new Intent(OrderLossEntry.this, BusinessExecutiveDashboard.class);
+                    startActivity(intent);
+                }else
+                {
+                    Intent intent = new Intent(OrderLossEntry.this, TeritoryManagerDashboard.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 }

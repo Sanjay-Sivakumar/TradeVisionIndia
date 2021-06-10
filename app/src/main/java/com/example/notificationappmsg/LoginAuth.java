@@ -80,8 +80,23 @@ public class LoginAuth extends AppCompatActivity {
                 if(task.isSuccessful()){
 
                     FirebaseUser user=auth.getCurrentUser();
-                    DocumentReference df=db.collection("UsersProfile").document(user.getUid());
-                    Toast.makeText(LoginAuth.this,user.getUid(),Toast.LENGTH_LONG).show();
+
+                    DocumentReference df1=db.collection("Users").document(user.getUid());
+
+
+                    Map<String, Object> note1 = new HashMap<>();
+                    note1.put("UserName", userNames);
+                    note1.put("UserPhoneNumber", UserPhoneNumber);
+                    note1.put("UserAddress", UserAddress);
+                    note1.put("UserEmailId", userEmailName);
+                    note1.put("UserLevel",UserLevelNumber );
+                    note1.put("UserId", UserId);
+                    df1.set(note1);
+
+
+                    DocumentReference df=db.collection("UsersProfile").document(UserPhoneNumber);
+
+
                     Map<String, Object> note = new HashMap<>();
                     note.put("UserName", userNames);
                     note.put("UserPhoneNumber", UserPhoneNumber);

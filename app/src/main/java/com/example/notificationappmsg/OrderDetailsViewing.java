@@ -32,7 +32,7 @@ public class OrderDetailsViewing extends AppCompatActivity {
     DatabaseReference databaseOrderList;
     ArrayList<String> cricketers;
 
-    public String viewOen,viewCname,viewCphone,viewCemail,viewCaddress;
+    public String viewOen,viewCname,viewCphone,viewCemail,viewCaddress,viewcompId;
 
     TextView cnamepr1,cphonepr1,cemailpr1,caddresspr1;
 
@@ -49,6 +49,7 @@ public class OrderDetailsViewing extends AppCompatActivity {
         viewCemail=CompanyID.getComPany_Email_id();
         viewCaddress=CompanyID.getComPany_Address();
         viewCphone=CompanyID.getComPany_phone_number();
+        viewcompId=companyID.getCOMPanyID();
 
 
 
@@ -111,7 +112,7 @@ public class OrderDetailsViewing extends AppCompatActivity {
 
 
 
-                   for (DataSnapshot ds : dataSnapshot.child(oen).child("listEqiupments").getChildren()) {
+                   for (DataSnapshot ds : dataSnapshot.child(viewOen+""+viewcompId).child("listEqiupments").getChildren()) {
 
                        if (ds.exists()) {
                            Cricketer crket = ds.getValue(Cricketer.class);
