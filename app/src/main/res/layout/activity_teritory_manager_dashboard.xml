@@ -78,7 +78,7 @@
                 app:layout_constraintHorizontal_bias="0.615"
                 app:layout_constraintStart_toEndOf="@+id/heading3"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/payment_details" />
+                app:srcCompat="@drawable/name_logo" />
 
 
             <LinearLayout
