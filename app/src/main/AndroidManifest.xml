@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Notificationappmsg">
-        <activity android:name=".PurposeOfVisitViewing"></activity>
+        <activity android:name=".Visit"></activity>
+        <activity android:name=".VisitOfferImageUpload" />
+        <activity android:name=".PurposeOfVisitViewing" />
         <activity android:name=".VisitDayDetails" />
         <activity android:name=".OrderCopyViewing" />
         <activity android:name=".SearchEngine" />
@@ -31,10 +33,10 @@
         <activity android:name=".OrderPhotoUpload" />
         <activity android:name=".PaymentReceipt" />
         <activity android:name=".TakingOrder" />
-        <activity android:name=".CompanySearch"></activity>
+        <activity android:name=".CompanySearch" />
         <activity android:name=".ServiceEntry" />
         <activity android:name=".ProfileImageUpload" />
-        <activity android:name=".CompanyDetailsEntering"></activity>
+        <activity android:name=".CompanyDetailsEntering" />
         <activity android:name=".ActivityCricketers" />
         <activity android:name=".PlacingOrderPlace">
             <intent-filter>
