@@ -22,9 +22,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.annotations.Nullable;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -34,6 +38,7 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class OrderPhotoUpload extends AppCompatActivity {
 
@@ -44,6 +49,10 @@ public class OrderPhotoUpload extends AppCompatActivity {
     DatabaseReference databaseorderdata;
     Uri imageUri;
     ImageView copyofpo;
+
+    String santab =new String("1");
+    String santab1 =new String("2");
+    String santab2 =new String("3");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,7 +139,9 @@ public class OrderPhotoUpload extends AppCompatActivity {
                                         public void onSuccess(Void aVoid) {
                                             pd.dismiss();
                                             Toast.makeText(OrderPhotoUpload.this, "Image is uploaded", Toast.LENGTH_LONG).show();
-                                            startActivity(new Intent(OrderPhotoUpload.this,UserLeveloneDashboard.class));
+                                            FirebaseAuth authUser=FirebaseAuth.getInstance();
+                                            FirebaseUser UserAuth=authUser.getCurrentUser();
+                                            CheckUserAccessLevel6(UserAuth.getUid());
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -172,8 +183,9 @@ public class OrderPhotoUpload extends AppCompatActivity {
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int id) {
-                Intent intent=new Intent(OrderPhotoUpload.this,UserLeveloneDashboard.class);
-                startActivity(intent);
+                FirebaseAuth authUser=FirebaseAuth.getInstance();
+                FirebaseUser UserAuth=authUser.getCurrentUser();
+                CheckUserAccessLevel6(UserAuth.getUid());
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -185,5 +197,31 @@ public class OrderPhotoUpload extends AppCompatActivity {
         });
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    private void CheckUserAccessLevel6(String uid) {
+        DocumentReference df=FirebaseFirestore.getInstance().collection("Users").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String levelCHecker=documentSnapshot.getString("UserLevel");
+
+                if(Objects.equals(levelCHecker, santab))
+                {
+                    Intent intent = new Intent(OrderPhotoUpload.this,ServiceEngineerDashboard.class);
+                    startActivity(intent);
+                }
+                else if(Objects.equals(levelCHecker, santab1)){
+                    Intent intent = new Intent(OrderPhotoUpload.this, BusinessExecutiveDashboard.class);
+                    startActivity(intent);
+                }else
+                {
+                    Intent intent = new Intent(OrderPhotoUpload.this, TeritoryManagerDashboard.class);
+                    startActivity(intent);
+                }
+
+            }
+        });
     }
 }

@@ -2,6 +2,7 @@ package com.example.notificationappmsg;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,21 +74,25 @@ public class LoginTabFragment extends Fragment {
         btntabfragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                authenticatetab.signInWithEmailAndPassword(emailtabfragment.getText().toString(),passwordtabfragment.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
+                if (!TextUtils.isEmpty(emailtabfragment.getText().toString()) && !TextUtils.isEmpty(passwordtabfragment.getText().toString())) {
+                    authenticatetab.signInWithEmailAndPassword(emailtabfragment.getText().toString(), passwordtabfragment.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
 
-                        FirebaseAuth authUser=FirebaseAuth.getInstance();
-                        FirebaseUser UserAuth=authUser.getCurrentUser();
+                            FirebaseAuth authUser = FirebaseAuth.getInstance();
+                            FirebaseUser UserAuth = authUser.getCurrentUser();
 
-                        CheckUserAccessLevel(UserAuth.getUid());
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getActivity(),"Login Failed",Toast.LENGTH_LONG).show();
-                    }
-                });
+                            CheckUserAccessLevel(UserAuth.getUid());
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getActivity(), "Login Failed", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }else{
+                    Toast.makeText(getActivity(),"Fill All details",Toast.LENGTH_LONG).show();
+                }
             }
         });
 

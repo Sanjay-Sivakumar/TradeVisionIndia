@@ -90,7 +90,7 @@ public class PlacingOrderPlace extends AppCompatActivity {
             case R.id.button_submit_list:
 
                 if(checkIfValidAndRead()){
-                    if(RequestCodeEquip.equals("1"))
+                   /* if(RequestCodeEquip.equals("1"))
                     {
                         Intent intent = new Intent(PlacingOrderPlace.this, TakingOrder.class);
                         Bundle bundle = new Bundle();
@@ -98,14 +98,20 @@ public class PlacingOrderPlace extends AppCompatActivity {
                         intent.putExtras(bundle);
                         startActivity(intent);
                     }
-                    else{
+                    else if(RequestCodeEquip.equals("2")){
                         Intent intent = new Intent(PlacingOrderPlace.this, ServiceEntryDetails.class);
                         Bundle bundle = new Bundle();
                         bundle.putSerializable("list", cricketersList);
                         intent.putExtras(bundle);
                         startActivity(intent);
+                    }else{*/
+                        Intent intent = new Intent(PlacingOrderPlace.this, VisitDayDetails.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("list", cricketersList);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
                     }
-                }
+                //}
 
                 break;
 

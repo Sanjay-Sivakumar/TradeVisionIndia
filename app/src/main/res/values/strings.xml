@@ -15,6 +15,27 @@
         <item>ON Call</item>
     </array>
 
+    <array name="district">
+        <item>Erode</item>
+        <item>Chennai</item>
+        <item>Kancheepuram</item>
+    </array>
+
+    <array name="state">
+        <item>Tamil Nadu</item>
+        <item>Others</item>
+    </array>
+
+    <array name="visitdetails">
+        <item>First</item>
+        <item>FollowUp</item>
+    </array>
+
+    <array name="purpose">
+        <item>Enquiry</item>
+        <item>Order</item>
+        <item>After Sales</item>
+    </array>
 
     <array name="quarry">
         <item>Own</item>

@@ -36,7 +36,7 @@ public class OrderDetailsViewing extends AppCompatActivity {
 
     TextView cnamepr1,cphonepr1,cemailpr1,caddresspr1;
 
-    LinearLayout linearLayoutpayment;
+    LinearLayout linearLayoutpayment,LinearLayoutOrderCopy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,7 @@ public class OrderDetailsViewing extends AppCompatActivity {
         databaseOrderList = FirebaseDatabase.getInstance().getReference("Order_Details");
         listViewOrderList = (ListView) findViewById(R.id.listViewordersview);
         listViewOrdermodel=findViewById(R.id.listVieworderlistview);
+        LinearLayoutOrderCopy=findViewById(R.id.gotoordercopy);
         cnamepr1=findViewById(R.id.textViewcompanynameprint);
         cphonepr1=findViewById(R.id.textViewcompanyphoneprint);
         cemailpr1=findViewById(R.id.textViewCompanyemailprint);
@@ -79,6 +80,15 @@ public class OrderDetailsViewing extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(OrderDetailsViewing.this,PaymentDetailsViewing.class);
                 intent.putExtra("RequestOen",viewOen);
+                startActivity(intent);
+            }
+        });
+
+        LinearLayoutOrderCopy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrderDetailsViewing.this,OrderCopyViewing.class);
+                intent.putExtra("ORDERPHOTO",viewOen);
                 startActivity(intent);
             }
         });

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PurposeOfVisitViewing">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:id="@+id/lastOfferCopy"
+                android:layout_marginStart="190dp"
+                android:focusable="true">
+
+
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Offer Given"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_goto"
+                    tools:ignore="ContentDescription" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="30dp"
+            android:layout_marginHorizontal="10dp"
+            android:background="#f1f1f1"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company Details"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"/>
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company Name"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:text="name"
+                    android:id="@+id/textViewcompanynameprint3"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company phone"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:text="phone"
+                    android:id="@+id/textViewcompanyphoneprint3"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company Email"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/textViewCompanyemailprint3"
+                    android:text="email"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Company Address"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:background="#ffffff"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginHorizontal="1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/textViewCompanyaddressprint3"
+                    android:text="address"
+                    android:background="#ffffff"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="1dp"/>
+
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Visit Details"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000"
+            android:layout_marginStart="150dp"/>
+
+        <ListView
+            android:id="@+id/listViewofferview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="1dp">
+
+        </ListView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Equipment Details"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#000"
+
+            android:layout_marginStart="120dp"/>
+
+        <ListView
+            android:id="@+id/listViewvisitequip"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="1dp">
+
+        </ListView>
+    </LinearLayout>
+
+
+</ScrollView>

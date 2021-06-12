@@ -38,6 +38,9 @@ public class CompanyDetailsList extends ArrayAdapter<CompanyDetails> {
         TextView textViewPersonDesignation = listViewItem.findViewById(R.id.textViewpersondesignation);
         TextView textViewAppliedDate =  listViewItem.findViewById(R.id.textViewapplieddate);
         TextView textViewNextVisit =  listViewItem.findViewById(R.id.textViewnextvisit);
+        TextView textViewSiteDistrict=listViewItem.findViewById(R.id.textViewsitedistrict);
+        TextView textViewSiteState=listViewItem.findViewById(R.id.textViewsitestate);
+
 
 
         CompanyDetails appointmentpatient = companyDetails.get(position);
@@ -53,6 +56,8 @@ public class CompanyDetailsList extends ArrayAdapter<CompanyDetails> {
         textViewAppliedDate.setText(appointmentpatient.getApplicationdate());
         textViewNextVisit.setText(appointmentpatient.getNextvisitdate());
 
+        textViewSiteDistrict.setText(appointmentpatient.getSiteDistrict());
+        textViewSiteState.setText(appointmentpatient.getSiteState());
 
 
         return listViewItem;

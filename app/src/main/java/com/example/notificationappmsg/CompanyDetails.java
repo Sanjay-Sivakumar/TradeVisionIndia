@@ -5,14 +5,14 @@ import com.google.firebase.database.IgnoreExtraProperties;
 public class CompanyDetails {
 
     String companyName, nameofhead,companyAddress,companyPhoneNumber,companySiteAddress,companyEmail,personName,personDesignation,personPhoneNumber,nextvisitdate,Applicationdate,ApplicationTime;
-    String companyId;
+    String companyId,SiteDistrict,SiteState;
 
 
     public CompanyDetails(){
 
     }
 
-    public CompanyDetails(String companyId,String companyName, String nameofhead, String companyAddress, String companyPhoneNumber, String companySiteAddress, String companyEmail, String personName, String personDesignation, String personPhoneNumber, String nextvisitdate,String Applicationdate,String ApplicationTime) {
+    public CompanyDetails(String companyId,String companyName, String nameofhead, String companyAddress, String companyPhoneNumber, String companySiteAddress, String companyEmail, String personName, String personDesignation, String personPhoneNumber, String nextvisitdate,String Applicationdate,String ApplicationTime,String Sitedistrict,String Sitestate) {
 
         this.companyId=companyId;
         this.companyName = companyName;
@@ -28,6 +28,8 @@ public class CompanyDetails {
         this.nextvisitdate = nextvisitdate;
         this.Applicationdate=Applicationdate;
         this.ApplicationTime=ApplicationTime;
+        this.SiteDistrict=Sitedistrict;
+        this.SiteState=Sitestate;
     }
 
     public CompanyDetails(String companyId,String companyName,String companyPhoneNumber,String companyAddress,String companyEmail)
@@ -141,5 +143,21 @@ public class CompanyDetails {
 
     public void setCompanyId(String companyId) {
         this.companyId = companyId;
+    }
+
+    public String getSiteDistrict() {
+        return SiteDistrict;
+    }
+
+    public void setSiteDistrict(String siteDistrict) {
+        SiteDistrict = siteDistrict;
+    }
+
+    public String getSiteState() {
+        return SiteState;
+    }
+
+    public void setSiteState(String siteState) {
+        SiteState = siteState;
     }
 }

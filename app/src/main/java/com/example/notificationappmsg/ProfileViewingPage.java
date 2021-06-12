@@ -144,7 +144,7 @@ public class ProfileViewingPage extends AppCompatActivity {
     }
 
     private void CheckUserAccessLevel2(String uid) {
-        DocumentReference df=FirebaseFirestore.getInstance().collection("UsersProfile").document(uid);
+        DocumentReference df=FirebaseFirestore.getInstance().collection("Users").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {

@@ -14,6 +14,8 @@
         android:layout_marginHorizontal="10dp"
         android:background="#f1f1f1">
 
+
+
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
@@ -38,7 +40,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="Company Name"
+                android:text="Visit Detail"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="#ffffff"
@@ -49,8 +51,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="companyname"
-                android:id="@+id/textViewcompanyname"
+                android:gravity="center"
+                android:id="@+id/textViewvistdetail"
+                android:text="details"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Purpose of Visit"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="tph"
+                android:id="@+id/textViewpurposeofvisit"
                 android:gravity="center"
                 android:background="#ffffff"
                 android:layout_marginEnd="1dp"
@@ -63,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="Company Phone Number"
+                android:text="Tph"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="#ffffff"
@@ -74,8 +101,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="companyphonenumber"
-                android:id="@+id/textViewcompanyphonenumber"
+                android:gravity="center"
+                android:id="@+id/textViewvisittph"
+                android:text="time"
+                android:background="#ffffff"
+                android:layout_marginRight="1dp"
+                android:layout_marginBottom="1dp"/>
+
+
+        </TableRow>
+
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="STAGE"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:layout_marginBottom="1dp"
+                android:layout_marginHorizontal="1dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="stage"
+                android:id="@+id/textViewvisitstage"
                 android:gravity="center"
                 android:background="#ffffff"
                 android:layout_marginEnd="1dp"
@@ -84,11 +137,13 @@
 
         </TableRow>
 
+
+
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="Company Email"
+                android:text="Meeting Person"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="#ffffff"
@@ -99,33 +154,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/textViewcompanyemail"
-                android:text="companyemail"
-                android:background="#ffffff"
-                android:layout_marginEnd="1dp"
-                android:layout_marginBottom="1dp"/>
-
-
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Company Address"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="#ffffff"
-                android:layout_marginBottom="1dp"
-                android:layout_marginHorizontal="1dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:text="address"
-                android:id="@+id/textViewcompanyaddresss"
+                android:text="person"
+                android:id="@+id/textViewmeetingperson"
                 android:gravity="center"
                 android:background="#ffffff"
                 android:layout_marginRight="1dp"
@@ -138,7 +168,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="Company Site Address"
+                android:text="Value of Offer"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="#ffffff"
@@ -149,8 +179,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="site address"
-                android:id="@+id/textViewsiteaddress"
+                android:text="valueofoffer"
+                android:id="@+id/textViewvalueofoffer"
                 android:gravity="center"
                 android:background="#ffffff"
                 android:layout_marginRight="1dp"
@@ -163,7 +193,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="Company Site District"
+                android:text="Remarks"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="#ffffff"
@@ -174,35 +204,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="site address"
-                android:id="@+id/textViewsitedistrict"
                 android:gravity="center"
-                android:background="#ffffff"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"/>
-
-
-        </TableRow>
-
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Company Site State"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="#ffffff"
-                android:layout_marginBottom="1dp"
-                android:layout_marginHorizontal="1dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:text="site address"
-                android:id="@+id/textViewsitestate"
-                android:gravity="center"
+                android:id="@+id/textViewVisitremarks"
+                android:text="Basicprice"
                 android:background="#ffffff"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"/>
@@ -214,7 +218,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="Name of Head"
+                android:text="Accompained Person"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="#ffffff"
@@ -225,33 +229,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/textViewnameofthehead"
-                android:text="Name of the head"
-                android:background="#ffffff"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"/>
-
-
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Person Name"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="#ffffff"
-                android:layout_marginBottom="1dp"
-                android:layout_marginHorizontal="1dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:text="Person Name"
-                android:id="@+id/textViewpersonname"
+                android:text="person"
+                android:id="@+id/textViewaccompainedperson"
                 android:gravity="center"
                 android:background="#ffffff"
                 android:layout_marginRight="1dp"
@@ -264,7 +243,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="Person Phone Number"
+                android:text="Last visit Date"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="#ffffff"
@@ -275,8 +254,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="personphonenumber"
-                android:id="@+id/textViewpersonphonenumber"
+                android:text="date"
+                android:id="@+id/textViewlastvisitdate"
                 android:gravity="center"
                 android:background="#ffffff"
                 android:layout_marginRight="1dp"
@@ -289,7 +268,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:text="Person Designation"
+                android:text="Last visit Time"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:background="#ffffff"
@@ -301,60 +280,8 @@
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:id="@+id/textViewpersondesignation"
-                android:text="persondesignation"
-                android:background="#ffffff"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"/>
-
-
-        </TableRow>
-
-
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Applied date"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="#ffffff"
-                android:layout_marginBottom="1dp"
-                android:layout_marginHorizontal="1dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/textViewapplieddate"
-                android:text="appointmentdate"
-                android:background="#ffffff"
-                android:layout_marginRight="1dp"
-                android:layout_marginBottom="1dp"/>
-
-
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Next Visit"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:background="#ffffff"
-                android:layout_marginBottom="1dp"
-                android:layout_marginHorizontal="1dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/textViewnextvisit"
-                android:text="nextvisit"
+                android:id="@+id/textViewlastvisittime"
+                android:text="time"
                 android:background="#ffffff"
                 android:layout_marginRight="1dp"
                 android:layout_marginBottom="1dp"/>
@@ -363,5 +290,7 @@
         </TableRow>
 
     </TableLayout>
+
+
 
 </LinearLayout>

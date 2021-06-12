@@ -156,6 +156,7 @@ public class SearchEngine extends AppCompatActivity {
                         CompanyID.setComPany_Email_id(models.getCompanyEmail());
                         CompanyID.setComPany_phone_number(models.getCompanyPhone());
                         CompanyID.setComPany_Address(models.getCompayAddress());
+                        CompanyID.setComPany_Name(models.getCompanyName());
 
                     }
 

@@ -59,8 +59,6 @@ public class OrderLossEntry extends AppCompatActivity {
 
     String santab =new String("1");
     String santab1 =new String("2");
-    String santab2 =new String("3");
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,13 +127,6 @@ public class OrderLossEntry extends AppCompatActivity {
 
                     OrderLossDetails orderLossDetails=new OrderLossDetails(Order_Loss_Comp_ID,Order_Loss_oen,Order_Loss_CompanyName,Order_Loss_CompanyPhone,Order_Loss_CompanyEmail,Order_Loss_Address,CompetitorsBrand,CompetitiorsPrice,LossPrice,LossScope,Exisiting_Brand,OtherReason,getTodaysDate(),getTimewitham());
                     dtbaseorderLoss.child(Order_Loss_oen).setValue(orderLossDetails);
-
-                    Toast.makeText(OrderLossEntry.this,"Your Order Has Been Closed",Toast.LENGTH_LONG);
-
-                    SendingMail();
-
-
-
                     FirebaseAuth authUser=FirebaseAuth.getInstance();
                     FirebaseUser UserAuth=authUser.getCurrentUser();
                     CheckUserAccessLevel5(UserAuth.getUid());
@@ -156,95 +147,6 @@ public class OrderLossEntry extends AppCompatActivity {
 
     }
 
-    private void SetAllTheValues() {
-    }
-
-    private void SendingMail() {
-
-        String sEmail, sPassword, rEmail;
-        sEmail = "ssannthoshkumar@gmail.com";
-        sPassword = "Santhosh*2";
-
-        rEmail = Order_Loss_CompanyEmail.trim();
-
-        Properties properties = new Properties();
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.port", "587");
-
-        Session session = Session.getInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(sEmail, sPassword);
-            }
-        });
-
-        try {
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(sEmail));
-
-            message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse(rEmail.trim()));
-
-            message.setSubject("Order Loss");
-
-            message.setText("Your Order Number "+Order_Loss_oen+" Has been droped.");
-
-            new SendMail().execute(message);
-
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private class SendMail extends AsyncTask<Message, String, String> {
-
-        private ProgressDialog progressDialog;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            progressDialog = ProgressDialog.show(OrderLossEntry.this
-                    , "Please Wait", "Sending Mail...", true, false);
-        }
-
-        @Override
-        protected String doInBackground(Message... messages) {
-            try {
-                Transport.send(messages[0]);
-                return "Success";
-            } catch (MessagingException e) {
-                e.printStackTrace();
-                return "Error";
-            }
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            progressDialog.dismiss();
-            if (s.equals("Success")) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(OrderLossEntry.this);
-                builder.setCancelable(false);
-                builder.setTitle(Html.fromHtml("<font color='#509324'>Success</font>"));
-                builder.setMessage("Mail send successfully");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-
-                builder.show();
-            } else {
-                Toast.makeText(getApplicationContext()
-                        , "Something went wrong ?", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 
     private String getTodaysDate(){
         return new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());

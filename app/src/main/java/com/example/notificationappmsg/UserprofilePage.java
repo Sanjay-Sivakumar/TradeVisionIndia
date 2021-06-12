@@ -33,8 +33,7 @@ public class UserprofilePage extends AppCompatActivity {
     private DocumentReference objectDocumentReference;
     private DocumentReference profileDocumentReference;
     private ImageView imagedownloaded;
-    public String linkStorer;
-
+    
 
     FirebaseFirestore fstoredit;
     private LinearLayout editprofilechecker;
@@ -50,8 +49,7 @@ public class UserprofilePage extends AppCompatActivity {
 
 
          USER_ID=getIntent().getStringExtra("USERID");
-
-         Toast.makeText(UserprofilePage.this,USER_ID,Toast.LENGTH_LONG).show();
+         
 
         fullName=findViewById(R.id.fullnameview);
         phoneNumber=findViewById(R.id.phonenumberview);
