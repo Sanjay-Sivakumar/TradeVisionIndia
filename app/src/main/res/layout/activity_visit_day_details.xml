@@ -275,15 +275,31 @@
             android:textColorHint="#000"
             android:layout_marginTop="10dp"
             android:layout_marginStart="140dp"/>
-
-
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Scan offer copy"
+            android:background="@drawable/ripple_effect"
+            android:layout_marginTop="50dp"
+            android:textColor="#000"
+            android:layout_marginStart="170dp"
+            />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="View offer copy"
+            android:background="@drawable/ripple_effect"
+            android:layout_marginTop="50dp"
+            android:textColor="#000"
+            android:layout_marginStart="170dp"
+            />
         <Button
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:text="SUBMIT"
             android:background="@drawable/ripple_effect"
             android:id="@+id/submitvisitinput"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:textColor="#000"
             android:layout_marginStart="170dp"
             />

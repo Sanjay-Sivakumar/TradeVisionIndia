@@ -31,7 +31,7 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
     DrawerLayout drawerLayout2;
     NavigationView navigationView2;
     Toolbar toolbar2;
-    ImageView image0,image4,image5,image6,image7,image8,image9;
+    ImageView image0,image4,image5,image6,image7,image8,image9,image20,image21;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +47,8 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
         image9 = findViewById(R.id.imageView9);
         image0 = findViewById(R.id.imageView0);
         image4 = findViewById(R.id.imageView4);
+        image20 = findViewById(R.id.imageView20);
+        image21 = findViewById(R.id.imageView21);
 
 
 
@@ -98,6 +100,22 @@ public class BusinessExecutiveDashboard extends AppCompatActivity implements Nav
             }
         });
         image9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "4");
+                BusinessExecutiveDashboard.this.startActivity(myIntent);
+            }
+        });
+        image20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SearchEngine.class);
+                myIntent.putExtra("RequestCode", "3");
+                BusinessExecutiveDashboard.this.startActivity(myIntent);
+            }
+        });
+        image21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(BusinessExecutiveDashboard.this, SearchEngine.class);

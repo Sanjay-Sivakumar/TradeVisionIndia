@@ -31,7 +31,7 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
      DrawerLayout drawerLayout3;
      NavigationView navigationView3;
      Toolbar toolbar3;
-     ImageView image10,image11,image12,image13,image14,image15,image16,image17,image18,image19;
+     ImageView image10,image11,image12,image13,image14,image15,image16,image17,image18,image19,image22,image23;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +50,8 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
         image12 = findViewById(R.id.imageView12);
         image13 = findViewById(R.id.imageView13);
         image19 = findViewById(R.id.imageView19);
+        image23 = findViewById(R.id.imageView23);
+        image22 = findViewById(R.id.imageView22);
 
 
 
@@ -126,6 +128,22 @@ public class TeritoryManagerDashboard extends AppCompatActivity implements Navig
         });
 
         image19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, LoginAuth.class);
+                TeritoryManagerDashboard.this.startActivity(myIntent);
+            }
+        });
+        image22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(TeritoryManagerDashboard.this, CompanySearch.class);
+                myIntent.putExtra("RequestCode", "1");
+                TeritoryManagerDashboard.this.startActivity(myIntent);
+            }
+        });
+
+        image23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(TeritoryManagerDashboard.this, LoginAuth.class);
