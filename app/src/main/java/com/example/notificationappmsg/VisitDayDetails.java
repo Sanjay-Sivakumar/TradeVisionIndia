@@ -223,7 +223,7 @@ public class VisitDayDetails extends AppCompatActivity {
                     LastVisitDetails busno = ds.getValue(LastVisitDetails.class);
                     String lastvisitdetail=busno.getVisitRemarks();
                     String lastvisitdate=busno.getDateVisited();
-                    String seter="Last visited date was "+lastvisitdate+"\n The Remark was "+lastvisitdetail;
+                    String seter="Last visited date was "+lastvisitdate+"\n The Remark given was "+lastvisitdetail;
                     lastvisitdetails.setText(seter);
 
                 }
