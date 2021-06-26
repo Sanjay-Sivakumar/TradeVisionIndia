@@ -19,11 +19,7 @@
         <activity android:name=".SearchEngine" />
         <activity android:name=".BusinessExecutiveDashboard" />
         <activity android:name=".TeritoryManagerDashboard">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ServiceEngineerDashboard" />
         <activity android:name=".ServiceSearchEngine" />
@@ -39,11 +35,6 @@
         <activity android:name=".CompanyDetailsEntering" />
         <activity android:name=".ActivityCricketers" />
         <activity android:name=".PlacingOrderPlace">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ServiceDashboardPage" />
         <activity android:name=".UserLeveloneDashboard" />
@@ -51,7 +42,13 @@
         <activity android:name=".OrderLossEntry" />
         <activity android:name=".ServiceEntryDetails" />
         <activity android:name=".OrderLossViewing" />
-        <activity android:name=".UserSearch" />
+        <activity android:name=".UserSearch" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ProfileEditingAdminPage" />
         <activity android:name=".ProfileViewingPage" />
         <activity android:name=".UserprofilePage" />

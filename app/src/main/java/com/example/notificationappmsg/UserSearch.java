@@ -26,6 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class UserSearch extends AppCompatActivity {
     String USERID;
 
     List<model> modelList;
+    public int k=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,12 +105,14 @@ public class UserSearch extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists())
                 {
+
+                    model1[] model1s= new model1[100];
                     ArrayList<String> listtuser=new ArrayList<>();
                     for(DataSnapshot ds:snapshot.getChildren())
                     {
-                        model models= new model(ds.child("namedb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("purldb").getValue(String.class));
-                        listtuser.add(models.getNamedb()+"\n"+models.getPhnodb()+"\n"+models.getEmaildb());
-                        USERID=models.getPhnodb();
+                         model1s[k]= new model1(ds.child("namedb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("purldb").getValue(String.class));
+                        listtuser.add(model1s[k].getNamedb()+"\n"+model1s[k].getPhnodb()+"\n"+model1s[k].getEmaildb());
+                        k++;
                     }
 
                     ArrayAdapter AAdapter=new ArrayAdapter(UserSearch.this, android.R.layout.simple_list_item_1,listtuser);
@@ -117,6 +121,7 @@ public class UserSearch extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                            USERID = model1s[position].getPhnodb();
                             Intent intent = new Intent(UserSearch.this,UserprofilePage.class);
                             intent.putExtra("USERID", USERID);
                             startActivity(intent);
