@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -148,7 +149,7 @@ public class TakingOrder extends AppCompatActivity {
                             if (snapshot.exists()) {
 
                                 int ids = (int) snapshot.getChildrenCount();
-                                DateFormat df1=new SimpleDateFormat("yy");
+                                @SuppressLint("SimpleDateFormat") DateFormat df1=new SimpleDateFormat("yy");
                                 String year=df1.format(Calendar.getInstance().getTime());
                                 Oen_Numbers=year+"OEN"+ids;
                                 oenNumber.setText(Oen_Numbers);

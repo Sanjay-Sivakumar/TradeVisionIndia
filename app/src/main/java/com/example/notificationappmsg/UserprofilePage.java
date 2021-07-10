@@ -109,6 +109,7 @@ public class UserprofilePage extends AppCompatActivity {
 
                 FirebaseAuth authUser=FirebaseAuth.getInstance();
                 FirebaseUser UserAuth=authUser.getCurrentUser();
+                if (UserAuth == null) throw new AssertionError();
                 CheckUserAccessLevelEditing(UserAuth.getUid());
 
             }
