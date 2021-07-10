@@ -109,7 +109,7 @@ public class OrderDetailsViewing extends AppCompatActivity {
                 orderEntryDetailList.clear();
                 cricketers.clear();
 
-                ArrayAdapter<String> adapter=new ArrayAdapter<String>(OrderDetailsViewing.this,android.R.layout.simple_list_item_1,cricketers);
+                ArrayAdapter<String> adapter=new ArrayAdapter<String>(OrderDetailsViewing.this,R.layout.row_cricketer,cricketers);
                 listViewOrdermodel.setAdapter(adapter);
 
 
@@ -131,6 +131,7 @@ public class OrderDetailsViewing extends AppCompatActivity {
                            String modelnumber=crket.getModelNumber();
                            cricketers.add(modelname);
                            cricketers.add(modelnumber);
+
 
                        } else {
                            Toast.makeText(OrderDetailsViewing.this, "Snapshot not found ", Toast.LENGTH_LONG).show();
