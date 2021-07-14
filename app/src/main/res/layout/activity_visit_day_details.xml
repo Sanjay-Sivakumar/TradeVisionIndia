@@ -102,7 +102,7 @@
                             android:inputType="date"
                             android:id="@+id/visittime"
                             android:textColor="#000"
-                            android:text="12/07/2002"
+                            android:text="12/07/2021"
                             android:textSize="16sp"/>
 
                     </LinearLayout>
