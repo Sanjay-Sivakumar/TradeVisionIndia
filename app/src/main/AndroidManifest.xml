@@ -11,9 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Notificationappmsg">
-        <activity android:name=".DailyTaskDetails">
+        <activity android:name=".Alarm_manager">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".DailyTaskDetails"/>
         <activity android:name=".Visit" />
         <activity android:name=".VisitOfferImageUpload" />
         <activity android:name=".PurposeOfVisitViewing" />
@@ -21,7 +26,7 @@
         <activity android:name=".OrderCopyViewing" />
         <activity android:name=".SearchEngine" />
         <activity android:name=".BusinessExecutiveDashboard" />
-        <activity android:name=".TeritoryManagerDashboard"></activity>
+        <activity android:name=".TeritoryManagerDashboard" />
         <activity android:name=".ServiceEngineerDashboard" />
         <activity android:name=".ServiceSearchEngine" />
         <activity android:name=".SecondActivity" />
@@ -35,20 +40,14 @@
         <activity android:name=".ProfileImageUpload" />
         <activity android:name=".CompanyDetailsEntering" />
         <activity android:name=".ActivityCricketers" />
-        <activity android:name=".PlacingOrderPlace"></activity>
+        <activity android:name=".PlacingOrderPlace" />
         <activity android:name=".ServiceDashboardPage" />
         <activity android:name=".UserLeveloneDashboard" />
         <activity android:name=".PaymentDetailsViewing" />
         <activity android:name=".OrderLossEntry" />
         <activity android:name=".ServiceEntryDetails" />
         <activity android:name=".OrderLossViewing" />
-        <activity android:name=".UserSearch">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".UserSearch"/>
         <activity android:name=".ProfileEditingAdminPage" />
         <activity android:name=".ProfileViewingPage" />
         <activity android:name=".UserprofilePage" />
@@ -58,6 +57,8 @@
         <activity android:name=".LoginAuth" />
         <activity android:name=".IntroActivity" />
         <activity android:name=".MainActivity" />
+
+        <receiver android:name=".RemainderBroadcast"/>
 
         <meta-data
             android:name="preloaded_fonts"
