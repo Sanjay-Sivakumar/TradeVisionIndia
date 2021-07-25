@@ -18,6 +18,6 @@ public class RemainderBroadcast extends BroadcastReceiver{
 
         NotificationManagerCompat notificationManager=NotificationManagerCompat.from(context);
 
-        notificationManager.notify(200, builder.build());
+        notificationManager.notify(300, builder.build());
     }
 }

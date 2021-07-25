@@ -32,7 +32,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="USER ID"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -52,7 +53,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
-                    android:layout_marginBottom="10dp">
+                    android:layout_marginBottom="10dp"
+                    tools:ignore="HardcodedText">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -68,7 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Full Name"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -83,7 +86,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -94,26 +98,34 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Work Position"
-                android:layout_marginBottom="10dp">
-
-                <com.google.android.material.textfield.TextInputEditText
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_workpositionicon"
-                    android:drawablePadding="10dp"
-                    android:id="@+id/createuserworkposition"/>
+                    android:hint="Working Position"
+                    android:layout_marginBottom="10dp"
+                    tools:ignore="HardcodedText">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_locationicon"
+                        android:drawablePadding="10dp"
+                        android:id="@+id/createuserworkpositon"
+                      />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="User Level"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -124,23 +136,24 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Working Zone"
-                android:layout_marginBottom="10dp">
-
-                <com.google.android.material.textfield.TextInputEditText
+                <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_locationicon"
+                    android:layout_marginBottom="10dp"
+                    android:drawableStart="@drawable/ic_workpositionicon"
                     android:drawablePadding="10dp"
                     android:id="@+id/createuserworkzone"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:drawableStart="@drawable/ic_workpositionicon"
+                    android:drawablePadding="10dp"
+                    android:id="@+id/createuserunderteritory"/>
 
-            <com.google.android.material.textfield.TextInputLayout
+
+                <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contact Email"

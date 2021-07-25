@@ -52,5 +52,15 @@
         <item>OEN_NUMBER</item>
     </array>
 
+    <array name="Zone">
+    <item>Erode</item>
+    <item>Kpm</item>
+        <item>Chennai</item>
+</array>
 
+    <array name="Teritory">
+        <item>T1</item>
+        <item>T2</item>
+        <item>T3</item>
+    </array>
 </resources>

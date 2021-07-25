@@ -10,17 +10,25 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class UserSearch extends AppCompatActivity {
@@ -70,8 +78,32 @@ public class UserSearch extends AppCompatActivity {
         {
             for(DataSnapshot ds:snapshot.getChildren())
             {
-                String Fname=ds.child("namedb").getValue(String.class);
-                names.add(Fname);
+                final int[] flagUser = {0};
+                FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+                DocumentReference df= FirebaseFirestore.getInstance().collection("Users").document(user.getUid());
+                df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+
+                        String WZ1=documentSnapshot.getString("UserWorkZone");
+                        if (Objects.equals(WZ1, ds.child("workZone1").getValue(String.class))) {
+                            flagUser[0] =1;
+                            Toast.makeText(UserSearch.this,documentSnapshot.getString("UserWorkZone")+"\n"+ds.child("namedb").getValue(String.class),Toast.LENGTH_LONG).show();
+                        }
+                        if(flagUser[0] ==1) {
+                            String Fname = ds.child("namedb").getValue(String.class);
+                            names.add(Fname);
+                            Toast.makeText(UserSearch.this,"Adding data",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull @NotNull Exception e) {
+                        Toast.makeText(UserSearch.this,"Can't Get Details 1",Toast.LENGTH_LONG).show();
+                    }
+                });
+
             }
             ArrayAdapter<String> Aadapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,names);
             txtsearch.setAdapter(Aadapter);
