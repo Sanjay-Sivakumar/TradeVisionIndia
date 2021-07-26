@@ -53,10 +53,10 @@
     </array>
 
     <array name="Zone">
-    <item>Erode</item>
-    <item>Kpm</item>
+        <item>Erode</item>
+        <item>Kpm</item>
         <item>Chennai</item>
-</array>
+    </array>
 
     <array name="Teritory">
         <item>T1</item>

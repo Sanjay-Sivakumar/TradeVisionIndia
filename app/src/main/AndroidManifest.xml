@@ -11,11 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Notificationappmsg">
-        <activity android:name=".NotifyManager">
-        </activity>
-        <activity android:name=".Alarm_manager">
-
-        </activity>
+        <activity android:name=".MyTeamPage"></activity>
+        <activity android:name=".NotifyManager"></activity>
+        <activity android:name=".Alarm_manager"></activity>
         <activity android:name=".DailyTaskDetails" />
         <activity android:name=".Visit" />
         <activity android:name=".VisitOfferImageUpload" />
@@ -24,9 +22,7 @@
         <activity android:name=".OrderCopyViewing" />
         <activity android:name=".SearchEngine" />
         <activity android:name=".BusinessExecutiveDashboard" />
-        <activity android:name=".TeritoryManagerDashboard" >
-
-        </activity>
+        <activity android:name=".TeritoryManagerDashboard"></activity>
         <activity android:name=".ServiceEngineerDashboard" />
         <activity android:name=".ServiceSearchEngine" />
         <activity android:name=".SecondActivity" />
@@ -51,13 +47,12 @@
         <activity android:name=".ProfileEditingAdminPage" />
         <activity android:name=".ProfileViewingPage" />
         <activity android:name=".UserprofilePage" />
-        <activity android:name=".LoginPage" >
+        <activity android:name=".LoginPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".AdminDashborad" />
         <activity android:name=".RegistrationPage" />

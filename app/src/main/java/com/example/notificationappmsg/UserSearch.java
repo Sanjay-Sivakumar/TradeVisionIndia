@@ -78,7 +78,6 @@ public class UserSearch extends AppCompatActivity {
         {
             for(DataSnapshot ds:snapshot.getChildren())
             {
-                final int[] flagUser = {0};
                 FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
                 DocumentReference df= FirebaseFirestore.getInstance().collection("Users").document(user.getUid());
                 df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -88,13 +87,8 @@ public class UserSearch extends AppCompatActivity {
 
                         String WZ1=documentSnapshot.getString("UserWorkZone");
                         if (Objects.equals(WZ1, ds.child("workZone1").getValue(String.class))) {
-                            flagUser[0] =1;
-                            Toast.makeText(UserSearch.this,documentSnapshot.getString("UserWorkZone")+"\n"+ds.child("namedb").getValue(String.class),Toast.LENGTH_LONG).show();
-                        }
-                        if(flagUser[0] ==1) {
                             String Fname = ds.child("namedb").getValue(String.class);
                             names.add(Fname);
-                            Toast.makeText(UserSearch.this,"Adding data",Toast.LENGTH_LONG).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
