@@ -18,15 +18,17 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="FIELDS"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="FILLED"
                 android:textStyle="bold"
                 android:layout_weight="1"
@@ -38,8 +40,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="OEN ID"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -48,8 +51,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewoenidloss"
@@ -63,8 +67,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company Name"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -73,8 +78,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="companyname"
                 android:id="@+id/textViewcompanynameloss"
@@ -88,8 +94,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company phone"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -98,8 +105,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="companyPhone"
                 android:id="@+id/textViewcompanyphonenloss"
@@ -113,8 +121,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company Email"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -123,8 +132,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewcompanyemailloss"
@@ -138,8 +148,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Competitors Price"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -148,8 +159,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="price"
                 android:id="@+id/textViewpriceloss"
@@ -163,8 +175,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Competitors Brand"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -173,8 +186,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="brand"
                 android:id="@+id/textViewbrandloss"
@@ -188,8 +202,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Existing Brand"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -198,8 +213,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewexitingbrandloss"
@@ -213,8 +229,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Price"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -223,8 +240,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="lossprice"
                 android:id="@+id/textViewlossprice"
@@ -238,8 +256,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Scope"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -248,8 +267,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="lossscope"
                 android:id="@+id/textViewlossscope"
@@ -263,8 +283,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Other Reason"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -273,8 +294,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewotherReason"
@@ -290,8 +312,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Order Loss Date"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -300,8 +323,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textVieworderlossdate"
@@ -315,8 +339,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Order Loss Time"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -325,8 +350,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewlosstime"

@@ -18,15 +18,17 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="FIELDS"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="FILLED"
                 android:textStyle="bold"
                 android:layout_weight="1"
@@ -38,8 +40,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="OEN ID"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -48,8 +51,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewoenidpayment"
@@ -63,8 +67,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Net Price"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -73,8 +78,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="netprice"
                 android:id="@+id/textViewnetpricepayment"
@@ -88,8 +94,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Amount Paid On that Day"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -98,8 +105,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="amountpaid"
                 android:id="@+id/textViewamountpaidpayment"
@@ -113,8 +121,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Cheque/RTGS"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -123,8 +132,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewchequedetailspayment"
@@ -138,8 +148,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Payment Done Date"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -148,8 +159,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="date"
                 android:id="@+id/textViewpaymentdate"
@@ -163,8 +175,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Payment done Time"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -173,8 +186,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="donetime"
                 android:id="@+id/textViewpaymenttime"

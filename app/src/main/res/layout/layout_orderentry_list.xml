@@ -18,15 +18,17 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="FIELDS"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="FILLED"
                 android:textStyle="bold"
                 android:layout_weight="1"
@@ -38,8 +40,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="OEN ID"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -48,8 +51,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewoenid"
@@ -63,8 +67,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="TPH"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -73,8 +78,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="ordertph"
                 android:id="@+id/textViewordertph"
@@ -88,8 +94,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="STAGE"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -98,8 +105,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="orderstage"
                 android:id="@+id/textVieworderstage"
@@ -113,8 +121,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Washing"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -123,8 +132,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewwashing"
@@ -138,8 +148,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="TPC NAME"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -148,8 +159,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="address"
                 android:id="@+id/textViewtpcname"
@@ -163,8 +175,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="TPC AMOUNT"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -173,8 +186,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="tpcamount"
                 android:id="@+id/textViewtpcamount"
@@ -188,8 +202,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="BASIC PRICE"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -198,8 +213,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewbasicprice"
@@ -213,8 +229,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="TRANSPORTATION PRICE"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -223,8 +240,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="transportationprice"
                 android:id="@+id/textViewtransportprice"
@@ -238,8 +256,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="GST AMOUNT"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -248,8 +267,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="gstamount"
                 android:id="@+id/textViewgstamount"
@@ -263,8 +283,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="TCS AMOUNT"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -273,8 +294,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewtcsamountview"
@@ -290,8 +312,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Advance Pay"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -300,8 +323,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewadvancepay"
@@ -315,8 +339,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="TOTAL PRICE"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -325,8 +350,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewtotalprice"
@@ -343,8 +369,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="NET PRICE"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -353,8 +380,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewnetpriceview"
@@ -368,8 +396,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="CHEQUE/RTGS"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -378,8 +407,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewchequedetails"
@@ -393,8 +423,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="REMARKS"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -403,8 +434,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textVieworderremarks"
@@ -419,8 +451,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="ORDERED DATE"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -429,8 +462,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewordereddate"
@@ -444,8 +478,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="ORDERED TIME"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -454,8 +489,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewordertime"

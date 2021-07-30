@@ -11,13 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Notificationappmsg" >
-        <activity android:name=".AlarmNotification" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".AlarmNotification" />
         <activity android:name=".Alarm_manager"/>
         <activity android:name=".DailyTaskDetails" />
         <activity android:name=".Visit" />
@@ -26,7 +20,12 @@
         <activity android:name=".VisitDayDetails" />
         <activity android:name=".OrderCopyViewing" />
         <activity android:name=".SearchEngine" />
-        <activity android:name=".BusinessExecutiveDashboard" />
+        <activity android:name=".BusinessExecutiveDashboard" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".TeritoryManagerDashboard" />
         <activity android:name=".ServiceEngineerDashboard" />
         <activity android:name=".ServiceSearchEngine" />
