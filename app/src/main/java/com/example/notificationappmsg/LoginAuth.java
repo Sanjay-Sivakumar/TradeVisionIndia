@@ -1,8 +1,10 @@
-package com.example.notificationappmsg;
+ package com.example.notificationappmsg;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -90,78 +92,32 @@ public class LoginAuth extends AppCompatActivity {
                         &&!TextUtils.isEmpty(loginuserlevel.getText().toString())&&!TextUtils.isEmpty(loginphonenumber.getText().toString())
                         &&!TextUtils.isEmpty(loginuseraddress.getText().toString())&&!TextUtils.isEmpty(loginuserid.getText().toString())
                 &&!TextUtils.isEmpty(loginworkposition.getText().toString())&&!TextUtils.isEmpty(loginworkzone.getSelectedItem().toString())&&!TextUtils.isEmpty(loginworkunderteritory.getSelectedItem().toString()))
-                validate(loginemail.getText().toString(), loginpassword.getText().toString(),loginname.getText().toString(),loginuserlevel.getText().toString(),loginphonenumber.getText().toString(),loginuseraddress.getText().toString(),loginworkposition.getText().toString(),loginworkzone.getSelectedItem().toString(),loginuserid.getText().toString(),loginworkunderteritory.getSelectedItem().toString());
+                ShowPopUpConfirmation(loginemail.getText().toString(), loginpassword.getText().toString(),loginname.getText().toString(),loginuserlevel.getText().toString(),loginphonenumber.getText().toString(),loginuseraddress.getText().toString(),loginworkposition.getText().toString(),loginworkzone.getSelectedItem().toString(),loginuserid.getText().toString(),loginworkunderteritory.getSelectedItem().toString());
 
             }
         });
 
     }
-
-    private void validate(String userEmailName, String userPassword,String userNames,String UserLevelNumber,String UserPhoneNumber,String UserAddress,String UserWorkPosition,String UserWorkZone,String UserId,String UserUnderTeritory) {
-
-        Toast.makeText(LoginAuth.this,UserWorkZone+"\n"+UserUnderTeritory,Toast.LENGTH_LONG).show();
-        auth.createUserWithEmailAndPassword(userEmailName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void ShowPopUpConfirmation(String userEmailName, String userPassword,String userNames,String UserLevelNumber,String UserPhoneNumber,String UserAddress,String UserWorkPosition,String UserWorkZone,String UserId,String UserUnderTeritory)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginAuth.this);
+        builder.setMessage("Please Confirm That You Entered Details Is Correct");
+        builder.setCancelable(true);
+        builder.setPositiveButton("CONFIRM", new DialogInterface.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-
-                    FirebaseUser user=auth.getCurrentUser();
-                    assert user != null;
-                    DocumentReference df1=db.collection("Users").document(user.getUid());
-
-
-                    Map<String, Object> note1 = new HashMap<>();
-                    note1.put("UserName", userNames);
-                    note1.put("UserPhoneNumber", UserPhoneNumber);
-                    note1.put("UserAddress", UserAddress);
-                    note1.put("UserEmailId", userEmailName);
-                    note1.put("UserLevel",UserLevelNumber );
-                    note1.put("UserId", UserId);
-                    note1.put("UserWorkZone",UserWorkZone);
-                    note1.put("UserWorkUnderTeritory",UserUnderTeritory);
-                    df1.set(note1);
-
-
-                    DocumentReference df=db.collection("UsersProfile").document(UserPhoneNumber);
-
-
-                    Map<String, Object> note = new HashMap<>();
-                    note.put("UserName", userNames);
-                    note.put("UserPhoneNumber", UserPhoneNumber);
-                    note.put("UserAddress", UserAddress);
-                    note.put("UserEmailId", userEmailName);
-                    note.put("UserCurrentPosition", UserWorkPosition);
-                    note.put("UserWorkingZone", UserWorkZone);
-                    note.put("UserWorkUnderTeritory",UserUnderTeritory);
-                    note.put("UserLevel",UserLevelNumber );
-                    note.put("UserId", UserId);
-                    df.set(note, SetOptions.merge())
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void aVoid) {
-                            Toast.makeText(LoginAuth.this, "Profile Created", Toast.LENGTH_SHORT).show();
-                            Intent intent =new Intent(LoginAuth.this,ProfileImageUpload.class);
-                            intent.putExtra("userName",userNames);
-                            intent.putExtra("UserPhone",UserPhoneNumber);
-                            intent.putExtra("userEmail",userEmailName);
-                            intent.putExtra("userWorkZone",UserWorkZone);
-                            intent.putExtra("userWorkUnderTeritory",UserUnderTeritory);
-                            startActivity(intent);
-                        }
-                    })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Toast.makeText(LoginAuth.this, "Error!", Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                }else{
-                    Toast.makeText(LoginAuth.this, "Creation of User Failed", Toast.LENGTH_SHORT).show();
-
-                }
+            public void onClick(DialogInterface dialog, int id) {
+                
             }
-        });}
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.cancel();
 
-
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 
 }

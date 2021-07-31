@@ -2,7 +2,6 @@ package com.example.notificationappmsg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,7 +14,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +33,7 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.UUID;
 
-@SuppressLint("UseSwitchCompatOrMaterialCode")
+
 public class CompanyDetailsEntering extends AppCompatActivity {
 
 
@@ -44,9 +42,8 @@ public class CompanyDetailsEntering extends AppCompatActivity {
     Button btnvisitinput;
     private DatabaseReference dtrefcompany;
     TextView inputDate,inputTime;
-    String santab =new String("1");
-    String santab1 =new String("2");
-    String santab2 =new String("3");
+    String santab ="1";
+    String santab1 ="2";
 
     private static final String TAG = "Next Visit";
 

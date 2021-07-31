@@ -3,11 +3,17 @@ package com.example.notificationappmsg;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -36,7 +42,7 @@ public class UserSearch extends AppCompatActivity {
     DatabaseReference userRef;
     private ListView listView;
     private AutoCompleteTextView txtsearch;
-    String USERID;
+    String UserPhno,UserNam,UserPos;
 
     List<model> modelList;
     public int k=0;
@@ -45,6 +51,8 @@ public class UserSearch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_search);
+
+
 
         userRef=FirebaseDatabase.getInstance().getReference("UserData");
         listView= findViewById(R.id.usersearchlist);
@@ -94,7 +102,7 @@ public class UserSearch extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull @NotNull Exception e) {
-                        Toast.makeText(UserSearch.this,"Can't Get Details 1",Toast.LENGTH_LONG).show();
+                        Toast.makeText(UserSearch.this,"Can't Get Details",Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -123,12 +131,12 @@ public class UserSearch extends AppCompatActivity {
                 if(snapshot.exists())
                 {
 
-                    model1[] model1s= new model1[100];
+                    model[] models= new model[100];
                     ArrayList<String> listtuser=new ArrayList<>();
                     for(DataSnapshot ds:snapshot.getChildren())
                     {
-                         model1s[k]= new model1(ds.child("namedb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("purldb").getValue(String.class));
-                        listtuser.add(model1s[k].getNamedb()+"\n"+model1s[k].getPhnodb()+"\n"+model1s[k].getEmaildb());
+                         models[k]= new model(ds.child("namedb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("purldb").getValue(String.class));
+                        listtuser.add(models[k].getNamedb()+"\n"+models[k].getPhnodb()+"\n"+models[k].getEmaildb());
                         k++;
                     }
 
@@ -136,10 +144,13 @@ public class UserSearch extends AppCompatActivity {
                     listView.setAdapter(AAdapter);
                     listView.setOnItemClickListener((parent, view, position, id) -> {
 
-                        USERID = model1s[position].getPhnodb();
-                        Intent intent = new Intent(UserSearch.this,UserprofilePage.class);
-                        intent.putExtra("USERID", USERID);
-                        startActivity(intent);
+                        UserPhno = models[position].getPhnodb();
+                        UserNam =models[position].getNamedb();
+                        UserPos=models[position].getEmaildb();
+
+                        ShowPopup(UserNam,UserPhno,UserPos);
+
+
                     });
 
 
@@ -170,19 +181,32 @@ public class UserSearch extends AppCompatActivity {
                     ArrayList<String> listtuser=new ArrayList<>();
                     for(DataSnapshot ds:dataSnapshot.getChildren())
                     {
-                        models[k]= new model(ds.child("namedb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("purldb").getValue(String.class));
-                        listtuser.add(models[k].getNamedb()+"\n"+models[k].getPhnodb()+"\n"+models[k].getEmaildb());
-                        k++;
-                    }
 
+                        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+                        DocumentReference df= FirebaseFirestore.getInstance().collection("Users").document(user.getUid());
+                        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                            @Override
+                            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+
+                                String WZ1=documentSnapshot.getString("UserWorkZone");
+                                if (Objects.equals(WZ1, ds.child("workZone1").getValue(String.class))) {
+                                    models[k]= new model(ds.child("namedb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("purldb").getValue(String.class));
+                                    listtuser.add(models[k].getNamedb()+"\n"+models[k].getPhnodb()+"\n"+models[k].getEmaildb());
+                                    k++;
+                                }
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull @NotNull Exception e) {
+                                Toast.makeText(UserSearch.this,"Can't Get Details",Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
                     ArrayAdapter<String> AAdapter=new ArrayAdapter<>(UserSearch.this, android.R.layout.simple_list_item_1,listtuser);
                     listView.setAdapter(AAdapter);
                     listView.setOnItemClickListener((parent, view, position, id) -> {
 
-                        USERID = models[position].getPhnodb();
-                        Intent intent = new Intent(UserSearch.this,UserprofilePage.class);
-                        intent.putExtra("USERID", USERID);
-                        startActivity(intent);
                     });
                 }else{
                     Toast.makeText(UserSearch.this,"Snapshot Not found",Toast.LENGTH_LONG).show();
@@ -194,6 +218,49 @@ public class UserSearch extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void ShowPopup(String name,String Phno,String Pos) {
+        TextView txtclose,txtnamepop,txtpospop;
+        LinearLayout l1,l2;
+        Dialog myDialog =new Dialog(this);
+        myDialog.setContentView(R.layout.custompopup);
+        txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+        txtnamepop =(TextView) myDialog.findViewById(R.id.textnamePOP);
+        txtpospop =(TextView) myDialog.findViewById(R.id.textposPOP);
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myDialog.dismiss();
+            }
+        });
+        txtnamepop.setText(name);
+        txtpospop.setText(Pos);
+        l1=(LinearLayout) myDialog.findViewById(R.id.userdataview);
+        l2=(LinearLayout) myDialog.findViewById(R.id.userdailydata);
+        l1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserSearch.this,UserprofilePage.class);
+                intent.putExtra("USERID",Phno);
+                startActivity(intent);
+                myDialog.dismiss();
+            }
+        });
+
+        l2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserSearch.this,MyTeamPage.class);
+                intent.putExtra("USERID",Phno);
+                startActivity(intent);
+                myDialog.dismiss();
+            }
+        });
+
+
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
     }
 
 }
