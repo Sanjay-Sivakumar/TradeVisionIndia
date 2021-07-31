@@ -42,7 +42,7 @@ import java.util.Objects;
 
 public class ProfileImageUpload extends AppCompatActivity {
 
-    String usernameIU,userphoneIU,userEmailIU;
+    String usernameIU,userphoneIU,userEmailIU,USERWORKZONEIU,userUnderTeritoryIU;
 
     StorageReference objectStorageReference;
     FirebaseFirestore objectFirebaseFirestore;
@@ -65,6 +65,10 @@ public class ProfileImageUpload extends AppCompatActivity {
         usernameIU= getIntent().getStringExtra("userName");
         userphoneIU=getIntent().getStringExtra("UserPhone");
         userEmailIU=getIntent().getStringExtra("userEmail");
+        USERWORKZONEIU=getIntent().getStringExtra("userWorkZone");
+        userUnderTeritoryIU=getIntent().getStringExtra("userWorkUnderTeritory");
+        Toast.makeText(ProfileImageUpload.this,USERWORKZONEIU+"\n"+userUnderTeritoryIU,Toast.LENGTH_LONG).show();
+
 
         objectStorageReference= FirebaseStorage.getInstance().getReference("profilePic");
         objectFirebaseFirestore=FirebaseFirestore.getInstance();
@@ -97,13 +101,13 @@ public class ProfileImageUpload extends AppCompatActivity {
 
                 Bitmap objectBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                 profilechange.setImageBitmap(objectBitmap);
-                uploadpicture(usernameIU,userphoneIU,userEmailIU,imageUri);
+                uploadpicture(usernameIU,userphoneIU,userEmailIU,imageUri,USERWORKZONEIU,userUnderTeritoryIU);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private void uploadpicture(String name, String id, String email, Uri imagelink) {
+    private void uploadpicture(String name, String id, String email, Uri imagelink,String workZone,String underTeritory) {
 
         String linktoupload=imagelink.toString();
 
@@ -111,7 +115,7 @@ public class ProfileImageUpload extends AppCompatActivity {
         pd.setTitle("uploading image.......");
         pd.show();
 
-        model modellist = new model(name,id,email,linktoupload);
+        model modellist = new model(name,id,email,linktoupload,workZone,underTeritory);
         databaseUserdata.child(id).setValue(modellist);
 
         try {

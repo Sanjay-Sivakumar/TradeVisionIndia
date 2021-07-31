@@ -6,12 +6,12 @@ import java.util.ArrayList;
 @IgnoreExtraProperties
 public class VisitDetails {
 
-    private String VisitedDate,VisitedTime,meetingPerson,tph,stage,valueOfOffer,visitRemarks,accompainedPerson,visitDetails,PurposeOfVisit,NextVisitDate,Visit_Company_Id;
+    private String VisitedDate,VisitedTime,meetingPerson,tph,stage,valueOfOffer,visitRemarks,accompainedPerson,visitDetails,PurposeOfVisit,NextVisitDate,Visit_Company_Id,UserNames,UId;
     private ArrayList<Cricketer> listEqiupments;
     public VisitDetails() {
     }
 
-    public VisitDetails(String visitedDate, String visitedTime, String meetingPerson, String tph, String stage, String valueOfOffer, String visitRemarks, String accompainedPerson, String visitDetails, String purposeOfVisit, String nextVisitDate, String companyId,ArrayList<Cricketer> liststring) {
+    public VisitDetails(String visitedDate, String visitedTime, String meetingPerson, String tph, String stage, String valueOfOffer, String visitRemarks, String accompainedPerson, String visitDetails, String purposeOfVisit, String nextVisitDate, String companyId,ArrayList<Cricketer> liststring,String UId,String UserNames) {
         VisitedDate = visitedDate;
         VisitedTime = visitedTime;
         this.meetingPerson = meetingPerson;
@@ -25,6 +25,8 @@ public class VisitDetails {
         this.NextVisitDate = nextVisitDate;
         this.Visit_Company_Id = companyId;
         this.listEqiupments=liststring;
+        this.UserNames=UserNames;
+
     }
 
     public String getVisitedDate() {
@@ -129,5 +131,21 @@ public class VisitDetails {
 
     public void setListEqiupments(ArrayList<Cricketer> listEqiupments) {
         this.listEqiupments = listEqiupments;
+    }
+
+    public String getUserNames() {
+        return UserNames;
+    }
+
+    public void setUserNames(String userNames) {
+        UserNames = userNames;
+    }
+
+    public String getUId() {
+        return UId;
+    }
+
+    public void setUId(String UId) {
+        this.UId = UId;
     }
 }

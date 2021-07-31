@@ -20,12 +20,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -143,8 +149,20 @@ public class VisitDayDetails extends AppCompatActivity {
                     String visitDetails=visitdetails.getSelectedItem().toString();
                     String PurposeOfVisit=purposeofvisit.getSelectedItem().toString();
 
-                    VisitDetails VD=new VisitDetails(getTodaysDate(),getTimewitham(),meetingPerson,tph,stage,valueOfOffer,visitRemarks,accompainedPerson,visitDetails,PurposeOfVisit,date1,CompanyVisitID,cricketersList2);
-                    dtbasevisit.child(CompanyVisitID+""+getTodaysDate()+""+getTimewitham()).setValue(VD);
+                    FirebaseAuth authUser=FirebaseAuth.getInstance();
+                    FirebaseUser UserAuth=authUser.getCurrentUser();
+                    if (UserAuth == null) throw new AssertionError();
+                    DocumentReference Vdfs= FirebaseFirestore.getInstance().collection("Users").document(UserAuth.getUid());
+                    Vdfs.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                            String Names=documentSnapshot.getString("userNames");
+                            VisitDetails VD=new VisitDetails(getTodaysDate(),getTimewitham(),meetingPerson,tph,stage,valueOfOffer,visitRemarks,accompainedPerson,visitDetails,PurposeOfVisit,date1,CompanyVisitID,cricketersList2,UserAuth.getUid(),Names);
+                            dtbasevisit.child(new StringBuilder().append(UserAuth.getUid()).append("").append(getTodaysDate()).append("").append(getTimewitham()).toString()).setValue(VD);
+
+                        }
+                    });
 
                     LastVisitDetails lastVisitDetails=new LastVisitDetails(CompanyVisitID,getTodaysDate(),getTimewitham(),visitRemarks);
                     dtbaselastdeatils.child(CompanyVisitID+""+getTodaysDate()+""+getTimewitham()).setValue(lastVisitDetails);
