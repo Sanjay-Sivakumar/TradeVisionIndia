@@ -16,15 +16,17 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="FIELDS"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="FILLED"
                 android:textStyle="bold"
                 android:layout_weight="1"
@@ -36,8 +38,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company Name"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -46,10 +49,11 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_weight="1"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="companyname"
+                android:layout_weight="1"
                 android:id="@+id/textViewcompanyname"
                 android:gravity="center"
                 android:background="#ffffff"
@@ -61,8 +65,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company Phone Number"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -71,12 +76,13 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
-                android:text="companyphonenumber"
-                android:id="@+id/textViewcompanyphonenumber"
                 android:gravity="center"
+                android:id="@+id/textViewcompanyphonenumber"
+                android:text="companyphonenumber"
                 android:background="#ffffff"
                 android:layout_marginEnd="1dp"
                 android:layout_marginBottom="1dp"/>
@@ -86,8 +92,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company Email"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -96,8 +103,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewcompanyemail"
@@ -111,8 +119,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company Address"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -121,8 +130,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="address"
                 android:id="@+id/textViewcompanyaddresss"
@@ -136,8 +146,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company Site Address"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -146,8 +157,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="site address"
                 android:id="@+id/textViewsiteaddress"
@@ -161,8 +173,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company Site District"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -171,8 +184,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="site address"
                 android:id="@+id/textViewsitedistrict"
@@ -187,8 +201,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Company Site State"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -197,8 +212,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="site address"
                 android:id="@+id/textViewsitestate"
@@ -212,8 +228,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Name of Head"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -222,8 +239,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewnameofthehead"
@@ -237,8 +255,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Person Name"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -247,8 +266,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="Person Name"
                 android:id="@+id/textViewpersonname"
@@ -262,8 +282,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Person Phone Number"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -272,8 +293,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="personphonenumber"
                 android:id="@+id/textViewpersonphonenumber"
@@ -287,8 +309,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Person Designation"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -297,8 +320,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewpersondesignation"
@@ -314,8 +338,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Applied date"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -324,8 +349,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewapplieddate"
@@ -339,8 +365,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Next Visit"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -349,8 +376,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewnextvisit"

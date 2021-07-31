@@ -47,6 +47,18 @@
         <item>NO</item>
     </array>
 
+    <array name="workposition">
+        <item>Zonal Manager</item>
+        <item>Business Executive</item>
+        <item>Service Engineer</item>
+    </array>
+
+
+    <array name="gender">
+        <item>MALE</item>
+        <item>FEMALE</item>
+        <item>OTHERS</item>
+    </array>
     <array name="SearchEngine">
         <item>Company_Name</item>
         <item>OEN_NUMBER</item>
