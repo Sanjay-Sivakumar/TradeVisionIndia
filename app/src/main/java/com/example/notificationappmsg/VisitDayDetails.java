@@ -159,7 +159,7 @@ public class VisitDayDetails extends AppCompatActivity {
 
                             String Names=documentSnapshot.getString("userNames");
                             VisitDetails VD=new VisitDetails(getTodaysDate(),getTimewitham(),meetingPerson,tph,stage,valueOfOffer,visitRemarks,accompainedPerson,visitDetails,PurposeOfVisit,date1,CompanyVisitID,cricketersList2,UserAuth.getUid(),Names);
-                            dtbasevisit.child(new StringBuilder().append(UserAuth.getUid()).append("").append(getTodaysDate()).append("").append(getTimewitham()).toString()).setValue(VD);
+                            dtbasevisit.child(UserAuth.getUid() + "" + getTodaysDate() + "" + getTimewitham()).setValue(VD);
 
                         }
                     });
@@ -239,6 +239,7 @@ public class VisitDayDetails extends AppCompatActivity {
                 if (ds.exists()) {
 
                     LastVisitDetails busno = ds.getValue(LastVisitDetails.class);
+                    assert busno != null;
                     String lastvisitdetail=busno.getVisitRemarks();
                     String lastvisitdate=busno.getDateVisited();
                     String seter="Last visited date was "+lastvisitdate+"\n The Remark given was "+lastvisitdetail;
