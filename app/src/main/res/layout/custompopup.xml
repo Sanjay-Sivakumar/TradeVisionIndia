@@ -4,14 +4,14 @@
     android:orientation="vertical"
     android:layout_width="350dp"
     android:layout_height="300dp"
-    android:background="#f5f5"
+    android:background="#D8FDD8"
     android:padding="5dp"
     android:layout_gravity="center">
     <TextView
         android:id="@+id/txtclose"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:textColor="@color/white"
+        android:textColor="@color/pink"
         android:text="X"
         android:textStyle="bold"
         android:layout_gravity="end"
@@ -29,16 +29,17 @@
         android:layout_height="wrap_content"
         android:text="Elina Grofild"
         android:textStyle="bold"
-        android:textColor="#000"
+        android:textColor="@color/purple_500"
         android:id="@+id/textnamePOP"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        tools:ignore="HardcodedText" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Montreal,Canada"
         android:id="@+id/textposPOP"
-        android:textColor="#000"
+        android:textColor="#E83045"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
         tools:ignore="HardcodedText" />
@@ -48,54 +49,66 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="DisableBaselineAlignment">
-        <LinearLayout
-            android:background="#FF5722"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="10dp"
-            android:id="@+id/userdataview">
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/round_grey"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="User Details"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:layout_marginTop="10dp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
         <LinearLayout
-            android:background="#F30B0B"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical"
+            android:id="@+id/userdataview"
             android:layout_marginStart="10dp"
-            android:id="@+id/userdailydata">
+            tools:ignore="UseCompoundDrawables">
+        <ImageView
+            android:background="@drawable/userviewingimg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            tools:ignore="ContentDescription"/>
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="User Details"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#EF1212"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:id="@+id/userdailydata"
+            tools:ignore="UseCompoundDrawables">
+
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/round_grey"
-                tools:ignore="ContentDescription" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/detailsimg"
+                android:layout_marginEnd="10dp"
+                tools:ignore="ContentDescription"/>
+
             <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Daily Task"
+                android:text="Daliy Visit Data"
+                android:textColor="#EA0808"
+                android:gravity="center"
                 android:textSize="18sp"
-                android:textColor="#000"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
+
+
     </LinearLayout>
 
 
