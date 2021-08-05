@@ -18,15 +18,19 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:text="FIELDS"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:gravity="center"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:text="FILLED"
                 android:textStyle="bold"
                 android:layout_weight="1"
@@ -38,8 +42,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Visit Detail"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -48,8 +53,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewvistdetail"
@@ -63,8 +69,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Purpose of Visit"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -73,8 +80,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="tph"
                 android:id="@+id/textViewpurposeofvisit"
@@ -88,8 +96,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Tph"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -98,8 +107,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewvisittph"
@@ -114,8 +124,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="STAGE"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -124,8 +135,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="stage"
                 android:id="@+id/textViewvisitstage"
@@ -141,8 +153,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Meeting Person"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -151,8 +164,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="person"
                 android:id="@+id/textViewmeetingperson"
@@ -166,8 +180,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Value of Offer"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -176,8 +191,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="valueofoffer"
                 android:id="@+id/textViewvalueofoffer"
@@ -191,8 +207,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Remarks"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -201,8 +218,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewVisitremarks"
@@ -216,8 +234,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Accompained Person"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -226,8 +245,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="person"
                 android:id="@+id/textViewaccompainedperson"
@@ -241,8 +261,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Last visit Date"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -251,8 +272,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:text="date"
                 android:id="@+id/textViewlastvisitdate"
@@ -266,8 +288,9 @@
 
         <TableRow>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:text="Last visit Time"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -276,8 +299,9 @@
                 android:layout_marginHorizontal="1dp"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="5dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:id="@+id/textViewlastvisittime"
