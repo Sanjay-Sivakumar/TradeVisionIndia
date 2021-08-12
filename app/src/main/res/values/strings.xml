@@ -16,6 +16,7 @@
     </array>
 
     <array name="district">
+        <item>Select District</item>
         <item>Erode</item>
         <item>Chennai</item>
         <item>Kancheepuram</item>
@@ -27,17 +28,20 @@
     </array>
 
     <array name="visitdetails">
+        <item>Select Visit Detail</item>
         <item>First</item>
         <item>FollowUp</item>
     </array>
 
     <array name="purpose">
+        <item>Purpose Of Visit</item>
         <item>Enquiry</item>
         <item>Order</item>
         <item>After Sales</item>
     </array>
 
     <array name="quarry">
+        <item>Select Quarry</item>
         <item>Own</item>
         <item>Lease</item>
     </array>
@@ -48,6 +52,7 @@
     </array>
 
     <array name="workposition">
+        <item>Select Work Position</item>
         <item>Zonal Manager</item>
         <item>Business Executive</item>
         <item>Service Engineer</item>
@@ -55,6 +60,7 @@
 
 
     <array name="gender">
+        <item>Select Gender</item>
         <item>MALE</item>
         <item>FEMALE</item>
         <item>OTHERS</item>
@@ -65,12 +71,14 @@
     </array>
 
     <array name="Zone">
+        <item>Select Working Zone</item>
         <item>Erode</item>
         <item>Kpm</item>
         <item>Chennai</item>
     </array>
 
     <array name="Teritory">
+        <item>Select Under Teritory</item>
         <item>T1</item>
         <item>T2</item>
         <item>T3</item>

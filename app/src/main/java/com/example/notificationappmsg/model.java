@@ -2,76 +2,130 @@ package com.example.notificationappmsg;
 
 public class model
 {
-    String namedb,phnodb,emaildb,purldb,WorkZone1,UnderTeritory1;
+
+    String linktoupload,name,email,address,phone,WorkPosition,accesslevel,workZone,underTeritory,Gender,id,Qualification;
 
     public model(){
 
     }
 
-    public model(String namedb,String phnodb,String emaildb,String purldb)
+    public  model(String name,String phone,String email,String linktoupload)
     {
-        this.namedb=namedb;
-        this.emaildb=emaildb;
-        this.phnodb=phnodb;
-        this.purldb=purldb;
-    }
-
-    public model(String namedb, String phnodb, String emaildb, String purldb,String WorkZone1,String UnderTeritory1) {
-        this.namedb = namedb;
-        this.phnodb = phnodb;
-        this.emaildb = emaildb;
-        this.purldb = purldb;
-        this.WorkZone1=WorkZone1;
-        this.UnderTeritory1=UnderTeritory1;
-    }
-
-    public String getNamedb() {
-        return namedb;
-    }
-
-    public String getPhnodb() {
-        return phnodb;
+        this.name=name;
+        this.email=email;
+        this.phone=phone;
+        this.linktoupload=linktoupload;
     }
 
 
-    public String getEmaildb() {
-        return emaildb;
+    public model(String linktoupload, String name, String email, String address, String phone, String workPosition, String accesslevel, String workZone, String underTeritory, String gender, String id, String qualification) {
+        this.linktoupload = linktoupload;
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.phone = phone;
+        WorkPosition = workPosition;
+        this.accesslevel = accesslevel;
+        this.workZone = workZone;
+        this.underTeritory = underTeritory;
+        Gender = gender;
+        this.id = id;
+        Qualification = qualification;
     }
 
-
-    public String getPurldb() {
-        return purldb;
+    public String getLinktoupload() {
+        return linktoupload;
     }
 
-    public void setNamedb(String namedb) {
-        this.namedb = namedb;
+    public void setLinktoupload(String linktoupload) {
+        this.linktoupload = linktoupload;
     }
 
-    public void setPhnodb(String phnodb) {
-        this.phnodb = phnodb;
+    public String getName() {
+        return name;
     }
 
-    public void setEmaildb(String emaildb) {
-        this.emaildb = emaildb;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setPurldb(String purldb) {
-        this.purldb = purldb;
+    public String getEmail() {
+        return email;
     }
 
-    public String getWorkZone1() {
-        return WorkZone1;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setWorkZone1(String workZone1) {
-        WorkZone1 = workZone1;
+    public String getAddress() {
+        return address;
     }
 
-    public String getUnderTeritory1() {
-        return UnderTeritory1;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public void setUnderTeritory1(String underTeritory1) {
-        UnderTeritory1 = underTeritory1;
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getWorkPosition() {
+        return WorkPosition;
+    }
+
+    public void setWorkPosition(String workPosition) {
+        WorkPosition = workPosition;
+    }
+
+    public String getAccesslevel() {
+        return accesslevel;
+    }
+
+    public void setAccesslevel(String accesslevel) {
+        this.accesslevel = accesslevel;
+    }
+
+    public String getWorkZone() {
+        return workZone;
+    }
+
+    public void setWorkZone(String workZone) {
+        this.workZone = workZone;
+    }
+
+    public String getUnderTeritory() {
+        return underTeritory;
+    }
+
+    public void setUnderTeritory(String underTeritory) {
+        this.underTeritory = underTeritory;
+    }
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getQualification() {
+        return Qualification;
+    }
+
+    public void setQualification(String qualification) {
+        Qualification = qualification;
     }
 }

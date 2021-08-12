@@ -136,7 +136,7 @@ public class UserSearch extends AppCompatActivity {
                     for(DataSnapshot ds:snapshot.getChildren())
                     {
                          models[k]= new model(ds.child("namedb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("purldb").getValue(String.class));
-                        listtuser.add(models[k].getNamedb()+"\n"+models[k].getPhnodb()+"\n"+models[k].getEmaildb());
+                        listtuser.add(models[k].getName()+"\n"+models[k].getPhone()+"\n"+models[k].getEmail());
                         k++;
                     }
 
@@ -144,9 +144,9 @@ public class UserSearch extends AppCompatActivity {
                     listView.setAdapter(AAdapter);
                     listView.setOnItemClickListener((parent, view, position, id) -> {
 
-                        UserPhno = models[position].getPhnodb();
-                        UserNam =models[position].getNamedb();
-                        UserPos=models[position].getEmaildb();
+                        UserPhno = models[position].getPhone();
+                        UserNam =models[position].getName();
+                        UserPos=models[position].getEmail();
 
                         ShowPopup(UserNam,UserPhno,UserPos);
 
@@ -192,7 +192,7 @@ public class UserSearch extends AppCompatActivity {
                                 String WZ1=documentSnapshot.getString("UserWorkZone");
                                 if (Objects.equals(WZ1, ds.child("workZone1").getValue(String.class))) {
                                     models[k]= new model(ds.child("namedb").getValue(String.class),ds.child("phnodb").getValue(String.class),ds.child("emaildb").getValue(String.class),ds.child("purldb").getValue(String.class));
-                                    listtuser.add(models[k].getNamedb()+"\n"+models[k].getPhnodb()+"\n"+models[k].getEmaildb());
+                                    listtuser.add(models[k].getName()+"\n"+models[k].getPhone()+"\n"+models[k].getEmail());
                                     k++;
                                 }
                             }
