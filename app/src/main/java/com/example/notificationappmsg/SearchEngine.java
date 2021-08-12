@@ -31,7 +31,7 @@ public class SearchEngine extends AppCompatActivity {
     ListView searchResults;
     DatabaseReference searchEngineRef;
     ToggleButton toggleButtonSearch;
-
+    Spinner Spinner_Button;
     public String RequestCodeSearch;
 
     @Override
@@ -40,15 +40,25 @@ public class SearchEngine extends AppCompatActivity {
         setContentView(R.layout.activity_search_engine);
 
         searchtext=findViewById(R.id.searchenginetext);
-        toggleButtonSearch=findViewById(R.id.toggleButtonsearch);
+        //toggleButtonSearch=findViewById(R.id.toggleButtonsearch);
         searchResults=findViewById(R.id.listofsearchresults);
-
-
+        Spinner_Button=findViewById(R.id.SpinnerButton);
         RequestCodeSearch= getIntent().getStringExtra("RequestCode");
 
         searchEngineRef= FirebaseDatabase.getInstance().getReference("Search_Engine_Details");
 
         CallValueEventListenerForName();
+
+        String check_spinner=Spinner_Button.getSelectedItem().toString();
+
+        if(check_spinner=="Name")
+        {
+            CallValueEventListenerForName();
+        }
+        else if(check_spinner=="OEN")
+        {
+            CallValueEventListenerForOen();
+        }
 
         toggleButtonSearch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -57,8 +67,6 @@ public class SearchEngine extends AppCompatActivity {
                     CallValueEventListenerForOen();
                 }
                 else{
-
-
                     CallValueEventListenerForName();
                 }
             }
@@ -71,7 +79,6 @@ public class SearchEngine extends AppCompatActivity {
         ValueEventListener event=new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
 
                 Toast.makeText(SearchEngine.this,"Search now by OEN",Toast.LENGTH_LONG).show();
                 PopulateSearchByOen(snapshot);

@@ -23,29 +23,21 @@
             android:text="Search By :"
             android:textColor="#000"
             android:textSize="24sp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:layout_marginStart="25dp"/>
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="14dp"
-            android:src="@drawable/ic_filter"
-            android:layout_marginStart="15dp"/>
-
-            <ToggleButton
-                android:id="@+id/toggleButtonsearch"
-                android:layout_marginTop="10dp"
+            <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton"
-                android:textOn="OEN NUMBER"
-                android:textOff="Company Name"
-                android:textColor="#000"
-                android:background="#00BCD4"/>
-
-
-
+                android:gravity="center"
+                android:layout_height="35dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:id="@+id/SpinnerButton"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="12dp"
+                android:textAlignment="center"
+                android:entries="@array/engine"
+                android:background="@drawable/bg_round"/>
 
         </LinearLayout>
 

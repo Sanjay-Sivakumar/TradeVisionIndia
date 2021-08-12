@@ -51,15 +51,15 @@ public class LoginAuth extends AppCompatActivity {
         loginemail=findViewById(R.id.createuseremail);
         loginpassword=findViewById(R.id.createuserpassword);
         loginname=findViewById(R.id.createusername);
-        loginuserlevel=findViewById(R.id.createuserlevel);
+        //loginuserlevel=findViewById(R.id.createuserlevel);
         loginphonenumber=findViewById(R.id.createuserphonenumber);
-        loginworkposition=findViewById(R.id.createuserworkpositon);
-        loginworkzone=findViewById(R.id.createuserworkzone);
+        //loginworkposition=findViewById(R.id.createuserworkpositon);
+      //  loginworkzone=findViewById(R.id.createuserworkzone);
         loginuseraddress=findViewById(R.id.createuseraddress);
-        loginuserid=findViewById(R.id.createuserid);
+       // loginuserid=findViewById(R.id.createuserid);
 
         createuser=findViewById(R.id.btncreateuser);
-        loginworkunderteritory=findViewById(R.id.createuserunderteritory);
+       // loginworkunderteritory=findViewById(R.id.createuserunderteritory);
 
 
         db=FirebaseFirestore.getInstance();

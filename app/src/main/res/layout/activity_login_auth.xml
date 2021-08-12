@@ -171,7 +171,7 @@
                             <Spinner
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:padding="5dp"
+                                android:padding="6dp"
                                 android:layout_centerInParent="true"
                                 android:visibility="visible"
                                 android:entries="@array/gender"
