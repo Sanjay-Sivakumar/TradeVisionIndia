@@ -114,7 +114,7 @@ public class SearchEngine extends AppCompatActivity {
         };
         searchEngineRef.addListenerForSingleValueEvent(event);
 
-        }
+    }
 
 
     private void PopulateSearchByOen(DataSnapshot snapshot) {
@@ -173,7 +173,7 @@ public class SearchEngine extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             //Toast.makeText(UserSearch.this,"you clicked something",Toast.LENGTH_LONG).show();
-                           GotoIntentation();
+                            GotoIntentation();
                         }
                     });
 
