@@ -26,10 +26,10 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull model model)
     {
-        holder.name.setText(model.getNamedb());
-        holder.course.setText(model.getPhnodb());
-        holder.email.setText(model.getEmaildb());
-        Glide.with(holder.img.getContext()).load(model.getPurldb()).into(holder.img);
+        holder.name.setText(model.getName());
+        holder.course.setText(model.getPhone());
+        holder.email.setText(model.getEmail());
+        Glide.with(holder.img.getContext()).load(model.getLinktoupload()).into(holder.img);
     }
 
     @NonNull

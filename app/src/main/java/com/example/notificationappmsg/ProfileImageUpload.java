@@ -42,14 +42,14 @@ import java.util.Objects;
 
 public class ProfileImageUpload extends AppCompatActivity {
 
-    String usernameIU,userphoneIU,userEmailIU,USERWORKZONEIU,userUnderTeritoryIU;
+    String usernameIU,userphoneIU,userEmailIU,USERWORKZONEIU,userUnderTeritoryIU,userAccessLevelIU;
+    String userPasswordIU,UserIDIU,userWorkPositionIU,userGenderIU,userAddressIU,userQualificationIU;
 
     StorageReference objectStorageReference;
     FirebaseFirestore objectFirebaseFirestore;
     DatabaseReference databaseUserdata;
     Uri imageUri;
     ImageView profilechange;
-  //  public String userId1;
 
     String santab =new String("1");
     String santab1 =new String("2");
@@ -62,18 +62,25 @@ public class ProfileImageUpload extends AppCompatActivity {
 
         profilechange=findViewById(R.id.profileimageupdate);
 
-        usernameIU= getIntent().getStringExtra("userName");
-        userphoneIU=getIntent().getStringExtra("UserPhone");
-        userEmailIU=getIntent().getStringExtra("userEmail");
-        USERWORKZONEIU=getIntent().getStringExtra("userWorkZone");
-        userUnderTeritoryIU=getIntent().getStringExtra("userWorkUnderTeritory");
-        Toast.makeText(ProfileImageUpload.this,USERWORKZONEIU+"\n"+userUnderTeritoryIU,Toast.LENGTH_LONG).show();
+        usernameIU= getIntent().getStringExtra("Name");
+        userphoneIU=getIntent().getStringExtra("PhoneNumber");
+        userEmailIU=getIntent().getStringExtra("Email");
+        USERWORKZONEIU=getIntent().getStringExtra("WorkZone");
+        userUnderTeritoryIU=getIntent().getStringExtra("WorkUnderTeritory");
+        userQualificationIU=getIntent().getStringExtra("Qualification");
+        UserIDIU=getIntent().getStringExtra("UserID");
+        userAccessLevelIU=getIntent().getStringExtra("UserAccessLevel");
+        userAddressIU=getIntent().getStringExtra("Address");
+        userGenderIU=getIntent().getStringExtra("Gender");
+        userPasswordIU=getIntent().getStringExtra("Password");
+        userWorkPositionIU=getIntent().getStringExtra("WorkPosition");
 
+
+        Toast.makeText(ProfileImageUpload.this,UserIDIU,Toast.LENGTH_SHORT).show();
 
         objectStorageReference= FirebaseStorage.getInstance().getReference("profilePic");
         objectFirebaseFirestore=FirebaseFirestore.getInstance();
         databaseUserdata = FirebaseDatabase.getInstance().getReference("UserData");
-      //  userId1= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
         profilechange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,13 +108,13 @@ public class ProfileImageUpload extends AppCompatActivity {
 
                 Bitmap objectBitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                 profilechange.setImageBitmap(objectBitmap);
-                uploadpicture(usernameIU,userphoneIU,userEmailIU,imageUri,USERWORKZONEIU,userUnderTeritoryIU);
+                uploadpicture(imageUri,usernameIU,userEmailIU,userAddressIU,userphoneIU,userWorkPositionIU,userAccessLevelIU,USERWORKZONEIU,userUnderTeritoryIU,userGenderIU,UserIDIU,userQualificationIU);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    private void uploadpicture(String name, String id, String email, Uri imagelink,String workZone,String underTeritory) {
+    private void uploadpicture(Uri imagelink,String name, String email, String address,String phone,String WorkPosition,String accesslevel,String workZone,String underTeritory,String Gender,String id,String Qualification) {
 
         String linktoupload=imagelink.toString();
 
@@ -115,7 +122,7 @@ public class ProfileImageUpload extends AppCompatActivity {
         pd.setTitle("uploading image.......");
         pd.show();
 
-        model modellist = new model(name,id,email,linktoupload,workZone,underTeritory);
+        model modellist = new model(linktoupload,name,email,address,phone,WorkPosition,accesslevel,workZone,underTeritory,Gender,id,Qualification);
         databaseUserdata.child(id).setValue(modellist);
 
         try {
@@ -137,7 +144,7 @@ public class ProfileImageUpload extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Uri> task) {
                         if (task.isSuccessful()) {
                             Map<String, String> objectmap = new HashMap<>();
-                            objectmap.put("url", task.getResult().toString());
+                            objectmap.put("url", Objects.requireNonNull(task.getResult()).toString());
                             objectFirebaseFirestore.collection("profileLinks").document(id)
                                     .set(objectmap)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -147,7 +154,7 @@ public class ProfileImageUpload extends AppCompatActivity {
                                             Toast.makeText(ProfileImageUpload.this, "Image is uploaded", Toast.LENGTH_LONG).show();
                                             FirebaseAuth authUser=FirebaseAuth.getInstance();
                                             FirebaseUser UserAuth=authUser.getCurrentUser();
-                                            CheckUserAccessLevel3(UserAuth.getUid());
+                                            CheckUserAccessLevel3(Objects.requireNonNull(UserAuth).getUid());
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -230,5 +237,6 @@ public class ProfileImageUpload extends AppCompatActivity {
             }
         });
     }
+
 
 }
