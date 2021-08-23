@@ -14,37 +14,62 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp"
+            android:baselineAligned="false">
 
             <LinearLayout
-                android:layout_width="220dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
                 android:orientation="horizontal"
-                android:clickable="true"
-                android:id="@+id/lastOfferCopy"
-                android:layout_marginStart="190dp"
-                android:focusable="true">
+                tools:ignore="UseCompoundDrawables">
 
-
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="18dp"
+                    android:src="@drawable/ic_calender"/>
 
                 <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Offer Given"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="18dp"
+                    android:inputType="date"
                     android:textColor="#000"
-                    android:textSize="18sp" />
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_goto"
-                    tools:ignore="ContentDescription" />
+                    android:text="12/07/2002"
+                    android:textSize="16sp"/>
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                android:id="@+id/lastOfferCopy"
+                tools:ignore="UseCompoundDrawables"
+                android:layout_marginStart="15dp">
 
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_goto"
+                    tools:ignore="ContentDescription" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="8dp"
+                    android:clickable="true"
+                    android:textColor="#000"
+                    android:focusable="true"
+                    android:text="Offer Given"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
         </LinearLayout>
 
 
